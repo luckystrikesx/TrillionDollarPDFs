@@ -3,308 +3,283 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <!-- ═══ EDIT ZONE 1 — tab title + link previews (X, Slack, iMessage) ═══
-     Crawlers don't run JavaScript, so these stay hardcoded here. -->
+Crawlers don't run JavaScript, so these stay hardcoded here. -->
 <title>Trillion $$ PDFs (PSYOP edition)</title>
 <meta name="description" content="An open index of PDFs that had a major influence on our understanding of mental models, beliefs, narratives and cults.">
 <meta property="og:title" content="Trillion $$ PDFs (PSYOP edition)">
 <meta property="og:description" content="An open index of PDFs that had a major influence on our understanding of mental models, beliefs, narratives and cults.">
 <meta name="twitter:card" content="summary_large_image">
 <!-- ═══ END EDIT ZONE 1 ═════════════════════════════════════════════ -->
-
 <meta name="theme-color" content="#D5D3C6">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%2316180F'/><rect x='3' y='3' width='10' height='10' fill='%23C6D82F'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-
 <script>
 /* ═══ EDIT ZONE 2 — every word on the page ═══════════════════════════════ */
-
 const SITE = {
-  wordmark:    "Trillion $$ PDFs",        // small mark, top left
-  headline:    "Trillion $$ PDFs",        // the big line
-  subhead:     "PSYOP edition",           // small mono block under it — "" to hide
-
-  description: "This is an open index of PDFs that had a major influence on our understanding of mental models, beliefs, narratives and cults — browse it below and follow the link to read the original.",
-  highlight:   "mental models, beliefs, narratives and cults",  // sulphur underline; must appear verbatim above, or ""
-
-  weeklyUrl:   "https://psyopweekly.substack.com",   // ← CHECK THIS. drives the panel and the cross-references
-  warning:     "Do not click this",       // repeated down the panel, redacted line by line
-  warningAria: "Read PSYOPWeekly",        // what a screen reader announces instead of the repetition
-
-  submitLabel: "Suggest a document →",
-  submitEmail: "hello@example.com",
-  footerLine:  "Trillion $$ PDFs (PSYOP edition)"
+wordmark: "Trillion $$ PDFs", // small mark, top left
+headline: "Trillion $$ PDFs", // the big line
+subhead: "PSYOP edition", // small mono block under it — "" to hide
+description: "This is an open index of PDFs that had a major influence on our understanding of mental models, beliefs, narratives and cults — browse it below and follow the link to read the original.",
+highlight: "mental models, beliefs, narratives and cults", // sulphur underline; must appear verbatim above, or ""
+weeklyUrl: "https://psyopweekly.substack.com", // ← CHECK THIS. drives the panel and the cross-references
+warning: "Do not click this", // repeated down the panel, redacted line by line
+warningAria: "Read PSYOPWeekly", // what a screen reader announces instead of the repetition
+submitLabel: "Suggest a document →",
+submitEmail: "hello@example.com",
+footerLine: "Trillion $$ PDFs (PSYOP edition)"
 };
 
 /* One object per entry, oldest first. Lot numbers follow this order.
-     t = title   a = author   y = year
-     u = link to the original ("" shows no link)
-     d = the one-line thesis   n = the note behind "Open +"
-     x = optional cross-reference to the Weekly, shown inside the note   */
-
+t = title a = author y = year
+u = link to the original ("" shows no link)
+d = the one-line thesis n = the note behind "Open +"
+x = optional cross-reference to the Weekly, shown inside the note */
 const ENTRIES = [
-  {t:"The Crowd: A Study of the Popular Mind", a:"Gustave Le Bon", y:1895, u:"",
-   d:"In a crowd, individual reasoning dissolves and a lower, contagious, image-driven mind takes its place.",
-   n:"Thin as science, unkillable as influence. Read it for the downstream: Freud argued with it, Mussolini and Hitler read it, and half of modern political consulting still runs on its assumptions."},
-  {t:"Propaganda", a:"Edward Bernays", y:1928, u:"",
-   d:"An organised minority must manufacture consent, and the author would like the job.",
-   n:"Written without embarrassment, which is why it still shocks. The value is procedural: Bernays describes the actual mechanics of engineering demand through third parties rather than direct appeal."},
-  {t:"The Rape of the Masses", a:"Serge Chakhotin", y:1939, u:"",
-   d:"Political symbols work as Pavlovian conditioning, and can be countered by better-designed symbols.",
-   n:"Chakhotin worked in Pavlov's lab, then designed the Three Arrows counter-symbol against the swastika. The rare theorist who field-tested his own model and lost.",
-   x:"The Three Arrows campaign gets a file of its own in the Weekly."},
-  {t:"Psychological Warfare", a:"Paul Linebarger", y:1948, u:"",
-   d:"The operational handbook: leaflets, radio, deception and morale, written for people who had to do it.",
-   n:"Linebarger ran psychological warfare for the US Army and wrote science fiction as Cordwainer Smith. The manual is unromantic about what actually moves an enemy population: not argument, logistics."},
-  {t:"The True Believer", a:"Eric Hoffer", y:1951, u:"",
-   d:"Mass movements are interchangeable; what converts is the need to lose a self, not the doctrine on offer.",
-   n:"A longshoreman's book, written in aphorisms, arguing that the same personality joins the church, the party and the cult in whatever order history offers them. The cheapest way to stop taking any single ideology seriously."},
-  {t:"The Rape of the Mind", a:"Joost Meerloo", y:1956, u:"",
-   d:"Menticide works less by force than by exhausting a person into wanting the confession.",
-   n:"Meerloo survived Nazi interrogation and then treated its victims. Written in near-panic about the coming age of mass media, which dates it and also explains its accuracy."},
-  {t:"Battle for the Mind", a:"William Sargant", y:1957, u:"",
-   d:"Conversion, brainwashing and revival preaching share one mechanism: push the nervous system past its limit, then rebuild belief.",
-   n:"A psychiatrist reading Wesley's revivals, Communist interrogation and shell shock as the same physiological event. Uncomfortable and largely unrefuted on its narrow point."},
-  {t:"The Hidden Persuaders", a:"Vance Packard", y:1957, u:"",
-   d:"Advertisers hired psychoanalysts to sell to the parts of you that do not answer surveys.",
-   n:"Journalism, not theory, and better for it — Packard names the agencies, the studies and the fees. The motivational research industry it exposed simply renamed itself."},
-  {t:"Crowds and Power", a:"Elias Canetti", y:1960, u:"",
-   d:"Crowds are classified by what they want — to grow, to discharge, to survive — and power is built from surviving others.",
-   n:"Not a social science book. Thirty years of watching, written in fragments, with a taxonomy of crowds that no discipline has claimed. The section on the survivor is the coldest thing here."},
-  {t:"Thought Reform and the Psychology of Totalism", a:"Robert Jay Lifton", y:1961, u:"",
-   d:"Eight identifiable conditions turn an environment into a machine for remaking a person.",
-   n:"The eight criteria — milieu control, loaded language, demand for purity and the rest — are the most portable cult diagnostic in this index. Apply them to anything, including your own side.",
-   x:"Run against a live case most weeks."},
-  {t:"Propaganda: The Formation of Men's Attitudes", a:"Jacques Ellul", y:1962, u:"",
-   d:"Propaganda is not lies told to the ignorant; it is a total sociological condition that the educated need most.",
-   n:"Ellul's move is to strip propaganda of its moral drama and treat it as infrastructure — something a technological society secretes whether or not anyone intends it. The chapter on the 'propagandee' is the part people steal from."},
-  {t:"Influence: The Psychology of Persuasion", a:"Robert Cialdini", y:1984, u:"",
-   d:"Six shortcuts — reciprocity, commitment, proof, liking, authority, scarcity — that compliance professionals fire on purpose.",
-   n:"The least obscure text in the index, included because everything downstream of it is a worse copy. Read the original edition and the appendix on how each shortcut is exploited."}
+{t:"Keynes's Beauty Contest", a:"John Maynard Keynes", y:1936, u:"https://www.mkwinc.com/wp-content/uploads/2015/09/Keyness-Beauty-Contest.pdf",
+d:"Markets are driven not by fundamental value, but by what people think other people think the value is.",
+n:"A core concept explaining speculative bubbles and meta-level reasoning perfectly. We are all just trying to guess what average opinion expects average opinion to be."},
+{t:"Simple Sabotage Field Manual", a:"Office of Strategic Services (OSS)", y:1944, u:"https://regmedia.co.uk/2021/01/05/simple_sabotage_field_manual.pdf",
+d:"A guide on how to subtly disrupt organizations and systems from within through bureaucratic friction and malicious compliance.",
+n:"Declassified WWII document. The section on 'General Interference with Organizations' describes most modern corporate meetings perfectly."},
+{t:"Learned Helplessness", a:"Martin Seligman", y:1972, u:"https://ppc.sas.upenn.edu/sites/default/files/learnedhelplessness.pdf",
+d:"When animals or humans are conditioned to expect pain with no escape, they stop trying to avoid it.",
+n:"A foundational psychology paper on conditioning and passivity, which later led Seligman to pivot entirely towards Positive Psychology."},
+{t:"Influence: The Psychology of Persuasion (Summary)", a:"Robert Cialdini", y:1984, u:"https://public.summaries.com/files/8-page-summary/influence.pdf",
+d:"The six shortcuts of persuasion that compliance professionals fire on purpose.",
+n:"A concise summary of Cialdini's seminal work on reciprocity, commitment, social proof, liking, authority, and scarcity."},
+{t:"MIT Guide to Lock Picking", a:"Ted the Tool", y:1991, u:"https://www.lysator.liu.se/mit-guide/MITLockGuide.pdf",
+d:"A mechanical explanation of how locks work and how they can be systematically defeated.",
+n:"One of the most famous early internet texts on physical security. It teaches a mindset: systems designed to keep people out are just logical puzzles."},
+{t:"The Psychology of Human Misjudgment", a:"Charlie Munger", y:1995, u:"https://neilhacker.com/wp-content/uploads/2020/02/human-misjudgement-copy.pdf",
+d:"A masterclass on the cognitive biases that lead individuals to make terrible decisions.",
+n:"Originally a speech at Harvard, this is the practical inversion of behavioral economics from a billionaire investor."},
+{t:"Psychological Constraints on Epistemology", a:"Brown / Gwern Archive", y:1999, u:"https://gwern.net/doc/cat/psychology/1999-brown.pdf",
+d:"An exploration into how limitations in human memory and attention shape our baseline understanding of reality.",
+n:"Archived in Gwern's extensive psychology repository. A fascinating look at the cognitive bottlenecks of belief."},
+{t:"Human Rationality and Decision Processes", a:"General Intelligence Library", y:2002, u:"https://www.general-intelligence.com/library/hr.pdf",
+d:"An examination of cognitive heuristics and structural constraints on rational decision making.",
+n:"Part of a broader repository of research on how agents process information in suboptimal environments."},
+{t:"Information Theory, Inference and Learning Algorithms", a:"David J.C. MacKay", y:2003, u:"https://assets.cambridge.org/97805218/26518/sample/9780521826518ws.pdf",
+d:"The fundamental limits of communication and learning, bridging physics and information science.",
+n:"A legendary text that connects Claude Shannon's original information theory with modern machine learning paradigms."},
+{t:"This Is Water", a:"David Foster Wallace", y:2005, u:"https://farmamol.web.uah.es/This_is_Water.pdf",
+d:"The exact nature of the default setting of our minds, and how to transcend it.",
+n:"Originally a commencement speech at Kenyon College. A foundational text on choosing what to pay attention to in mundane, adult life."},
+{t:"Keep Your Identity Small", a:"Paul Graham", y:2009, u:"https://paulgraham.com/identity.html",
+d:"The more labels you attach to your identity, the dumber you become because you are forced to defend them.",
+n:"A short, powerful essay (formatted as HTML rather than PDF, but equally vital) on why political or religious discussions immediately shut down rational thought."},
+{t:"Escaping the Laboratory: The Rodent Experiments of John B. Calhoun", a:"Edmund Ramsden & Jon Adams", y:2009, u:"https://joeornstein.github.io/pols-4641/readings/Ramsden%20and%20Adams%20-%202009%20-%20Escaping%20the%20Laboratory%20The%20Rodent%20Experiments%20of.pdf",
+d:"A deep dive into the infamous 'Universe 25' mouse utopia experiments and their cultural impact.",
+n:"Shows how population density and 'behavioral sinks' became a prevailing narrative in 20th-century sociology and urban planning."},
+{t:"On the Absolute, the Sublime, and Ecstatic Truth", a:"Werner Herzog", y:2010, u:"https://www.bu.edu/arion/files/2010/03/Herzog.pdf",
+d:"A manifesto on why facts do not constitute truth, and why the deeper strata of truth must be reached through poetic fabrication.",
+n:"Delivered as a rogue declaration. It explains his entire filmmaking philosophy and why he frequently alters reality to achieve 'ecstatic truth'."},
+{t:"6 Secrets of Mental Toughness From the Navy SEALs", a:"Sport Ngin", y:2015, u:"https://cdn1.sportngin.com/attachments/document/748b-2136103/6_Secrets_of_Mental_Toughness_From_the_Navy_SEALs.pdf",
+d:"Actionable strategies for maintaining psychological resilience in extreme stress environments.",
+n:"Focuses on compartmentalization, visualization, and micro-goals to bypass the brain's innate panic responses."},
+{t:"Blood Meridian as Gnostic Tragedy", a:"eScholarship Archive", y:2015, u:"https://escholarship.org/content/qt5kw8f77n/qt5kw8f77n_noSplash_c03e51aa9031a015630f5b7bfa32ea15.pdf",
+d:"An examination of Cormac McCarthy's masterpiece through the framework of Gnosticism.",
+n:"Analyzes the brutal, deterministic world of Blood Meridian and the archon-like figure of Judge Holden."}
 ];
-
 /* ═══ END EDIT ZONE 2 — nothing below here needs touching ════════════════ */
 </script>
-
 <style>
-  /* Change these six and the whole page follows. */
-  :root{
-    --field:#D5D3C6;      /* kraft paper */
-    --bone:#E4E2D6;       /* card surface */
-    --soil:#16180F;       /* ink */
-    --drab:#4C5340;       /* olive drab, secondary */
-    --sulphur:#C6D82F;    /* marking spray accent */
-    --rule:1px solid var(--soil);
-    --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-    --cond:"IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0; background:var(--field); color:var(--soil);
-    font-family:var(--mono); font-size:14px; line-height:1.5;
-    background-image:
-      linear-gradient(to right, rgba(22,24,15,.055) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(22,24,15,.055) 1px, transparent 1px);
-    background-size:34px 34px;
-  }
-  .wrap{max-width:1180px; margin:0 auto; padding:0 20px}
-  a{color:inherit}
-
-  /* ── header ── */
-  header{border-bottom:var(--rule); background:var(--field)}
-  .bar{display:flex; align-items:center; gap:20px; min-height:46px;
-       font-size:11px; letter-spacing:.14em; text-transform:uppercase}
-  .mark{font-weight:600; display:flex; align-items:center; gap:8px}
-  .mark i{width:9px; height:9px; background:var(--sulphur); display:block; flex:none}
-  nav{margin-left:auto; display:flex; gap:18px}
-  nav a{text-decoration:none; padding-bottom:2px; border-bottom:1px solid transparent}
-  nav a:hover, nav a:focus-visible{border-bottom-color:var(--soil)}
-
-  /* ── hero ── */
-  .hero{padding:64px 0 8px}
-  h1{font-family:var(--cond); font-weight:700; margin:0;
-     font-size:clamp(44px,11.6vw,130px); line-height:.92; letter-spacing:-.03em}
-  .subhead{display:flex; align-items:center; gap:18px; margin:20px 0 0}
-  .subhead b{font-family:var(--mono); font-weight:600; background:var(--soil); color:var(--field);
-             font-size:clamp(14px,2.1vw,21px); letter-spacing:.1em; padding:8px 15px 9px; white-space:nowrap}
-  .subhead i{flex:1; height:1px; background:var(--soil); min-width:20px}
-  .lede{font-family:var(--cond); font-size:19px; line-height:1.42; max-width:56ch; margin:26px 0 0}
-  .lede b{font-weight:600; box-shadow:inset 0 -.42em 0 rgba(198,216,47,.55)}
-
-  /* ── index bar ── */
-  .filters{border-top:var(--rule); border-bottom:var(--rule); margin-top:46px; padding:11px 0;
-           position:sticky; top:0; background:var(--field); z-index:5;
-           display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px}
-  .count{font-size:11px; letter-spacing:.14em; color:var(--drab); text-transform:uppercase}
-  button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
-  .views{margin-left:auto; display:flex; gap:8px}
-  .toggle{font-size:11px; letter-spacing:.1em; text-transform:uppercase; border:var(--rule); padding:3px 9px}
-  .toggle[aria-pressed="true"]{background:var(--soil); color:var(--field)}
-  .toggle:focus-visible, .expand:focus-visible{outline:2px solid var(--soil); outline-offset:3px}
-
-  /* ── the index ── */
-  .plots{display:grid; gap:1px; background:var(--soil); border:var(--rule); border-top:0; margin-bottom:56px}
-  @media(min-width:640px){.plots{grid-template-columns:repeat(2,1fr)}}
-  @media(min-width:980px){.plots{grid-template-columns:repeat(3,1fr)}}
-  .plots.list{grid-template-columns:1fr !important}
-
-  .lot{background:var(--bone); padding:18px 18px 16px; display:flex; flex-direction:column;
-       border-left:3px solid transparent}
-  .lot:hover{border-left-color:var(--sulphur)}
-  .lot .no{font-size:10px; letter-spacing:.18em; color:var(--drab); display:flex; justify-content:space-between}
-  .lot h2{font-family:var(--cond); font-weight:600; font-size:23px; line-height:1.14;
-          margin:14px 0 0; letter-spacing:-.005em}
-  .lot h2 a{text-decoration:none; border-bottom:2px solid transparent}
-  .lot h2 a:hover{border-bottom-color:var(--sulphur)}
-  .thesis{font-family:var(--cond); font-size:15.5px; line-height:1.44; color:#2C3122; margin:9px 0 0}
-  .meta{margin-top:auto; padding-top:18px; display:flex; align-items:flex-end; justify-content:space-between; gap:12px}
-  .who{font-size:11px; letter-spacing:.06em; color:var(--drab); text-transform:uppercase}
-  .expand{font-size:10px; letter-spacing:.16em; text-transform:uppercase;
-          border-bottom:1px solid var(--soil); padding-bottom:1px; flex:none}
-  .note{display:none; font-family:var(--cond); font-size:15px; line-height:1.5;
-        border-top:1px dashed var(--drab); margin-top:14px; padding-top:12px; color:#2C3122}
-  .lot.open{background:var(--field)}
-  .lot.open .note{display:block}
-  .xref{font-family:var(--mono); font-size:11px; line-height:1.6; color:var(--drab); margin:14px 0 0}
-  .read{display:inline-block; margin-top:12px; font-size:10px; letter-spacing:.16em;
-        text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--soil)}
-  a.w{text-decoration:none; color:var(--soil); border-bottom:2px solid var(--sulphur); white-space:nowrap}
-  a.w:hover{background:var(--sulphur)}
-
-  .plots.list .lot{display:grid; grid-template-columns:64px 1fr; gap:0 18px; align-items:start}
-  .plots.list .no{flex-direction:column; gap:4px; grid-row:1/span 4}
-  .plots.list h2{margin-top:0}
-  .plots.list .meta{padding-top:12px}
-
-  /* ── the panel ── */
-  .warning{display:block; text-decoration:none; color:var(--field); background:var(--soil);
-           border:var(--rule); margin:0 0 56px; overflow:hidden}
-  .warning .inner{padding:clamp(38px,5.4vw,68px) clamp(22px,5vw,54px)}
-  .warning .ln{position:relative; font-family:var(--cond); font-weight:700; text-transform:uppercase;
-               font-size:clamp(29px,7.1vw,92px); line-height:1.02; letter-spacing:-.032em;
-               white-space:nowrap; overflow:hidden}
-  .warning .ln i{position:absolute; top:2%; bottom:2%; background:var(--soil); transform-origin:left center}
-  .warning:hover, .warning:focus-visible{background:var(--sulphur); color:var(--soil)}
-  .warning:hover .ln i, .warning:focus-visible .ln i{transform:scaleX(0)}
-  .warning:focus-visible{outline:3px solid var(--soil); outline-offset:3px}
-
-  footer{border-top:var(--rule); padding:26px 0 50px; font-size:11px; letter-spacing:.1em;
-         text-transform:uppercase; color:var(--drab); display:flex; flex-wrap:wrap; gap:6px 22px}
-  footer a{text-decoration:none; border-bottom:1px solid var(--drab)}
-  footer a:hover{color:var(--soil); border-bottom-color:var(--soil)}
-
-  @media(prefers-reduced-motion:no-preference){
-    .lot{animation:rise .45s ease both}
-    @keyframes rise{from{opacity:0; transform:translateY(7px)} to{opacity:1; transform:none}}
-    .warning{transition:background .16s ease, color .16s ease}
-    .warning .ln i{transition:transform .44s cubic-bezier(.2,.85,.25,1)}
-  }
+/* Change these six and the whole page follows. */
+:root{
+--field:#D5D3C6; /* kraft paper */
+--bone:#E4E2D6; /* card surface */
+--soil:#16180F; /* ink */
+--drab:#4C5340; /* olive drab, secondary */
+--sulphur:#C6D82F; /* marking spray accent */
+--rule:1px solid var(--soil);
+--mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+--cond:"IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+margin:0; background:var(--field); color:var(--soil);
+font-family:var(--mono); font-size:14px; line-height:1.5;
+background-image:
+linear-gradient(to right, rgba(22,24,15,.055) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(22,24,15,.055) 1px, transparent 1px);
+background-size:34px 34px;
+}
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px}
+a{color:inherit}
+/* ── header ── */
+header{border-bottom:var(--rule); background:var(--field)}
+.bar{display:flex; align-items:center; gap:20px; min-height:46px;
+font-size:11px; letter-spacing:.14em; text-transform:uppercase}
+.mark{font-weight:600; display:flex; align-items:center; gap:8px}
+.mark i{width:9px; height:9px; background:var(--sulphur); display:block; flex:none}
+nav{margin-left:auto; display:flex; gap:18px}
+nav a{text-decoration:none; padding-bottom:2px; border-bottom:1px solid transparent}
+nav a:hover, nav a:focus-visible{border-bottom-color:var(--soil)}
+/* ── hero ── */
+.hero{padding:64px 0 8px}
+h1{font-family:var(--cond); font-weight:700; margin:0;
+font-size:clamp(44px,11.6vw,130px); line-height:.92; letter-spacing:-.03em}
+.subhead{display:flex; align-items:center; gap:18px; margin:20px 0 0}
+.subhead b{font-family:var(--mono); font-weight:600; background:var(--soil); color:var(--field);
+font-size:clamp(14px,2.1vw,21px); letter-spacing:.1em; padding:8px 15px 9px; white-space:nowrap}
+.subhead i{flex:1; height:1px; background:var(--soil); min-width:20px}
+.lede{font-family:var(--cond); font-size:19px; line-height:1.42; max-width:56ch; margin:26px 0 0}
+.lede b{font-weight:600; box-shadow:inset 0 -.42em 0 rgba(198,216,47,.55)}
+/* ── index bar ── */
+.filters{border-top:var(--rule); border-bottom:var(--rule); margin-top:46px; padding:11px 0;
+position:sticky; top:0; background:var(--field); z-index:5;
+display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px}
+.count{font-size:11px; letter-spacing:.14em; color:var(--drab); text-transform:uppercase}
+button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
+.views{margin-left:auto; display:flex; gap:8px}
+.toggle{font-size:11px; letter-spacing:.1em; text-transform:uppercase; border:var(--rule); padding:3px 9px}
+.toggle[aria-pressed="true"]{background:var(--soil); color:var(--field)}
+.toggle:focus-visible, .expand:focus-visible{outline:2px solid var(--soil); outline-offset:3px}
+/* ── the index ── */
+.plots{display:grid; gap:1px; background:var(--soil); border:var(--rule); border-top:0; margin-bottom:56px}
+@media(min-width:640px){.plots{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.plots{grid-template-columns:repeat(3,1fr)}}
+.plots.list{grid-template-columns:1fr !important}
+.lot{background:var(--bone); padding:18px 18px 16px; display:flex; flex-direction:column;
+border-left:3px solid transparent}
+.lot:hover{border-left-color:var(--sulphur)}
+.lot .no{font-size:10px; letter-spacing:.18em; color:var(--drab); display:flex; justify-content:space-between}
+.lot h2{font-family:var(--cond); font-weight:600; font-size:23px; line-height:1.14;
+margin:14px 0 0; letter-spacing:-.005em}
+.lot h2 a{text-decoration:none; border-bottom:2px solid transparent}
+.lot h2 a:hover{border-bottom-color:var(--sulphur)}
+.thesis{font-family:var(--cond); font-size:15.5px; line-height:1.44; color:#2C3122; margin:9px 0 0}
+.meta{margin-top:auto; padding-top:18px; display:flex; align-items:flex-end; justify-content:space-between; gap:12px}
+.who{font-size:11px; letter-spacing:.06em; color:var(--drab); text-transform:uppercase}
+.expand{font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+border-bottom:1px solid var(--soil); padding-bottom:1px; flex:none}
+.note{display:none; font-family:var(--cond); font-size:15px; line-height:1.5;
+border-top:1px dashed var(--drab); margin-top:14px; padding-top:12px; color:#2C3122}
+.lot.open{background:var(--field)}
+.lot.open .note{display:block}
+.xref{font-family:var(--mono); font-size:11px; line-height:1.6; color:var(--drab); margin:14px 0 0}
+.read{display:inline-block; margin-top:12px; font-size:10px; letter-spacing:.16em;
+text-transform:uppercase; text-decoration:none; border-bottom:1px solid var(--soil)}
+a.w{text-decoration:none; color:var(--soil); border-bottom:2px solid var(--sulphur); white-space:nowrap}
+a.w:hover{background:var(--sulphur)}
+.plots.list .lot{display:grid; grid-template-columns:64px 1fr; gap:0 18px; align-items:start}
+.plots.list .no{flex-direction:column; gap:4px; grid-row:1/span 4}
+.plots.list h2{margin-top:0}
+.plots.list .meta{padding-top:12px}
+/* ── the panel ── */
+.warning{display:block; text-decoration:none; color:var(--field); background:var(--soil);
+border:var(--rule); margin:0 0 56px; overflow:hidden}
+.warning .inner{padding:clamp(38px,5.4vw,68px) clamp(22px,5vw,54px)}
+.warning .ln{position:relative; font-family:var(--cond); font-weight:700; text-transform:uppercase;
+font-size:clamp(29px,7.1vw,92px); line-height:1.02; letter-spacing:-.032em;
+white-space:nowrap; overflow:hidden}
+.warning .ln i{position:absolute; top:2%; bottom:2%; background:var(--soil); transform-origin:left center}
+.warning:hover, .warning:focus-visible{background:var(--sulphur); color:var(--soil)}
+.warning:hover .ln i, .warning:focus-visible .ln i{transform:scaleX(0)}
+.warning:focus-visible{outline:3px solid var(--soil); outline-offset:3px}
+footer{border-top:var(--rule); padding:26px 0 50px; font-size:11px; letter-spacing:.1em;
+text-transform:uppercase; color:var(--drab); display:flex; flex-wrap:wrap; gap:6px 22px}
+footer a{text-decoration:none; border-bottom:1px solid var(--drab)}
+footer a:hover{color:var(--soil); border-bottom-color:var(--soil)}
+@media(prefers-reduced-motion:no-preference){
+.lot{animation:rise .45s ease both}
+@keyframes rise{from{opacity:0; transform:translateY(7px)} to{opacity:1; transform:none}}
+.warning{transition:background .16s ease, color .16s ease}
+.warning .ln i{transition:transform .44s cubic-bezier(.2,.85,.25,1)}
+}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="wrap bar">
-    <span class="mark"><i></i><span id="s-wordmark"></span></span>
-    <nav>
-      <a href="#index">Index</a>
-      <a href="#submit">Submit</a>
-    </nav>
-  </div>
+<div class="wrap bar">
+<span class="mark"><i></i><span id="s-wordmark"></span></span>
+<nav>
+<a href="#index">Index</a>
+<a href="#submit">Submit</a>
+</nav>
+</div>
 </header>
-
 <main class="wrap">
-  <section class="hero">
-    <h1 id="s-headline"></h1>
-    <div class="subhead"><b id="s-subhead"></b><i></i></div>
-    <p class="lede" id="s-description"></p>
-  </section>
-
-  <div class="filters" id="index">
-    <span class="count" id="count"></span>
-    <div class="views">
-      <button class="toggle" id="v-grid" aria-pressed="true">Grid</button>
-      <button class="toggle" id="v-list" aria-pressed="false">List</button>
-    </div>
-  </div>
-
-  <section class="plots" id="plots"></section>
-
-  <a class="warning" id="s-warning" href="#" target="_blank" rel="noopener"></a>
-
-  <footer id="submit"></footer>
+<section class="hero">
+<h1 id="s-headline"></h1>
+<div class="subhead"><b id="s-subhead"></b><i></i></div>
+<p class="lede" id="s-description"></p>
+</section>
+<div class="filters" id="index">
+<span class="count" id="count"></span>
+<div class="views">
+<button class="toggle" id="v-grid" aria-pressed="true">Grid</button>
+<button class="toggle" id="v-list" aria-pressed="false">List</button>
+</div>
+</div>
+<section class="plots" id="plots"></section>
+<a class="warning" id="s-warning" href="#" target="_blank" rel="noopener"></a>
+<footer id="submit"></footer>
 </main>
-
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-
 /* ── hero ── */
 $("s-wordmark").textContent = SITE.wordmark;
 $("s-headline").textContent = SITE.headline;
 if(SITE.subhead) $("s-subhead").textContent = SITE.subhead;
 else document.querySelector(".subhead").remove();
 $("s-description").innerHTML = SITE.highlight
-  ? esc(SITE.description).replace(esc(SITE.highlight), "<b>"+esc(SITE.highlight)+"</b>")
-  : esc(SITE.description);
-
+? esc(SITE.description).replace(esc(SITE.highlight), "<b>"+esc(SITE.highlight)+"</b>")
+: esc(SITE.description);
 /* ── the index ── */
 $("count").textContent = ENTRIES.length + " documents";
 $("plots").innerHTML = ENTRIES.map((e,i)=>{
-  const link = t => `<a href="${esc(e.u)}" target="_blank" rel="noopener">${t}</a>`;
-  return `
-    <article class="lot" style="animation-delay:${i*28}ms">
-      <div class="no"><span>LOT ${String(i+1).padStart(2,"0")}</span><span>SOWN ${esc(e.y)}</span></div>
-      <h2>${e.u ? link(esc(e.t)) : esc(e.t)}</h2>
-      <p class="thesis">${esc(e.d)}</p>
-      <div class="meta">
-        <span class="who">${esc(e.a)}</span>
-        <button class="expand" aria-expanded="false" aria-controls="note-${i}">Open +</button>
-      </div>
-      <div class="note" id="note-${i}">
-        <p style="margin:0">${esc(e.n)}</p>
-        ${e.x ? `<p class="xref">${esc(e.x)} <a class="w" href="${esc(SITE.weeklyUrl)}" target="_blank" rel="noopener">Read it in the Weekly →</a></p>` : ""}
-        ${e.u ? `<a class="read" href="${esc(e.u)}" target="_blank" rel="noopener">Read the original →</a>` : ""}
-      </div>
-    </article>`;
+const link = t => `<a href="${esc(e.u)}" target="_blank" rel="noopener">${t}</a>`;
+return `
+<article class="lot" style="animation-delay:${i*28}ms">
+<div class="no"><span>LOT ${String(i+1).padStart(2,"0")}</span><span>SOWN ${esc(e.y)}</span></div>
+<h2>${e.u ? link(esc(e.t)) : esc(e.t)}</h2>
+<p class="thesis">${esc(e.d)}</p>
+<div class="meta">
+<span class="who">${esc(e.a)}</span>
+<button class="expand" aria-expanded="false" aria-controls="note-${i}">Open +</button>
+</div>
+<div class="note" id="note-${i}">
+<p style="margin:0">${esc(e.n)}</p>
+${e.x ? `<p class="xref">${esc(e.x)} <a class="w" href="${esc(SITE.weeklyUrl)}" target="_blank" rel="noopener">Read it in the Weekly →</a></p>` : ""}
+${e.u ? `<a class="read" href="${esc(e.u)}" target="_blank" rel="noopener">Read the original →</a>` : ""}
+</div>
+</article>`;
 }).join("");
-
 $("plots").querySelectorAll(".expand").forEach(btn=>{
-  btn.onclick = ()=>{
-    const open = btn.closest(".lot").classList.toggle("open");
-    btn.textContent = open ? "Close −" : "Open +";
-    btn.setAttribute("aria-expanded", open);
-  };
+btn.onclick = ()=>{
+const open = btn.closest(".lot").classList.toggle("open");
+btn.textContent = open ? "Close −" : "Open +";
+btn.setAttribute("aria-expanded", open);
+};
 });
-
 const g = $("v-grid"), l = $("v-list");
 const view = isList => {
-  $("plots").classList.toggle("list", isList);
-  g.setAttribute("aria-pressed", !isList);
-  l.setAttribute("aria-pressed", isList);
+$("plots").classList.toggle("list", isList);
+g.setAttribute("aria-pressed", !isList);
+l.setAttribute("aria-pressed", isList);
 };
 g.onclick = ()=>view(false);
 l.onclick = ()=>view(true);
-
 /* ── the panel: [left%, width%] of each bar, row by row.
-      Clear at the top, fully redacted at the bottom. ── */
+Clear at the top, fully redacted at the bottom. ── */
 const REDACTION = [ [], [[41,23]], [[13,27],[55,31]], [[0,36],[43,57]], [[0,100]] ];
 const panel = $("s-warning");
 panel.href = SITE.weeklyUrl;
 panel.setAttribute("aria-label", SITE.warningAria);
 panel.innerHTML = `<div class="inner" aria-hidden="true">` + REDACTION.map((bars,r)=>
-  `<div class="ln">${esc(SITE.warning)}` +
-  bars.map(([x,w])=>`<i style="left:${x}%;width:${w}%;transition-delay:${r*45}ms"></i>`).join("") +
-  `</div>`).join("") + `</div>`;
-
+`<div class="ln">${esc(SITE.warning)}` +
+bars.map(([x,w])=>`<i style="left:${x}%;width:${w}%;transition-delay:${r*45}ms"></i>`).join("") +
+`</div>`).join("") + `</div>`;
 /* ── footer ── */
 $("submit").innerHTML =
-  `<span>${esc(SITE.footerLine)}</span>` +
-  `<a href="mailto:${esc(SITE.submitEmail)}">${esc(SITE.submitLabel)}</a>`;
+`<span>${esc(SITE.footerLine)}</span>` +
+`<a href="mailto:${esc(SITE.submitEmail)}">${esc(SITE.submitLabel)}</a>`;
 </script>
 </body>
 </html>
