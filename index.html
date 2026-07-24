@@ -6,9 +6,9 @@
 <!-- ═══ EDIT ZONE 1 — tab title + link previews (X, Slack, iMessage) ═══
 Crawlers don't run JavaScript, so these stay hardcoded here. -->
 <title>Trillion $$ PDFs (PSYOP edition)</title>
-<meta name="description" content="An open index of PDFs that shaped how we understand human behavior, incentives, intelligence, cults and narratives">
+<meta name="description" content="An open index of foundational texts and blueprints that shaped how we understand human behavior, machine intelligence, incentive structures, and narrative control — browse it below and follow the link to read the original.">
 <meta property="og:title" content="Trillion $$ PDFs (PSYOP edition)">
-<meta property="og:description" content="An open index of PDFs that had a major influence on our understanding of mental models, beliefs, narratives and cults.">
+<meta property="og:description" content="An open index of foundational texts and blueprints that shaped how we understand human behavior, machine intelligence, incentive structures, and narrative control — browse it below and follow the link to read the original.">
 <meta name="twitter:card" content="summary_large_image">
 <!-- ═══ END EDIT ZONE 1 ═════════════════════════════════════════════ -->
 <meta name="theme-color" content="#D5D3C6">
@@ -22,8 +22,8 @@ const SITE = {
 wordmark: "Trillion $$ PDFs", // small mark, top left
 headline: "Trillion $$ PDFs", // the big line
 subhead: "PSYOP edition", // small mono block under it — "" to hide
-description: "This is an open index of PDFs that had a major influence on our understanding of mental models, beliefs, narratives and cults — browse it below and follow the link to read the original.",
-highlight: "mental models, beliefs, narratives and cults", // sulphur underline; must appear verbatim above, or ""
+description: "An open index of foundational texts and blueprints that shaped how we understand human behavior, machine intelligence, incentive structures, and narrative control — browse it below and follow the link to read the original.",
+highlight: "human behavior, machine intelligence, incentive structures, and narrative control", // sulphur underline; must appear verbatim above, or ""
 weeklyUrl: "https://psyopweekly.substack.com/", // drives the panel and the cross-references
 warning: "Do not click this", // repeated down the panel, redacted line by line
 warningAria: "Read PSYOPWeekly", // what a screen reader announces instead of the repetition
@@ -38,10 +38,10 @@ u = link to the original ("" shows no link)
 d = the one-line thesis n = the note behind "Open +"
 x = optional cross-reference to the Weekly, shown inside the note */
 const ENTRIES = [
-{t:"Gravers False and True: Blood Meridian as Gnostic Tragedy", a:"Leo Daugherty", y:1992, u:"https://escholarship.org/content/qt5kw8f77n/qt5kw8f77n_noSplash_c03e51aa9031a015630f5b7bfa32ea15.pdf",
-d:"An examination of Cormac McCarthy's masterpiece through the framework of Gnosticism, where the material world is inherently evil.",
-n:"Analyzes the brutal, deterministic world of Blood Meridian and the archon-like figure of Judge Holden. Daugherty argues that the violence is not senseless, but deeply rooted in Gnostic theology."},
-{t:"Chapter 12: The State of Long-Term Expectation (The Beauty Contest)", a:"John Maynard Keynes", y:1936, u:"https://www.mkwinc.com/wp-content/uploads/2015/09/Keyness-Beauty-Contest.pdf",
+{t:"The Code of Hammurabi", a:"King Hammurabi (Trans. L.W. King)", y:"c. 1750 BCE", u:"https://www.general-intelligence.com/library/hr.pdf",
+d:"One of the oldest deciphered writings of significant length in the world, establishing the concept of justice and laws through 'an eye for an eye'.",
+n:"While not a modern psychological text, it is a foundational document in human behavior modification, establishing clear legal boundaries and state-enforced consequences for actions."},
+{t:"The Beauty Contest", a:"John Maynard Keynes", y:1936, u:"https://www.mkwinc.com/wp-content/uploads/2015/09/Keyness-Beauty-Contest.pdf",
 d:"Markets are driven not by fundamental value, but by what people think other people think the value is.",
 n:"A core concept from 'The General Theory of Employment, Interest and Money' explaining speculative bubbles and meta-level reasoning. We are all just trying to guess what average opinion expects average opinion to be."},
 {t:"Simple Sabotage Field Manual", a:"Office of Strategic Services (OSS)", y:1944, u:"https://regmedia.co.uk/2021/01/05/simple_sabotage_field_manual.pdf",
@@ -50,46 +50,58 @@ n:"Declassified WWII document. The section on 'General Interference with Organiz
 {t:"The Sect of the Phoenix", a:"Jorge Luis Borges", y:1952, u:"https://2500art.wordpress.com/wp-content/uploads/2014/02/sect-of-the-phoenix.pdf",
 d:"A hidden, ubiquitous secret unites all of humanity through an unspoken, mundane, and instinctive ritual.",
 n:"An extended riddle disguised as a parable about a mysterious global cult whose universal secret is simply the instinctual act of human procreation."},
+{t:"Letter to Hume Logan", a:"Hunter S. Thompson", y:1958, u:"https://fs.blog/hunter-s-thompson-to-hume-logan/",
+d:"A philosophical masterclass on why a person should not strive to fit a predetermined goal, but mold the goal to fit their own nature.",
+n:"Written when Thompson was just 20 years old, it perfectly articulates the existential difference between 'being' and 'doing' when choosing a path in life."},
+{t:"Playboy Interview: Miles Davis", a:"Alex Haley", y:1962, u:"https://www.erenkrantz.com/Music/MilesDavisInterview.shtml",
+d:"A fiercely unfiltered conversation about race, the relentless pursuit of artistic evolution, and refusing to compromise.",
+n:"The inaugural Playboy Interview. Davis lays bare the psychology of a musical genius who continuously reinvented his art form rather than resting on past successes."},
 {t:"Learned Helplessness: Theory and Evidence", a:"Martin E.P. Seligman", y:1972, u:"https://ppc.sas.upenn.edu/sites/default/files/learnedhelplessness.pdf",
 d:"When animals or humans are conditioned to expect pain with no escape, they stop trying to avoid it.",
 n:"A foundational psychology paper on conditioning and passivity, which later led Seligman to pivot entirely towards Positive Psychology."},
 {t:"Influence: The Psychology of Persuasion (Summary)", a:"Robert B. Cialdini", y:1984, u:"https://public.summaries.com/files/8-page-summary/influence.pdf",
 d:"The six shortcuts of persuasion that compliance professionals fire on purpose.",
 n:"A concise summary of Cialdini's seminal work on reciprocity, commitment, social proof, liking, authority, and scarcity."},
+{t:"Personal Renewal", a:"John W. Gardner", y:1990, u:"https://gsb-courses.stanford.edu/building-innovative-brands/wp-content/uploads/sites/25/2022/04/johngardner-roadtoself-renewal2.pdf",
+d:"An exploration of why some individuals decay into staleness while others maintain vitality and curiosity throughout their lives.",
+n:"Originally delivered as a speech to McKinsey & Company, it identifies the key traps of mid-career success and how to systemize lifelong learning and reinvention."},
 {t:"MIT Guide to Lock Picking", a:"Ted the Tool", y:1991, u:"https://www.lysator.liu.se/mit-guide/MITLockGuide.pdf",
 d:"A mechanical explanation of how locks work and how they can be systematically defeated.",
 n:"One of the most famous early internet texts on physical security. It teaches a mindset: systems designed to keep people out are just logical puzzles."},
+{t:"Blood Meridian as Gnostic Tragedy", a:"Leo Daugherty", y:1992, u:"https://escholarship.org/content/qt5kw8f77n/qt5kw8f77n_noSplash_c03e51aa9031a015630f5b7bfa32ea15.pdf",
+d:"An examination of Cormac McCarthy's masterpiece through the framework of Gnosticism, where the material world is inherently evil.",
+n:"Analyzes the brutal, deterministic world of Blood Meridian and the archon-like figure of Judge Holden. Daugherty argues that the violence is not senseless, but deeply rooted in Gnostic theology."},
 {t:"The Psychology of Human Misjudgment", a:"Charlie Munger", y:1995, u:"https://neilhacker.com/wp-content/uploads/2020/02/human-misjudgement-copy.pdf",
 d:"A masterclass on the cognitive biases that lead individuals to make terrible decisions.",
 n:"Originally a speech at Harvard, this is the practical inversion of behavioral economics from a billionaire investor."},
-{t:"The Ecology of Fear: Optimal Foraging, Game Theory, and Trophic Interactions", a:"Joel S. Brown", y:1999, u:"https://gwern.net/doc/cat/psychology/1999-brown.pdf",
+{t:"The Ecology of Fear", a:"Joel S. Brown", y:1999, u:"https://gwern.net/doc/cat/psychology/1999-brown.pdf",
 d:"How the psychological landscape of fear dictates the behavior, feeding habits, and survival strategies of prey animals.",
 n:"A foundational paper in behavioral ecology showing that the mere presence of predators (the 'ecology of fear') impacts ecosystems just as much as actual predation."},
-{t:"The Code of Hammurabi", a:"King Hammurabi (Trans. L.W. King)", y:"c. 1750 BCE", u:"https://www.general-intelligence.com/library/hr.pdf",
-d:"One of the oldest deciphered writings of significant length in the world, establishing the concept of justice and laws through 'an eye for an eye'.",
-n:"While not a modern psychological text, it is a foundational document in human behavior modification, establishing clear legal boundaries and state-enforced consequences for actions."},
 {t:"Information Theory, Inference, and Learning Algorithms", a:"David J.C. MacKay", y:2003, u:"https://assets.cambridge.org/97805218/26518/sample/9780521826518ws.pdf",
-d:"The fundamental limits of communication and learning, bridging physics and information science.",
-n:"A legendary text that connects Claude Shannon's original information theory with modern machine learning paradigms."},
-{t:"This Is Water: Some Thoughts, Delivered on a Significant Occasion, about Living a Compassionate Life", a:"David Foster Wallace", y:2005, u:"https://farmamol.web.uah.es/This_is_Water.pdf",
+d:"An elegant mathematical framework uniting Claude Shannon's communication theory with Bayesian inference and machine learning.",
+n:"Long before the deep learning boom, this legendary textbook proved that data compression, error correction, and artificial neural networks are all facets of the exact same mathematical reality."},
+{t:"The World's Largest Hedge Fund is a Fraud", a:"Harry Markopolos", y:2005, u:"https://www.sec.gov/news/studies/2009/oig-509/exhibit-0293.pdf",
+d:"The meticulously ignored whistleblowing memo that proved mathematically that Bernie Madoff’s returns were impossible.",
+n:"A masterclass in forensic accounting and systemic blindness. It details exact red flags showing how Madoff was running a pure Ponzi scheme years before it collapsed."},
+{t:"This Is Water", a:"David Foster Wallace", y:2005, u:"https://farmamol.web.uah.es/This_is_Water.pdf",
 d:"The exact nature of the default setting of our minds, and how to transcend it.",
 n:"Originally a commencement speech at Kenyon College. A foundational text on choosing what to pay attention to in mundane, adult life."},
-{t:"The Secret Tesla Motors Master Plan (just between you and me)", a:"Elon Musk", y:2006, u:"https://www.tesla.com/en_in/secret-master-plan",
+{t:"The Secret Tesla Motors Master Plan", a:"Elon Musk", y:2006, u:"https://www.tesla.com/en_in/secret-master-plan",
 d:"Build sports car; use that money to build an affordable car; use that money to build an even more affordable car; provide zero emission power.",
 n:"A classic essay on strategic roadmap transparency and narrative positioning, reframing electric vehicle manufacturing from a niche gimmick into an inevitable stepped capital deployment plan."},
-{t:"Keep Your Identity Small", a:"Paul Graham", y:2009, u:"https://paulgraham.com/identity.html",
-d:"The more labels you attach to your identity, the dumber you become because you are forced to defend them.",
-n:"A short, powerful essay (formatted as HTML rather than PDF, but equally vital) on why political or religious discussions immediately shut down rational thought."},
-{t:"Escaping the Laboratory: The Rodent Experiments of John B. Calhoun & Their Cultural Influence", a:"Edmund Ramsden & Jon Adams", y:2009, u:"https://joeornstein.github.io/pols-4641/readings/Ramsden%20and%20Adams%20-%202009%20-%20Escaping%20the%20Laboratory%20The%20Rodent%20Experiments%20of.pdf",
+{t:"Escaping the Laboratory", a:"Edmund Ramsden & Jon Adams", y:2009, u:"https://joeornstein.github.io/pols-4641/readings/Ramsden%20and%20Adams%20-%202009%20-%20Escaping%20the%20Laboratory%20The%20Rodent%20Experiments%20of.pdf",
 d:"A deep dive into the infamous 'Universe 25' mouse utopia experiments and their cultural impact.",
 n:"Shows how population density and 'behavioral sinks' became a prevailing narrative in 20th-century sociology and urban planning."},
 {t:"On the Absolute, the Sublime, and Ecstatic Truth", a:"Werner Herzog", y:2010, u:"https://www.bu.edu/arion/files/2010/03/Herzog.pdf",
 d:"A manifesto on why facts do not constitute truth, and why the deeper strata of truth must be reached through poetic fabrication.",
 n:"Delivered as a rogue declaration. It explains his entire filmmaking philosophy and why he frequently alters reality to achieve 'ecstatic truth'."},
+{t:"Facebook's Little Red Book", a:"Ben Barry / Facebook", y:2012, u:"https://drive.google.com/file/d/1TZYqdFOXkZZPpMJx_16YBFkw-jaPbxiS/view",
+d:"An internal corporate handbook on hacking, building fast, and maintaining a disruptive startup mentality at massive scale.",
+n:"Given to new employees during Facebook's prime. It acts as both propaganda and a genuinely effective distillation of engineering culture and aggressive risk-taking."},
 {t:"Meditations On Moloch", a:"Scott Alexander", y:2014, u:"https://slatestarcodex.com/2014/07/30/meditations-on-moloch/",
 d:"Multipolar traps and coordination failures force rational individual actors into destructive, race-to-the-bottom arms races.",
 n:"A landmark essay in modern rationalist discourse using game theory and Allen Ginsberg's 'Moloch' metaphor to explain systemic incentives that ruin human flourishing."},
-{t:"Self-Fulfilling Prophesies, Placebo Effects, and the Social-Psychological Creation of Reality", a:"Alia Crum & Damon J. Phillips", y:2015, u:"https://www.researchgate.net/publication/299865216_Self-Fulfilling_Prophesies_Placebo_Effects_and_the_Social-Psychological_Creation_of_Reality",
+{t:"Self-Fulfilling Prophesies", a:"Alia Crum & Damon J. Phillips", y:2015, u:"https://www.researchgate.net/publication/299865216_Self-Fulfilling_Prophesies_Placebo_Effects_and_the_Social-Psychological_Creation_of_Reality",
 d:"How top-down expectations, mindset, and social influence directly alter physical reality and bodily physiology.",
 n:"An interdisciplinary synthesis connecting psychology, sociology, and medicine to prove that belief physically modulates outcomes."},
 {t:"6 Secrets of Mental Toughness From the Navy SEALs", a:"Sport Ngin", y:2015, u:"https://cdn1.sportngin.com/attachments/document/748b-2136103/6_Secrets_of_Mental_Toughness_From_the_Navy_SEALs.pdf",
@@ -97,7 +109,10 @@ d:"Actionable strategies for maintaining psychological resilience in extreme str
 n:"Focuses on compartmentalization, visualization, and micro-goals to bypass the brain's innate panic responses."},
 {t:"Attention Is All You Need", a:"Ashish Vaswani et al.", y:2017, u:"https://arxiv.org/abs/1706.03762",
 d:"Replacing recurrent networks entirely with self-attention mechanisms unlocks massive parallelization and modern generative AI.",
-n:"The foundational paper introducing the Transformer architecture, completely shifting the trajectory of compute, machine intelligence, and modern technological narrative."}
+n:"The foundational paper introducing the Transformer architecture, completely shifting the trajectory of compute, machine intelligence, and modern technological narrative."},
+{t:"How to Do Great Work", a:"Paul Graham", y:2023, u:"https://www.paulgraham.com/greatwork.html",
+d:"A comprehensive framework for cultivating obsessive curiosity, identifying deep problems, and compounding your efforts over decades.",
+n:"A distillation of everything PG learned from observing elite founders. The core thesis: great work happens at the intersection of natural aptitude, deep interest, and relentless execution."}
 ];
 /* ═══ END EDIT ZONE 2 — nothing below here needs touching ════════════════ */
 </script>
