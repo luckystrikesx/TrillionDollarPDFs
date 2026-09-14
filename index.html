@@ -171,7 +171,7 @@ n:"The foundational paper introducing the Transformer architecture, completely s
 --soil:#16180F; /* ink */
 --drab:#4C5340; /* olive drab, secondary */
 --sulphur:#C6D82F; /* marking spray accent */
---flare:#F26B21; /* hazard orange, the stamp */
+--flare:#D1451A; /* stamp red, the highlight on dark */
 --rule:1px solid var(--soil);
 --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 --cond:"IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
@@ -266,7 +266,7 @@ background-size:34px 34px}
 .sg-marks i:nth-child(3){bottom:12px; left:12px; border-bottom-width:1px; border-left-width:1px}
 .sg-marks i:nth-child(4){bottom:12px; right:12px; border-bottom-width:1px; border-right-width:1px}
 .sg-grid{display:grid; gap:clamp(28px,3.6vw,54px); align-items:end}
-@media(min-width:900px){.sg-grid{grid-template-columns:1.12fr .88fr}}
+@media(min-width:900px){.sg-grid{grid-template-columns:1fr .92fr}}
 .signup .eyebrow{font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:.26em;
 text-transform:uppercase; color:var(--sulphur); display:flex; align-items:center; gap:14px}
 .signup .eyebrow i{flex:1; height:1px; background:rgba(228,226,214,.3)}
@@ -277,23 +277,27 @@ letter-spacing:-.038em; font-size:clamp(42px,8.6vw,102px); margin:18px 0 0}
 .signup p{font-family:var(--cond); font-size:clamp(16px,1.5vw,18.5px); line-height:1.45;
 color:rgba(228,226,214,.84); max-width:46ch; margin:20px 0 0}
 .sg-stamp{margin:14px 0 0; max-width:none}
-.sg-stamp span{font-family:var(--cond); font-weight:700;
-font-size:clamp(15px,1.45vw,18.5px); letter-spacing:.005em; line-height:1.5;
-background:var(--flare); color:var(--soil); padding:.14em .4em;
+.sg-stamp span{font-family:var(--cond); font-weight:600;
+font-size:clamp(16px,1.5vw,18.5px); letter-spacing:.005em; line-height:1.55;
+color:rgba(228,226,214,.84);
+background:linear-gradient(var(--flare), var(--flare)) left bottom/100% .42em no-repeat;
 -webkit-box-decoration-break:clone; box-decoration-break:clone}
-.signup form{display:grid; gap:10px; margin:0}
-@media(max-width:899px){.signup form{margin-top:4px}}
-.signup input[type=email]{width:100%; min-width:0; font-family:var(--mono); font-size:14px;
-color:var(--field); background:transparent; border:1px solid rgba(228,226,214,.42); border-radius:0;
-padding:15px 16px; -webkit-appearance:none; appearance:none}
-.signup input[type=email]::placeholder{color:rgba(228,226,214,.5)}
-.signup input[type=email]:focus{outline:none; border-color:var(--sulphur)}
-.signup button[type=submit]{width:100%; font-family:var(--mono); font-size:11.5px; font-weight:600;
-letter-spacing:.22em; text-transform:uppercase; background:var(--sulphur); color:var(--soil);
-border:1px solid var(--sulphur); padding:15px 24px;
-transition:background .14s ease, color .14s ease, border-color .14s ease}
-.signup button[type=submit]:hover{background:transparent; color:var(--sulphur)}
-.signup button[type=submit]:focus-visible{outline:2px solid var(--sulphur); outline-offset:3px}
+.signup form{display:grid; gap:12px; margin:0; align-self:end}
+@media(max-width:899px){.signup form{margin-top:8px}}
+.signup input[type=email]{width:100%; min-width:0; font-family:var(--mono);
+font-size:clamp(15px,1.5vw,19px); line-height:1.2; color:var(--soil); background:var(--bone);
+border:1px solid var(--bone); border-radius:0;
+padding:clamp(21px,2.4vw,29px) clamp(18px,1.9vw,24px);
+-webkit-appearance:none; appearance:none; transition:box-shadow .14s ease}
+.signup input[type=email]::placeholder{color:var(--drab); opacity:.75}
+.signup input[type=email]:focus{outline:none; box-shadow:0 0 0 3px var(--sulphur)}
+.signup button[type=submit]{width:100%; font-family:var(--mono);
+font-size:clamp(12px,1.1vw,14px); font-weight:600; letter-spacing:.22em; text-transform:uppercase;
+background:var(--sulphur); color:var(--soil); border:1px solid var(--sulphur);
+padding:clamp(21px,2.4vw,29px) 24px;
+transition:background .14s ease, color .14s ease}
+.signup button[type=submit]:hover{background:var(--bone); border-color:var(--bone)}
+.signup button[type=submit]:focus-visible{outline:2px solid var(--bone); outline-offset:3px}
 footer{border-top:var(--rule); padding:26px 0 50px; font-size:11px; letter-spacing:.1em;
 text-transform:uppercase; color:var(--drab); display:flex; flex-wrap:wrap; gap:6px 22px}
 footer a{text-decoration:none; border-bottom:1px solid var(--drab)}
