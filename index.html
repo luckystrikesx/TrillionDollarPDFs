@@ -6,10 +6,10 @@
 <!-- ═══ EDIT ZONE 1 - tab title + link previews (X, Slack, iMessage) ═══
 Crawlers don't run JavaScript, so these stay hardcoded here.
 Keep all three description strings identical to SITE.description below. -->
-<title>Trillion $$ PDFs (PSYOP edition)</title>
-<meta name="description" content="PDFs on human behavior, belief, incentive structures, cults, myth, narrative and other stuff - browse it below and follow the link to read the original.">
-<meta property="og:title" content="Trillion $$ PDFs (PSYOP edition)">
-<meta property="og:description" content="PDFs on human behavior, belief, incentive structures, cults, myth, narrative and other stuff - browse it below and follow the link to read the original.">
+<title>Trillion $$ PDFs (PSYOP Research Unit Archive)</title>
+<meta name="description" content="PDFs on propaganda, cults, advertising, incentive structures, narrative, persuasion and mechanics of beliefs - browse it below and follow the link to read the original.">
+<meta property="og:title" content="Trillion $$ PDFs (PSYOP Research Unit Archive)">
+<meta property="og:description" content="PDFs on propaganda, cults, advertising, incentive structures, narrative, persuasion and mechanics of beliefs - browse it below and follow the link to read the original.">
 <meta name="twitter:card" content="summary_large_image">
 <!-- ═══ END EDIT ZONE 1 ═════════════════════════════════════════════ -->
 <meta name="theme-color" content="#D5D3C6">
@@ -22,15 +22,22 @@ Keep all three description strings identical to SITE.description below. -->
 const SITE = {
 wordmark: "Trillion $$ PDFs", // small mark, top left
 headline: "Trillion $$ PDFs", // the big line
-subhead: "PSYOP edition", // small mono block under it - "" to hide
-description: "PDFs on human behavior, belief, incentive structures, cults, myth, narrative and other stuff - browse it below and follow the link to read the original.",
-highlight: "human behavior, belief, incentive structures, cults, myth, narrative", // sulphur underline; must appear verbatim above, or ""
-weeklyUrl: "https://psyopweekly.substack.com/", // drives the panel and the cross-references
-warning: "Do not click this", // repeated down the panel, redacted line by line
-warningAria: "Read PSYOPWeekly", // what a screen reader announces instead of the repetition
+subhead: "PSYOP Research Unit Archive", // small mono block under it - "" to hide
+description: "PDFs on propaganda, cults, advertising, incentive structures, narrative, persuasion and mechanics of beliefs - browse it below and follow the link to read the original.",
+highlight: "propaganda, cults, advertising, incentive structures, narrative, persuasion and mechanics of beliefs", // sulphur underline; must appear verbatim above, or ""
+weeklyUrl: "https://psyopweekly.substack.com/", // drives the panel, the signup form and the cross-references
+/* ── the closing block ── */
+signupEyebrow: "Dispatch / every week",
+signupTitleA: "PSYOP", // plain
+signupTitleB: "Weekly", // stamped in sulphur
+signupBlurb: "Sam Altman killed my startup, so I write about starting a cult.",
+signupStamp: "FREE gas station espresso shots and tobacco included.", // sulphur stamp, own line
+signupPlaceholder: "your@email.com",
+signupButton: "Subscribe",
+
 submitLabel: "Suggest a document →",
 submitEmail: "kaliyuga112233@example.com",
-footerLine: "Trillion $$ PDFs (PSYOP edition)"
+footerLine: "Trillion $$ PDFs (PSYOP Research Unit Archive)"
 };
 
 /* One object per entry, oldest first. Lot numbers follow this order.
@@ -84,9 +91,6 @@ n:"Goffman starts with the confidence trick and then shows the same machinery ru
 {t:"An Essay on Bargaining", a:"Thomas C. Schelling", y:1956, u:"https://elearning.unite.it/pluginfile.php/356450/mod_resource/content/0/16.%20Schelling%20-%20An%20Essay%20on%20Bargaining.pdf",
 d:"The power to constrain your opponent comes from binding yourself first.",
 n:"Schelling's central inversion: weakness is leverage, and the negotiator who destroys his own freedom to concede wins. Burn the bridge, publish the deadline, hand the decision to someone who cannot say yes. The paper that made commitment a technology rather than a virtue."},
-{t:"Letter from Hunter S. Thompson", a:"Hunter S. Thompson", y:1958, u:"https://fs.blog/hunter-s-thompson-to-hume-logan/",
-d:"A philosophical masterclass on why a person should not strive to fit a predetermined goal, but mold the goal to fit their own nature.",
-n:"Written when Thompson was just 20 years old, it perfectly articulates the existential difference between 'being' and 'doing' when choosing a path in life."},
 {t:"Playboy Interview: Miles Davis", a:"Alex Haley", y:1962, u:"https://www.erenkrantz.com/Music/MilesDavisInterview.shtml",
 d:"A fiercely unfiltered conversation about race, the relentless pursuit of artistic evolution, and refusing to compromise.",
 n:"The inaugural Playboy Interview. Davis lays bare the psychology of a musical genius who continuously reinvented his art form rather than resting on past successes."},
@@ -135,9 +139,9 @@ n:"A classic essay on strategic roadmap transparency and narrative positioning, 
 {t:"Escaping the Laboratory", a:"Edmund Ramsden & Jon Adams", y:2009, u:"https://joeornstein.github.io/pols-4641/readings/Ramsden%20and%20Adams%20-%202009%20-%20Escaping%20the%20Laboratory%20The%20Rodent%20Experiments%20of.pdf",
 d:"A deep dive into the infamous 'Universe 25' mouse utopia experiments and their cultural impact.",
 n:"Shows how population density and 'behavioral sinks' became a prevailing narrative in 20th-century sociology and urban planning."},
-{t:"On the Absolute, the Sublime, and Ecstatic Truth", a:"Werner Herzog", y:2010, u:"https://www.bu.edu/arion/files/2010/03/Herzog.pdf",
+{t:"Ecstatic Truth", a:"Werner Herzog", y:2010, u:"https://www.bu.edu/arion/files/2010/03/Herzog.pdf",
 d:"A manifesto on why facts do not constitute truth, and why the deeper strata of truth must be reached through poetic fabrication.",
-n:"Delivered as a rogue declaration. It explains his entire filmmaking philosophy and why he frequently alters reality to achieve 'ecstatic truth'."},
+n:"Delivered as a rogue declaration, published as 'On the Absolute, the Sublime, and Ecstatic Truth'. It explains his entire filmmaking philosophy and why he frequently alters reality to achieve what he calls ecstatic truth."},
 {t:"The Way of the Golden Elixir", a:"Fabrizio Pregadio", y:2011, u:"https://dons.directory/library/Way_Of_The_Golden_Elixir.pdf",
 d:"An introduction to Taoist alchemy: the outer furnace of Waidan, the inner furnace of Neidan, and the body as the vessel.",
 n:"Pregadio traces how the search for a transmuting elixir turned inward, until the crucible, the fire and the ingredients were all located inside the practitioner. A working map of the doctrine, its lineages, and the stages of the internal work."},
@@ -155,10 +159,7 @@ d:"Actionable strategies for maintaining psychological resilience in extreme str
 n:"Focuses on compartmentalization, visualization, and micro-goals to bypass the brain's innate panic responses."},
 {t:"Attention Is All You Need", a:"Ashish Vaswani et al.", y:2017, u:"https://arxiv.org/abs/1706.03762",
 d:"Replacing recurrent networks entirely with self-attention mechanisms unlocks massive parallelization and modern generative AI.",
-n:"The foundational paper introducing the Transformer architecture, completely shifting the trajectory of compute, machine intelligence, and modern technological narrative."},
-{t:"How to Do Great Work", a:"Paul Graham", y:2023, u:"https://www.paulgraham.com/greatwork.html",
-d:"A comprehensive framework for cultivating obsessive curiosity, identifying deep problems, and compounding your efforts over decades.",
-n:"A distillation of everything PG learned from observing elite founders. The core thesis: great work happens at the intersection of natural aptitude, deep interest, and relentless execution."}
+n:"The foundational paper introducing the Transformer architecture, completely shifting the trajectory of compute, machine intelligence, and modern technological narrative."}
 ];
 /* ═══ END EDIT ZONE 2 - nothing below here needs touching ════════════════ */
 </script>
@@ -170,6 +171,7 @@ n:"A distillation of everything PG learned from observing elite founders. The co
 --soil:#16180F; /* ink */
 --drab:#4C5340; /* olive drab, secondary */
 --sulphur:#C6D82F; /* marking spray accent */
+--flare:#F26B21; /* hazard orange, the stamp */
 --rule:1px solid var(--soil);
 --mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 --cond:"IBM Plex Sans Condensed", "Helvetica Neue", Arial, sans-serif;
@@ -201,8 +203,10 @@ h1{font-family:var(--cond); font-weight:700; margin:0;
 font-size:clamp(44px,11.6vw,130px); line-height:.92; letter-spacing:-.03em}
 .subhead{display:flex; align-items:center; gap:18px; margin:20px 0 0}
 .subhead b{font-family:var(--mono); font-weight:600; background:var(--soil); color:var(--field);
-font-size:clamp(14px,2.1vw,21px); letter-spacing:.1em; padding:8px 15px 9px; white-space:nowrap}
+font-size:clamp(11px,1.7vw,19px); letter-spacing:.09em; padding:8px 15px 9px; white-space:nowrap}
 .subhead i{flex:1; height:1px; background:var(--soil); min-width:20px}
+@media(max-width:480px){.subhead{gap:12px}
+.subhead b{font-size:10.5px; letter-spacing:.05em; padding:7px 10px 8px}}
 .lede{font-family:var(--cond); font-size:19px; line-height:1.42; max-width:56ch; margin:26px 0 0}
 .lede b{font-weight:600; -webkit-box-decoration-break:clone; box-decoration-break:clone;
 background:linear-gradient(rgba(198,216,47,.55), rgba(198,216,47,.55)) left bottom/100% .42em no-repeat}
@@ -247,17 +251,49 @@ a.w:hover{background:var(--sulphur)}
 .plots.list .no{flex-direction:column; gap:4px; grid-row:1/span 4}
 .plots.list h2{margin-top:0}
 .plots.list .meta{padding-top:12px}
-/* ── the panel ── */
-.warning{display:block; text-decoration:none; color:var(--field); background:var(--soil);
-border:var(--rule); margin:0 0 56px; overflow:hidden}
-.warning .inner{padding:clamp(38px,5.4vw,68px) clamp(22px,5vw,54px)}
-.warning .ln{position:relative; font-family:var(--cond); font-weight:700; text-transform:uppercase;
-font-size:clamp(29px,7.1vw,92px); line-height:1.02; letter-spacing:-.032em;
-white-space:nowrap; overflow:hidden}
-.warning .ln i{position:absolute; top:2%; bottom:2%; background:var(--soil); transform-origin:left center}
-.warning:hover, .warning:focus-visible{background:var(--sulphur); color:var(--soil)}
-.warning:hover .ln i, .warning:focus-visible .ln i{transform:scaleX(0)}
-.warning:focus-visible{outline:3px solid var(--soil); outline-offset:3px}
+/* ── the closing block ── */
+.signup{position:relative; border:var(--rule); background:var(--soil); color:var(--field);
+margin:0 0 56px; padding:clamp(34px,5vw,62px) clamp(24px,5vw,56px); overflow:hidden}
+.signup::before{content:""; position:absolute; inset:0; pointer-events:none;
+background-image:
+linear-gradient(to right, rgba(228,226,214,.06) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(228,226,214,.06) 1px, transparent 1px);
+background-size:34px 34px}
+.signup > *{position:relative; z-index:1}
+.sg-marks i{position:absolute; width:13px; height:13px; border:0 solid rgba(228,226,214,.5); z-index:2}
+.sg-marks i:nth-child(1){top:12px; left:12px; border-top-width:1px; border-left-width:1px}
+.sg-marks i:nth-child(2){top:12px; right:12px; border-top-width:1px; border-right-width:1px}
+.sg-marks i:nth-child(3){bottom:12px; left:12px; border-bottom-width:1px; border-left-width:1px}
+.sg-marks i:nth-child(4){bottom:12px; right:12px; border-bottom-width:1px; border-right-width:1px}
+.sg-grid{display:grid; gap:clamp(28px,3.6vw,54px); align-items:end}
+@media(min-width:900px){.sg-grid{grid-template-columns:1.12fr .88fr}}
+.signup .eyebrow{font-family:var(--mono); font-size:10px; font-weight:600; letter-spacing:.26em;
+text-transform:uppercase; color:var(--sulphur); display:flex; align-items:center; gap:14px}
+.signup .eyebrow i{flex:1; height:1px; background:rgba(228,226,214,.3)}
+.sg-title{font-family:var(--cond); font-weight:700; text-transform:uppercase; line-height:.88;
+letter-spacing:-.038em; font-size:clamp(42px,8.6vw,102px); margin:18px 0 0}
+.sg-title .hl{background:var(--sulphur); color:var(--soil); padding:0 .07em;
+-webkit-box-decoration-break:clone; box-decoration-break:clone}
+.signup p{font-family:var(--cond); font-size:clamp(16px,1.5vw,18.5px); line-height:1.45;
+color:rgba(228,226,214,.84); max-width:46ch; margin:20px 0 0}
+.sg-stamp{margin:14px 0 0; max-width:none}
+.sg-stamp span{font-family:var(--cond); font-weight:700;
+font-size:clamp(15px,1.45vw,18.5px); letter-spacing:.005em; line-height:1.5;
+background:var(--flare); color:var(--soil); padding:.14em .4em;
+-webkit-box-decoration-break:clone; box-decoration-break:clone}
+.signup form{display:grid; gap:10px; margin:0}
+@media(max-width:899px){.signup form{margin-top:4px}}
+.signup input[type=email]{width:100%; min-width:0; font-family:var(--mono); font-size:14px;
+color:var(--field); background:transparent; border:1px solid rgba(228,226,214,.42); border-radius:0;
+padding:15px 16px; -webkit-appearance:none; appearance:none}
+.signup input[type=email]::placeholder{color:rgba(228,226,214,.5)}
+.signup input[type=email]:focus{outline:none; border-color:var(--sulphur)}
+.signup button[type=submit]{width:100%; font-family:var(--mono); font-size:11.5px; font-weight:600;
+letter-spacing:.22em; text-transform:uppercase; background:var(--sulphur); color:var(--soil);
+border:1px solid var(--sulphur); padding:15px 24px;
+transition:background .14s ease, color .14s ease, border-color .14s ease}
+.signup button[type=submit]:hover{background:transparent; color:var(--sulphur)}
+.signup button[type=submit]:focus-visible{outline:2px solid var(--sulphur); outline-offset:3px}
 footer{border-top:var(--rule); padding:26px 0 50px; font-size:11px; letter-spacing:.1em;
 text-transform:uppercase; color:var(--drab); display:flex; flex-wrap:wrap; gap:6px 22px}
 footer a{text-decoration:none; border-bottom:1px solid var(--drab)}
@@ -265,8 +301,6 @@ footer a:hover{color:var(--soil); border-bottom-color:var(--soil)}
 @media(prefers-reduced-motion:no-preference){
 .lot{animation:rise .45s ease both}
 @keyframes rise{from{opacity:0; transform:translateY(7px)} to{opacity:1; transform:none}}
-.warning{transition:background .16s ease, color .16s ease}
-.warning .ln i{transition:transform .44s cubic-bezier(.2,.85,.25,1)}
 }
 </style>
 </head>
@@ -276,6 +310,7 @@ footer a:hover{color:var(--soil); border-bottom-color:var(--soil)}
 <span class="mark"><i></i><span id="s-wordmark"></span></span>
 <nav>
 <a href="#index">Index</a>
+<a href="#subscribe">Subscribe</a>
 <a href="#submit">Submit</a>
 </nav>
 </div>
@@ -294,7 +329,28 @@ footer a:hover{color:var(--soil); border-bottom-color:var(--soil)}
 </div>
 </div>
 <section class="plots" id="plots"></section>
-<a class="warning" id="s-warning" href="https://psyopweekly.substack.com/" target="_blank" rel="noopener"></a>
+<section class="signup" id="subscribe">
+<span class="sg-marks" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+<div class="sg-grid">
+<div>
+<div class="eyebrow"><span id="s-signup-eyebrow"></span><i></i></div>
+<h2 class="sg-title" id="s-signup-title"></h2>
+<p id="s-signup-blurb"></p>
+<p class="sg-stamp"><span id="s-signup-stamp"></span></p>
+</div>
+<form id="signup-form" method="post" target="_blank" rel="noopener">
+<label for="signup-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Email address</label>
+<input id="signup-email" type="email" name="email" autocomplete="email" required spellcheck="false">
+<input type="hidden" name="first_url" value="">
+<input type="hidden" name="first_referrer" value="">
+<input type="hidden" name="current_url" value="">
+<input type="hidden" name="current_referrer" value="">
+<input type="hidden" name="referral_code" value="">
+<input type="hidden" name="source" value="embed">
+<button type="submit" id="s-signup-button"></button>
+</form>
+</div>
+</section>
 <footer id="submit"></footer>
 </main>
 <script>
@@ -343,19 +399,27 @@ l.setAttribute("aria-pressed", isList);
 };
 g.onclick = ()=>view(false);
 l.onclick = ()=>view(true);
-/* ── the panel: [left%, width%] of each bar, row by row.
-Clear at the top, fully redacted at the bottom. ── */
-const REDACTION = [ [], [[41,23]], [[13,27],[55,31]], [[0,36],[43,57]], [[0,100]] ];
-const panel = $("s-warning");
-panel.href = SITE.weeklyUrl;
-panel.setAttribute("aria-label", SITE.warningAria);
-panel.innerHTML = `<div class="inner" aria-hidden="true">` + REDACTION.map((bars,r)=>
-`<div class="ln">${esc(SITE.warning)}` +
-bars.map(([x,w])=>`<i style="left:${x}%;width:${w}%;transition-delay:${r*45}ms"></i>`).join("") +
-`</div>`).join("") + `</div>`;
+/* ── the closing block.
+The form posts the address straight to Substack's free-subscribe
+endpoint and opens the publication in a new tab, so one submit both
+captures the email and lands the reader on the Weekly. ── */
+const base = SITE.weeklyUrl.replace(/\/?$/, "/");
+const form = $("signup-form");
+$("s-signup-eyebrow").textContent = SITE.signupEyebrow;
+$("s-signup-title").innerHTML = esc(SITE.signupTitleA) + '<span class="hl">' + esc(SITE.signupTitleB) + '</span>';
+$("s-signup-blurb").textContent = SITE.signupBlurb;
+$("s-signup-stamp").textContent = SITE.signupStamp;
+$("s-signup-button").textContent = SITE.signupButton;
+$("signup-email").placeholder = SITE.signupPlaceholder;
+form.action = base + "api/v1/free";
+form.querySelector('[name=first_url]').value = location.href;
+form.querySelector('[name=current_url]').value = location.href;
+form.querySelector('[name=first_referrer]').value = document.referrer;
+form.querySelector('[name=current_referrer]').value = document.referrer;
 /* ── footer ── */
 $("submit").innerHTML =
 `<span>${esc(SITE.footerLine)}</span>` +
+`<a href="${esc(SITE.weeklyUrl)}" target="_blank" rel="noopener">Read PSYOPWeekly →</a>` +
 `<a href="mailto:${esc(SITE.submitEmail)}">${esc(SITE.submitLabel)}</a>`;
 </script>
 </body>
