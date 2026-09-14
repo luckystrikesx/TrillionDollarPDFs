@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- ═══ EDIT ZONE 1 — tab title + link previews (X, Slack, iMessage) ═══
+<!-- ═══ EDIT ZONE 1 - tab title + link previews (X, Slack, iMessage) ═══
 Crawlers don't run JavaScript, so these stay hardcoded here.
 Keep all three description strings identical to SITE.description below. -->
 <title>Trillion $$ PDFs (PSYOP edition)</title>
@@ -18,11 +18,11 @@ Keep all three description strings identical to SITE.description below. -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <script>
-/* ═══ EDIT ZONE 2 — every word on the page ═══════════════════════════════ */
+/* ═══ EDIT ZONE 2 - every word on the page ═══════════════════════════════ */
 const SITE = {
 wordmark: "Trillion $$ PDFs", // small mark, top left
 headline: "Trillion $$ PDFs", // the big line
-subhead: "PSYOP edition", // small mono block under it — "" to hide
+subhead: "PSYOP edition", // small mono block under it - "" to hide
 description: "PDFs on human behavior, belief, incentive structures, cults, myth, narrative and other stuff - browse it below and follow the link to read the original.",
 highlight: "human behavior, belief, incentive structures, cults, myth, narrative", // sulphur underline; must appear verbatim above, or ""
 weeklyUrl: "https://psyopweekly.substack.com/", // drives the panel and the cross-references
@@ -42,30 +42,69 @@ const ENTRIES = [
 {t:"The Code of Hammurabi", a:"King Hammurabi (Trans. L.W. King)", y:"c. 1750 BCE", u:"https://www.general-intelligence.com/library/hr.pdf",
 d:"One of the oldest deciphered writings of significant length in the world, establishing the concept of justice and laws through 'an eye for an eye'.",
 n:"While not a modern psychological text, it is a foundational document in human behavior modification, establishing clear legal boundaries and state-enforced consequences for actions."},
+{t:"Against the Sophists", a:"Isocrates", y:"c. 390 BCE", u:"https://people.duke.edu/~wj25/ereserves/WJ-Against_the_Sophists.pdf",
+d:"The rival school's opening shot: the sophists sell certainty about virtue for a fixed fee, and the promise itself is the fraud.",
+n:"Isocrates goes after the eristics for peddling a science of happiness and the speechwriters for peddling formulas, then stakes out the ground between them. Rhetoric is neither a trick nor a science but a general training in judgment, useless without native talent and long practice. He lost the argument to Plato and won the next two thousand years of education."},
+{t:"Gorgias", a:"Plato (Trans. Benjamin Jowett)", y:"c. 380 BCE", u:"https://www.gutenberg.org/files/1672/1672-h/1672-h.htm",
+d:"Socrates against the professional persuader: rhetoric is cookery, not medicine - flattery that produces pleasure instead of health.",
+n:"The founding indictment of persuasion as a trade. Gorgias claims the orator can win any room on any subject without knowing the subject; Socrates answers that this is exactly the problem. Read it as the case against your own work and then answer it."},
+{t:"Phaedrus", a:"Plato (Trans. Benjamin Jowett)", y:"c. 370 BCE", u:"https://www.gutenberg.org/files/1636/1636-h/1636-h.htm",
+d:"Rhetoric as psychagogia, the leading of souls, plus the myth of Theuth in which writing turns out to be a drug that both cures and poisons.",
+n:"The concession Plato makes nowhere else. A real art of persuasion is possible, but only for someone who knows the kinds of soul and which speech moves which, the way a physician knows bodies. Then the dialogue turns on itself: the written word is an orphan that cannot answer questions or defend itself. Argued, of course, in writing."},
+{t:"On the Sublime", a:"Longinus (Trans. H.L. Havell)", y:"1st c. AD", u:"https://www.gutenberg.org/files/17957/17957-h/17957-h.htm",
+d:"The aim is not to persuade but to transport. The audience is not convinced, it is carried off.",
+n:"The turn nobody expects from a treatise on style. Longinus drops persuasion for ekstasis and locates the source not in technique but in greatness of soul, since sublimity of language is the echo of a noble mind. Ends by asking why his own age produces no great writers, and blames the corruption of appetite rather than the loss of liberty. Sits directly beside the Herzog."},
 {t:"Plutarch on Progress in Virtue", a:"Plutarch", y:"c. 100 AD", u:"https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Quomodo_quis_sentiat*.html",
-d:"Against the Stoic claim that you are either perfectly wise or wholly base — the signs by which you can tell you are actually improving.",
+d:"Against the Stoic claim that you are either perfectly wise or wholly base - the signs by which you can tell you are actually improving.",
 n:"Plutarch's marks of real progress: vice loosening its grip, steadiness where you used to flare, admiring good men instead of envying them, calm even in your dreams. The oldest working answer to the question of whether you are getting better or only performing it."},
+{t:"Alexander the False Prophet", a:"Lucian of Samosata", y:"c. 180 AD", u:"https://tertullian.org/rpearse/lucian/lucian_alexander.htm",
+d:"A working expose of a live religious con: the oracle of Glycon, the tame snake with a linen head, and the racket built on both.",
+n:"Lucian got inside the cult of Alexander of Abonoteichus and wrote up the mechanics in detail: the planted prophecies, the sealed questions opened and resealed, the staged epiphany, the ruthless handling of skeptics. The oldest surviving takedown of a cult leader, and still funny."},
+{t:"Orpheus, or Philosophy", a:"Francis Bacon", y:1609, u:"https://home.hiwaay.net/~paul/bacon/ancients/orpheus.html",
+d:"Orpheus read as philosophy itself: it goes down to raise the dead, fails, and settles for charming stones and beasts into cities.",
+n:"Fable XI of The Wisdom of the Ancients, where Bacon treats myth as encoded doctrine rather than decoration. Natural philosophy attempts immortality, loses it by looking back, and turns to moral and civil philosophy, taming men into society by eloquence alone. Then the Bacchanals tear the singer apart and the beasts return. Bacon's compressed theory of how civilisations are held together by persuasion and how they come undone."},
+{t:"On Truth and Lies in a Nonmoral Sense", a:"Friedrich Nietzsche", y:1873, u:"https://dn790002.ca.archive.org/0/items/NietzscheTruthLiesInANonmoralSense1873/Nietzsche%20-%20Truth%20%26%20Lies%20in%20a%20Nonmoral%20Sense%20%281873%29.pdf",
+d:"Truth is a mobile army of metaphors which a people agreed to lie about in unison, then forgot it was lying.",
+n:"A trained philologist detonating his own discipline. A nerve stimulus becomes an image, the image becomes a sound: two metaphors deep before a word exists, and every concept is made by discarding whatever is unequal. There is no non-rhetorical naturalness of language, which means philosophy has been doing rhetoric all along while denying it."},
 {t:"The Beauty Contest", a:"John Maynard Keynes", y:1936, u:"https://www.mkwinc.com/wp-content/uploads/2015/09/Keyness-Beauty-Contest.pdf",
 d:"Markets are driven not by fundamental value, but by what people think other people think the value is.",
 n:"A core concept from 'The General Theory of Employment, Interest and Money' explaining speculative bubbles and meta-level reasoning. We are all just trying to guess what average opinion expects average opinion to be."},
 {t:"Essay on Wotan", a:"C. G. Jung", y:1936, u:"https://www.philosopher.eu/others-writings/essay-on-wotan-w-nietzsche-c-g-jung/",
-d:"Nazism read not as economics or politics but as possession — a dormant Germanic god, Wotan, waking inside an entire nation.",
-n:"Jung's most unsettling essay, written in 1936 as it happened: an archetype, not an ideology, is what seizes a people. His word for it is Ergriffenheit, the state of being gripped — still the sharpest case for treating myth as a live force rather than decoration."},
+d:"Nazism read not as economics or politics but as possession - a dormant Germanic god, Wotan, waking inside an entire nation.",
+n:"Jung's most unsettling essay, written in 1936 as it happened: an archetype, not an ideology, is what seizes a people. His word for it is Ergriffenheit, the state of being gripped - still the sharpest case for treating myth as a live force rather than decoration."},
 {t:"Simple Sabotage Field Manual", a:"Office of Strategic Services (OSS)", y:1944, u:"https://regmedia.co.uk/2021/01/05/simple_sabotage_field_manual.pdf",
 d:"A guide on how to subtly disrupt organizations and systems from within through bureaucratic friction and malicious compliance.",
 n:"Declassified WWII document. The section on 'General Interference with Organizations' describes most modern corporate meetings perfectly."},
 {t:"The Sect of the Phoenix", a:"Jorge Luis Borges", y:1952, u:"https://2500art.wordpress.com/wp-content/uploads/2014/02/sect-of-the-phoenix.pdf",
 d:"A hidden, ubiquitous secret unites all of humanity through an unspoken, mundane, and instinctive ritual.",
 n:"An extended riddle disguised as a parable about a mysterious global cult whose universal secret is simply the instinctual act of human procreation."},
+{t:"On Cooling the Mark Out", a:"Erving Goffman", y:1952, u:"https://gwern.net/doc/crime/1952-goffman.pdf",
+d:"After the con is done, someone has to stay behind and teach the victim how to take a loss quietly.",
+n:"Goffman starts with the confidence trick and then shows the same machinery running everywhere: firings, demotions, rejections, breakups. Every institution keeps a cooler on staff. Once you have the word for it, you cannot stop seeing the role, or noticing when it is your turn to play it."},
+{t:"An Essay on Bargaining", a:"Thomas C. Schelling", y:1956, u:"https://elearning.unite.it/pluginfile.php/356450/mod_resource/content/0/16.%20Schelling%20-%20An%20Essay%20on%20Bargaining.pdf",
+d:"The power to constrain your opponent comes from binding yourself first.",
+n:"Schelling's central inversion: weakness is leverage, and the negotiator who destroys his own freedom to concede wins. Burn the bridge, publish the deadline, hand the decision to someone who cannot say yes. The paper that made commitment a technology rather than a virtue."},
 {t:"Letter from Hunter S. Thompson", a:"Hunter S. Thompson", y:1958, u:"https://fs.blog/hunter-s-thompson-to-hume-logan/",
 d:"A philosophical masterclass on why a person should not strive to fit a predetermined goal, but mold the goal to fit their own nature.",
 n:"Written when Thompson was just 20 years old, it perfectly articulates the existential difference between 'being' and 'doing' when choosing a path in life."},
 {t:"Playboy Interview: Miles Davis", a:"Alex Haley", y:1962, u:"https://www.erenkrantz.com/Music/MilesDavisInterview.shtml",
 d:"A fiercely unfiltered conversation about race, the relentless pursuit of artistic evolution, and refusing to compromise.",
 n:"The inaugural Playboy Interview. Davis lays bare the psychology of a musical genius who continuously reinvented his art form rather than resting on past successes."},
+{t:"The Warren Commission Report", a:"President's Commission on the Assassination of President Kennedy", y:1964, u:"https://www.archives.gov/research/jfk/warren-commission-report/toc",
+d:"888 pages produced in ten months to settle the question of who killed a president, and the founding document of modern American distrust.",
+n:"Whatever you conclude about the lone gunman, the Report is the case study in how an official account is built: the commission's mandate, what it chose to pursue, what it declined to, and the confident tone it adopted throughout. It was meant to end speculation and instead created an entire industry of it. Read it as a lesson in how institutions produce narrative under time pressure."},
+{t:"Attitudinal Effects of Mere Exposure", a:"Robert B. Zajonc", y:1968, u:"https://web.mit.edu/curhan/www/docs/Articles/biases/9_J_Personality_Social_Psychology_1_(Zajonc).pdf",
+d:"Repetition alone manufactures preference. No argument, no proof, no content - just contact.",
+n:"Zajonc showed that liking rises with familiarity even when the stimulus is meaningless: nonsense syllables, invented characters, faces seen in passing. The mechanism underneath advertising, campaign saturation and every account that wins by posting daily rather than posting well."},
 {t:"Learned Helplessness: Theory and Evidence", a:"Martin E.P. Seligman", y:1972, u:"https://ppc.sas.upenn.edu/sites/default/files/learnedhelplessness.pdf",
 d:"When animals or humans are conditioned to expect pain with no escape, they stop trying to avoid it.",
 n:"A foundational psychology paper on conditioning and passivity, which later led Seligman to pivot entirely towards Positive Psychology."},
+{t:"On Being Sane in Insane Places", a:"David L. Rosenhan", y:1973, u:"http://www.freedom-center.org/pdf/onbeingsane.pdf",
+d:"Eight sane people talked their way into psychiatric wards and then could not talk their way out.",
+n:"Once the label was applied, every ordinary act became evidence for it: note-taking was recorded as 'writing behavior', queuing early for lunch as oral-acquisitive syndrome. The other patients spotted the frauds; the staff never did. The cleanest demonstration that a diagnosis can describe the setting more than the person."},
+{t:"Judgment Under Uncertainty: Heuristics and Biases", a:"Amos Tversky & Daniel Kahneman", y:1974, u:"https://www.csc2.ncsu.edu/faculty/mpsingh/local/Social/f25/wrap/readings/Tversky+Kahneman-heuristics-biases-1974.pdf",
+d:"Three mental shortcuts - representativeness, availability, anchoring - quietly govern every estimate anyone gives you.",
+n:"Eight pages in Science that launched the whole field. The shortcuts are efficient, which is why they survive, and their errors are systematic, which is why they can be exploited. Anchoring alone explains most of what happens in a negotiation before anyone mentions a number."},
 {t:"Influence: The Psychology of Persuasion (Summary)", a:"Robert B. Cialdini", y:1984, u:"https://public.summaries.com/files/8-page-summary/influence.pdf",
 d:"The six shortcuts of persuasion that compliance professionals fire on purpose.",
 n:"A concise summary of Cialdini's seminal work on reciprocity, commitment, social proof, liking, authority, and scarcity."},
@@ -81,11 +120,11 @@ n:"Originally a speech at Harvard, this is the practical inversion of behavioral
 {t:"The Ecology of Fear", a:"Joel S. Brown", y:1999, u:"https://gwern.net/doc/cat/psychology/1999-brown.pdf",
 d:"How the psychological landscape of fear dictates the behavior, feeding habits, and survival strategies of prey animals.",
 n:"A foundational paper in behavioral ecology showing that the mere presence of predators (the 'ecology of fear') impacts ecosystems just as much as actual predation."},
-{t:"Information Theory, Inference, and Learning Algorithms", a:"David J.C. MacKay", y:2003, u:"https://assets.cambridge.org/97805218/26518/sample/9780521826518ws.pdf",
-d:"An elegant mathematical framework uniting Claude Shannon's communication theory with Bayesian inference and machine learning.",
-n:"Long before the deep learning boom, this legendary textbook proved that data compression, error correction, and artificial neural networks are all facets of the exact same mathematical reality."},
+{t:"Psychology of Intelligence Analysis", a:"Richards J. Heuer, Jr. (CIA)", y:1999, u:"https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2",
+d:"How mental models and cognitive bias quietly wreck analysis, and the tradecraft built to counter them.",
+n:"Written for CIA analysts and better than most of the popular bias books that came after it. The practical takeaway is Analysis of Competing Hypotheses: instead of building a case for your favoured explanation, list them all and hunt for the evidence that kills them. Free, book-length, still in use."},
 {t:"The World's Largest Hedge Fund is a Fraud", a:"Harry Markopolos", y:2005, u:"https://www.sec.gov/news/studies/2009/oig-509/exhibit-0293.pdf",
-d:"The meticulously ignored whistleblowing memo that proved mathematically that Bernie Madoff’s returns were impossible.",
+d:"The meticulously ignored whistleblowing memo that proved mathematically that Bernie Madoff's returns were impossible.",
 n:"A masterclass in forensic accounting and systemic blindness. It details exact red flags showing how Madoff was running a pure Ponzi scheme years before it collapsed."},
 {t:"This Is Water", a:"David Foster Wallace", y:2005, u:"https://farmamol.web.uah.es/This_is_Water.pdf",
 d:"The exact nature of the default setting of our minds, and how to transcend it.",
@@ -99,6 +138,9 @@ n:"Shows how population density and 'behavioral sinks' became a prevailing narra
 {t:"On the Absolute, the Sublime, and Ecstatic Truth", a:"Werner Herzog", y:2010, u:"https://www.bu.edu/arion/files/2010/03/Herzog.pdf",
 d:"A manifesto on why facts do not constitute truth, and why the deeper strata of truth must be reached through poetic fabrication.",
 n:"Delivered as a rogue declaration. It explains his entire filmmaking philosophy and why he frequently alters reality to achieve 'ecstatic truth'."},
+{t:"The Way of the Golden Elixir", a:"Fabrizio Pregadio", y:2011, u:"https://dons.directory/library/Way_Of_The_Golden_Elixir.pdf",
+d:"An introduction to Taoist alchemy: the outer furnace of Waidan, the inner furnace of Neidan, and the body as the vessel.",
+n:"Pregadio traces how the search for a transmuting elixir turned inward, until the crucible, the fire and the ingredients were all located inside the practitioner. A working map of the doctrine, its lineages, and the stages of the internal work."},
 {t:"Facebook's Little Red Book", a:"Ben Barry / Facebook", y:2012, u:"https://drive.google.com/file/d/1TZYqdFOXkZZPpMJx_16YBFkw-jaPbxiS/view",
 d:"An internal corporate handbook on hacking, building fast, and maintaining a disruptive startup mentality at massive scale.",
 n:"Given to new employees during Facebook's prime. It acts as both propaganda and a genuinely effective distillation of engineering culture and aggressive risk-taking."},
@@ -118,7 +160,7 @@ n:"The foundational paper introducing the Transformer architecture, completely s
 d:"A comprehensive framework for cultivating obsessive curiosity, identifying deep problems, and compounding your efforts over decades.",
 n:"A distillation of everything PG learned from observing elite founders. The core thesis: great work happens at the intersection of natural aptitude, deep interest, and relentless execution."}
 ];
-/* ═══ END EDIT ZONE 2 — nothing below here needs touching ════════════════ */
+/* ═══ END EDIT ZONE 2 - nothing below here needs touching ════════════════ */
 </script>
 <style>
 /* Change these six and the whole page follows. */
