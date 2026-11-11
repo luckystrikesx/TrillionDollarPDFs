@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- ═══ EDIT ZONE 1 - tab title + link previews (X, Slack, iMessage) ═══
 Crawlers don't run JavaScript, so these stay hardcoded here.
-Keep all three description strings identical to SITE.description below. -->
-<title>Trillion $$$ PDFs (PSYOP Research Unit Archive)</title>
+The description here is only for search and link previews; it is not shown on the page. -->
+<title>Trillion $$ PDFs (PSYOP Research Unit Archive)</title>
 <meta name="description" content="PDFs on propaganda, cults, advertising, incentive structures, narrative, persuasion and mechanics of beliefs - browse it below and follow the link to read the original.">
-<meta property="og:title" content="Trillion $$$ PDFs (PSYOP Research Unit Archive)">
+<meta property="og:title" content="Trillion $$ PDFs (PSYOP Research Unit Archive)">
 <meta property="og:description" content="PDFs on propaganda, cults, advertising, incentive structures, narrative, persuasion and mechanics of beliefs - browse it below and follow the link to read the original.">
 <meta name="twitter:card" content="summary_large_image">
 <!-- ═══ END EDIT ZONE 1 ═════════════════════════════════════════════ -->
@@ -20,162 +20,218 @@ Keep all three description strings identical to SITE.description below. -->
 <script>
 /* ═══ EDIT ZONE 2 - every word on the page ═══════════════════════════════ */
 const SITE = {
-wordmark: "Trillion $$$ PDFs", // small mark, top left
-headline: "Trillion $$$ PDFs", // the big line
+headline: "Trillion $$ PDFs", // the big line
 subhead: "PSYOP Research Unit Archive", // small mono block under it - "" to hide
-description: "PDFs on propaganda, cults, advertising, incentive structures, narrative, persuasion and mechanics of beliefs - browse it below and follow the link to read the original.",
-highlight: "propaganda, cults, advertising, incentive structures, narrative, persuasion and mechanics of beliefs", // orange underline; must appear verbatim above, or ""
+description: "", // optional paragraph under the headline - "" hides it (link previews use the meta tags in zone 1)
+highlight: "", // phrase inside the description to underline in orange, or ""
 weeklyUrl: "https://psyopletters.substack.com/", // drives the signup form, the footer link and the cross-references
 /* ── the closing block ── */
 signupEyebrow: "Dispatch / every week",
 signupTitleA: "PSYOP", // only shown as text if the masthead image (BANNER, below) is set to ""
 signupTitleB: "Letters",
 footerLink: "Read PSYOP Letters",
-signupBlurb: "Sam Altman killed my startup, so I write about starting a cult.",
+signupBlurb: "Sam Altman killed my startup, so I've started a cult!",
 signupStamp: "FREE gas station espresso shots and tobacco included.", // sits beside the starburst
 signupPlaceholder: "your@email.com",
 signupButton: "Subscribe",
 
 submitLabel: "Suggest a document",
 submitEmail: "kaliyuga112233@example.com",
-footerLine: "Trillion $$$ PDFs (PSYOP Research Unit Archive)",
+footerLine: "Trillion $$ PDFs (PSYOP Research Unit Archive)",
 /* ── the stealth / broadcast layer ── */
+banner: "", // optional thin strip at the very top, e.g. "Unclassified // open source" - "" hides it
 tickerLabel: "BREAKING:", // red block at the start of the crawl - "" to hide
 ticker: [ // the blue crawl under the hero - [] to hide the whole strip
 "If your opponent is of choleric temper, irritate him.",
 "Even if it seems certain that you will lose, retaliate.",
 "Build your opponent a golden bridge to retreat across.",
 "Simply become insane and desperate.",
-"Let your plans be dark and impenetrable as night, and when you move, fall like a thunderbolt."
+"Let your plans be dark and impenetrable as night, and when you move, fall like a thunderbolt.",
+"All warfare is based on deception.",
+"When able to attack, we must seem unable.",
+"Pretend to be weak, that he may grow arrogant.",
+"If he is taking his ease, give him no rest.",
+"Attack him where he is unprepared, appear where you are not expected.",
+"Hold out baits to entice the enemy. Feign disorder, and crush him.",
+"Throw your soldiers into positions whence there is no escape, and they will prefer death to flight.",
+"Matters of great concern should be treated lightly.",
+"One should make his decisions within the space of seven breaths.",
+"Common sense will not accomplish great things.",
+"There is something to be learned from a rainstorm.",
+"It is much safer to be feared than loved.",
+"Men ought either to be well treated or crushed.",
+"Everyone sees what you appear to be, few really know what you are.",
+"Do nothing which is of no use.",
+"Perceive those things which cannot be seen.",
+"Think with the few and speak with the many.",
+"The strong do what they can and the weak suffer what they must.",
+"War is the father of all and king of all.",
+"Never interrupt your enemy when he is making a mistake."
 ],
-searchPlaceholder: "search title, author, year",
-emptyState: "NO SIGNAL - nothing in the archive matches that. Try fewer words.",
 openLabel: "Declassify +", // the button on each entry
 closeLabel: "Seal -",
-signupTag: "Free PSYOP", // tape overlay on the closing block
+signupTag: "", // optional tape overlay line on the closing block - "" hides it
 signupBurst: "FREE" // the orange starburst - "" to hide
 };
 
-/* One object per entry, oldest first. Lot numbers follow this order.
+/* One object per entry. The order here is the order on the page (it is curated, not by date):
+the first six, the run around the middle (Markopolos to Tesla) and the last five are the hooks.
+DOC numbers follow this order.
 t = title a = author y = year
 u = link to the original ("" shows no link)
 d = the one-line thesis n = the note behind "Open +"
 x = optional cross-reference to the Weekly, shown inside the note */
 const ENTRIES = [
-{t:"The Code of Hammurabi", a:"King Hammurabi (Trans. L.W. King)", y:"c. 1750 BCE", u:"https://www.general-intelligence.com/library/hr.pdf",
-d:"One of the oldest deciphered writings of significant length in the world, establishing the concept of justice and laws through 'an eye for an eye'.",
-n:"While not a modern psychological text, it is a foundational document in human behavior modification, establishing clear legal boundaries and state-enforced consequences for actions."},
-{t:"Against the Sophists", a:"Isocrates", y:"c. 390 BCE", u:"https://people.duke.edu/~wj25/ereserves/WJ-Against_the_Sophists.pdf",
-d:"The rival school's opening shot: the sophists sell certainty about virtue for a fixed fee, and the promise itself is the fraud.",
-n:"Isocrates goes after the eristics for peddling a science of happiness and the speechwriters for peddling formulas, then stakes out the ground between them. Rhetoric is neither a trick nor a science but a general training in judgment, useless without native talent and long practice. He lost the argument to Plato and won the next two thousand years of education."},
-{t:"Gorgias", a:"Plato (Trans. Benjamin Jowett)", y:"c. 380 BCE", u:"https://www.gutenberg.org/files/1672/1672-h/1672-h.htm",
-d:"Socrates against the professional persuader: rhetoric is cookery, not medicine - flattery that produces pleasure instead of health.",
-n:"The founding indictment of persuasion as a trade. Gorgias claims the orator can win any room on any subject without knowing the subject; Socrates answers that this is exactly the problem. Read it as the case against your own work and then answer it."},
-{t:"Phaedrus", a:"Plato (Trans. Benjamin Jowett)", y:"c. 370 BCE", u:"https://www.gutenberg.org/files/1636/1636-h/1636-h.htm",
-d:"Rhetoric as psychagogia, the leading of souls, plus the myth of Theuth in which writing turns out to be a drug that both cures and poisons.",
-n:"The concession Plato makes nowhere else. A real art of persuasion is possible, but only for someone who knows the kinds of soul and which speech moves which, the way a physician knows bodies. Then the dialogue turns on itself: the written word is an orphan that cannot answer questions or defend itself. Argued, of course, in writing."},
-{t:"On the Sublime", a:"Longinus (Trans. H.L. Havell)", y:"1st c. AD", u:"https://www.gutenberg.org/files/17957/17957-h/17957-h.htm",
-d:"The aim is not to persuade but to transport. The audience is not convinced, it is carried off.",
-n:"The turn nobody expects from a treatise on style. Longinus drops persuasion for ekstasis and locates the source not in technique but in greatness of soul, since sublimity of language is the echo of a noble mind. Ends by asking why his own age produces no great writers, and blames the corruption of appetite rather than the loss of liberty. Sits directly beside the Herzog."},
-{t:"Plutarch on Progress in Virtue", a:"Plutarch", y:"c. 100 AD", u:"https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Quomodo_quis_sentiat*.html",
-d:"Against the Stoic claim that you are either perfectly wise or wholly base - the signs by which you can tell you are actually improving.",
-n:"Plutarch's marks of real progress: vice loosening its grip, steadiness where you used to flare, admiring good men instead of envying them, calm even in your dreams. The oldest working answer to the question of whether you are getting better or only performing it."},
-{t:"Alexander the False Prophet", a:"Lucian of Samosata", y:"c. 180 AD", u:"https://tertullian.org/rpearse/lucian/lucian_alexander.htm",
-d:"A working expose of a live religious con: the oracle of Glycon, the tame snake with a linen head, and the racket built on both.",
-n:"Lucian got inside the cult of Alexander of Abonoteichus and wrote up the mechanics in detail: the planted prophecies, the sealed questions opened and resealed, the staged epiphany, the ruthless handling of skeptics. The oldest surviving takedown of a cult leader, and still funny."},
-{t:"Orpheus, or Philosophy", a:"Francis Bacon", y:1609, u:"https://home.hiwaay.net/~paul/bacon/ancients/orpheus.html",
-d:"Orpheus read as philosophy itself: it goes down to raise the dead, fails, and settles for charming stones and beasts into cities.",
-n:"Fable XI of The Wisdom of the Ancients, where Bacon treats myth as encoded doctrine rather than decoration. Natural philosophy attempts immortality, loses it by looking back, and turns to moral and civil philosophy, taming men into society by eloquence alone. Then the Bacchanals tear the singer apart and the beasts return. Bacon's compressed theory of how civilisations are held together by persuasion and how they come undone."},
-{t:"On Truth and Lies in a Nonmoral Sense", a:"Friedrich Nietzsche", y:1873, u:"https://dn790002.ca.archive.org/0/items/NietzscheTruthLiesInANonmoralSense1873/Nietzsche%20-%20Truth%20%26%20Lies%20in%20a%20Nonmoral%20Sense%20%281873%29.pdf",
-d:"Truth is a mobile army of metaphors which a people agreed to lie about in unison, then forgot it was lying.",
-n:"A trained philologist detonating his own discipline. A nerve stimulus becomes an image, the image becomes a sound: two metaphors deep before a word exists, and every concept is made by discarding whatever is unequal. There is no non-rhetorical naturalness of language, which means philosophy has been doing rhetoric all along while denying it."},
-{t:"The Beauty Contest", a:"John Maynard Keynes", y:1936, u:"https://www.mkwinc.com/wp-content/uploads/2015/09/Keyness-Beauty-Contest.pdf",
-d:"Markets are driven not by fundamental value, but by what people think other people think the value is.",
-n:"A core concept from 'The General Theory of Employment, Interest and Money' explaining speculative bubbles and meta-level reasoning. We are all just trying to guess what average opinion expects average opinion to be."},
-{t:"Essay on Wotan", a:"C. G. Jung", y:1936, u:"https://www.philosopher.eu/others-writings/essay-on-wotan-w-nietzsche-c-g-jung/",
-d:"Nazism read not as economics or politics but as possession - a dormant Germanic god, Wotan, waking inside an entire nation.",
-n:"Jung's most unsettling essay, written in 1936 as it happened: an archetype, not an ideology, is what seizes a people. His word for it is Ergriffenheit, the state of being gripped - still the sharpest case for treating myth as a live force rather than decoration."},
 {t:"Simple Sabotage Field Manual", a:"Office of Strategic Services (OSS)", y:1944, u:"https://regmedia.co.uk/2021/01/05/simple_sabotage_field_manual.pdf",
-d:"A guide on how to subtly disrupt organizations and systems from within through bureaucratic friction and malicious compliance.",
-n:"Declassified WWII document. The section on 'General Interference with Organizations' describes most modern corporate meetings perfectly."},
-{t:"The Sect of the Phoenix", a:"Jorge Luis Borges", y:1952, u:"https://2500art.wordpress.com/wp-content/uploads/2014/02/sect-of-the-phoenix.pdf",
-d:"A hidden, ubiquitous secret unites all of humanity through an unspoken, mundane, and instinctive ritual.",
-n:"An extended riddle disguised as a parable about a mysterious global cult whose universal secret is simply the instinctual act of human procreation."},
+d:"How to wreck an organisation from the inside without breaking a single rule.",
+n:"A 1944 manual for citizens in occupied Europe. The physical sabotage is dated. The section on meetings is not: insist on proper channels, refer everything to a committee, reopen decisions already made, haggle over wording. Read it and count how many of your colleagues are working for the OSS."},
 {t:"On Cooling the Mark Out", a:"Erving Goffman", y:1952, u:"https://gwern.net/doc/crime/1952-goffman.pdf",
-d:"After the con is done, someone has to stay behind and teach the victim how to take a loss quietly.",
-n:"Goffman starts with the confidence trick and then shows the same machinery running everywhere: firings, demotions, rejections, breakups. Every institution keeps a cooler on staff. Once you have the word for it, you cannot stop seeing the role, or noticing when it is your turn to play it."},
-{t:"An Essay on Bargaining", a:"Thomas C. Schelling", y:1956, u:"https://elearning.unite.it/pluginfile.php/356450/mod_resource/content/0/16.%20Schelling%20-%20An%20Essay%20on%20Bargaining.pdf",
-d:"The power to constrain your opponent comes from binding yourself first.",
-n:"Schelling's central inversion: weakness is leverage, and the negotiator who destroys his own freedom to concede wins. Burn the bridge, publish the deadline, hand the decision to someone who cannot say yes. The paper that made commitment a technology rather than a virtue."},
-{t:"Playboy Interview: Miles Davis", a:"Alex Haley", y:1962, u:"https://www.erenkrantz.com/Music/MilesDavisInterview.shtml",
-d:"A fiercely unfiltered conversation about race, the relentless pursuit of artistic evolution, and refusing to compromise.",
-n:"The inaugural Playboy Interview. Davis lays bare the psychology of a musical genius who continuously reinvented his art form rather than resting on past successes."},
-{t:"The Warren Commission Report", a:"President's Commission on the Assassination of President Kennedy", y:1964, u:"https://www.archives.gov/research/jfk/warren-commission-report/toc",
-d:"888 pages produced in ten months to settle the question of who killed a president, and the founding document of modern American distrust.",
-n:"Whatever you conclude about the lone gunman, the Report is the case study in how an official account is built: the commission's mandate, what it chose to pursue, what it declined to, and the confident tone it adopted throughout. It was meant to end speculation and instead created an entire industry of it. Read it as a lesson in how institutions produce narrative under time pressure."},
+d:"After the con, someone stays behind to teach the victim how to take the loss quietly.",
+n:"The mark has lost his money and, worse, his picture of himself as a man who cannot be fooled. If he makes noise the operation is in danger, so one of the crew cools him out. Goffman then finds the same job in every institution: the exit interview, the consolation prize, the kindly doctor, the friend who explains why she left. Once you have the word you will catch yourself doing it."},
+{t:"Cognitive Consequences of Forced Compliance", a:"Leon Festinger & James M. Carlsmith", y:1959, u:"https://is.muni.cz/el/phil/jaro2017/PSX_512/um/Festinger_forced_compliance.pdf?lang=en",
+d:"Pay a man $1 to tell a lie and he comes to believe it. Pay him $20 and he does not.",
+n:"Stanford students spent an hour turning pegs, then were paid to tell the next person it had been fun. The ones paid $20 knew why they lied. The ones paid $1 had no excuse, so they decided the task had been fairly interesting after all. Small rewards change beliefs because they leave you nobody to blame but yourself. Every cult that starts by asking for a small favour knows this."},
+{t:"Becoming a World-Saver", a:"John Lofland & Rodney Stark", y:1965, u:"https://www.romolocapuano.com/wp-content/uploads/2016/01/Lofland-and-Stark-becoming-a-worldsaver.pdf",
+d:"Nobody is argued into a cult. They are befriended into one.",
+n:"Lofland lived among the first American followers of Sun Myung Moon, who appears in the paper disguised as a Mr. Chang. He found seven conditions for conversion, and being convinced by the doctrine is not one of them. The people who joined were at a turning point, had weak ties outside, and formed a bond with someone inside. Belief came afterwards, to match the friendships. Twenty-one converts, and it is still the model every later study is measured against."},
+{t:"On Bullshit", a:"Harry G. Frankfurt", y:1986, u:"https://raw.githubusercontent.com/wandyezj/reference/master/on-bullshit.pdf",
+d:"The liar cares about the truth enough to hide it. The bullshitter does not care at all.",
+n:"Frankfurt, a Princeton philosopher, treats the word with a straight face. A liar has to know what is true in order to steer you away from it. The bullshitter wants only the effect, and whether his words are true or false is of no interest to him. That is why Frankfurt calls bullshit the greater enemy of truth. Written in 1986, before any of us had a feed."},
+{t:"Voyages to the End of the World", a:"Peter Thiel & Sam Wolfe", y:2025, u:"https://firstthings.com/voyages-to-the-end-of-the-world/",
+d:"Thiel reads Bacon, Swift, Watchmen and One Piece as one long argument about science, world government and the Antichrist.",
+n:"Written with Sam Wolfe for First Things. The claim is that Bacon's New Atlantis hides a programme for a scientific world empire, that Swift saw it and mocked it, and that the question of one world under one ruler runs straight through to a 1980s comic and a Japanese manga. He prefers the manga's ending. Whatever you make of the theology, it shows how the co-founder of Palantir reads stories. Bacon's own Orpheus is also in this archive."},
+{t:"Alexander the False Prophet", a:"Lucian of Samosata", y:"c. 180 AD", u:"https://tertullian.org/rpearse/lucian/lucian_alexander.htm",
+d:"A satirist walks into a live cult and writes down how the tricks are done.",
+n:"Alexander of Abonoteichus ran an oracle around a tame snake fitted with a linen head. Lucian records the method: sealed questions opened and resealed, prophecies planted in advance, staged apparitions, sceptics denounced from the shrine. Second century, and the whole kit is already there. Also very funny."},
+{t:"On the Folly of Rewarding A, While Hoping for B", a:"Steven Kerr", y:1975, u:"https://appstate.edu/~steelekm/classes/psy5150/Documents/Kerr1975-95.pdf",
+d:"Organisations pay for one behaviour and then act surprised when they do not get the other.",
+n:"Kerr's cases: the soldier in Vietnam who went home when his tour ended, whether or not the war was won. The doctor who is sued for missing an illness and never for inventing one. The university that wants teaching and promotes on publications. Find what is rewarded and you know what people will do. Ignore the mission statement. The link is his 1995 update of the 1975 paper."},
+{t:"The Beauty Contest", a:"John Maynard Keynes", y:1936, u:"https://www.mkwinc.com/wp-content/uploads/2015/09/Keyness-Beauty-Contest.pdf",
+d:"The winning move is to pick the face you think the others will think the others will pick.",
+n:"A few paragraphs from chapter 12 of the General Theory. Keynes compares the stock market to a newspaper contest where you win by choosing the faces most chosen, so nobody is judging beauty at all. Everyone is guessing at average opinion about average opinion. Every bubble, every meme coin and most of politics runs on that."},
 {t:"Attitudinal Effects of Mere Exposure", a:"Robert B. Zajonc", y:1968, u:"https://web.mit.edu/curhan/www/docs/Articles/biases/9_J_Personality_Social_Psychology_1_(Zajonc).pdf",
-d:"Repetition alone manufactures preference. No argument, no proof, no content - just contact.",
-n:"Zajonc showed that liking rises with familiarity even when the stimulus is meaningless: nonsense syllables, invented characters, faces seen in passing. The mechanism underneath advertising, campaign saturation and every account that wins by posting daily rather than posting well."},
-{t:"Learned Helplessness: Theory and Evidence", a:"Martin E.P. Seligman", y:1972, u:"https://ppc.sas.upenn.edu/sites/default/files/learnedhelplessness.pdf",
-d:"When animals or humans are conditioned to expect pain with no escape, they stop trying to avoid it.",
-n:"A foundational psychology paper on conditioning and passivity, which later led Seligman to pivot entirely towards Positive Psychology."},
-{t:"On Being Sane in Insane Places", a:"David L. Rosenhan", y:1973, u:"http://www.freedom-center.org/pdf/onbeingsane.pdf",
-d:"Eight sane people talked their way into psychiatric wards and then could not talk their way out.",
-n:"Once the label was applied, every ordinary act became evidence for it: note-taking was recorded as 'writing behavior', queuing early for lunch as oral-acquisitive syndrome. The other patients spotted the frauds; the staff never did. The cleanest demonstration that a diagnosis can describe the setting more than the person."},
-{t:"Judgment Under Uncertainty: Heuristics and Biases", a:"Amos Tversky & Daniel Kahneman", y:1974, u:"https://www.csc2.ncsu.edu/faculty/mpsingh/local/Social/f25/wrap/readings/Tversky+Kahneman-heuristics-biases-1974.pdf",
-d:"Three mental shortcuts - representativeness, availability, anchoring - quietly govern every estimate anyone gives you.",
-n:"Eight pages in Science that launched the whole field. The shortcuts are efficient, which is why they survive, and their errors are systematic, which is why they can be exploited. Anchoring alone explains most of what happens in a negotiation before anyone mentions a number."},
-{t:"Influence: The Psychology of Persuasion (Summary)", a:"Robert B. Cialdini", y:1984, u:"https://public.summaries.com/files/8-page-summary/influence.pdf",
-d:"The six shortcuts of persuasion that compliance professionals fire on purpose.",
-n:"A concise summary of Cialdini's seminal work on reciprocity, commitment, social proof, liking, authority, and scarcity."},
+d:"People come to like what they have merely seen before. No argument required.",
+n:"Zajonc showed subjects nonsense words and invented Chinese characters, some once, some twenty-five times. The more often they had seen a thing, the more they liked it. This is why the brand that turns up every day beats the brand with the better case, and why posting daily works."},
+{t:"The Sect of the Phoenix", a:"Jorge Luis Borges", y:1952, u:"https://2500art.wordpress.com/wp-content/uploads/2014/02/sect-of-the-phoenix.pdf",
+d:"A sect with no book, no temple and no doctrine. Only a secret, and everybody already knows it.",
+n:"Three pages built as a riddle. The members are everywhere, the rite is trivial and a little shameful, children learn it from each other, and nobody speaks of it. Borges later said the answer was sex. The better lesson is how little a cult needs: a secret, a rite, and silence."},
+{t:"An Essay on Bargaining", a:"Thomas C. Schelling", y:1956, u:"https://elearning.unite.it/pluginfile.php/356450/mod_resource/content/0/16.%20Schelling%20-%20An%20Essay%20on%20Bargaining.pdf",
+d:"In a negotiation, the one who can no longer back down wins.",
+n:"Weakness as leverage. Burn the bridge behind you, announce the deadline in public, send a negotiator who has no authority to concede. Now the other side has to move, because you cannot. Schelling turned commitment from a virtue into a technique, and the Cold War was planned with it."},
+{t:"Telling More Than We Can Know", a:"Richard E. Nisbett & Timothy D. Wilson", y:1977, u:"https://deepblue.lib.umich.edu/bitstream/2027.42/92167/1/TellingMoreThanWeCanKnow.pdf",
+d:"Ask people why they did something and they will tell you. They do not know. They are guessing like anyone else.",
+n:"The authors changed what subjects did by means the subjects never noticed, then asked them to explain themselves. The explanations were confident, plausible and wrong, and they matched what outside observers guessed. We have no window onto our own decisions. We have theories about people, and we apply them to ourselves. Bad news for focus groups, surveys and anyone who has ever asked a customer why they bought."},
+{t:"Phaedrus", a:"Plato (Trans. Benjamin Jowett)", y:"c. 370 BCE", u:"https://www.gutenberg.org/files/1636/1636-h/1636-h.htm",
+d:"Rhetoric is the leading of souls. To do it well you must know what kinds of soul there are and which words move which.",
+n:"The one place Plato grants that a real art of persuasion could exist, and he names the price: know your listener the way a physician knows a body. Then comes the myth of Theuth, where the god offers writing as a cure for forgetting and the king answers that it is a poison for memory. A written text cannot answer back or choose its reader. Plato wrote that down."},
+{t:"The Most Intolerant Wins", a:"Nassim Nicholas Taleb", y:2016, u:"https://www.fisheaters.com/srpdf/themostintolerantwins.pdf",
+d:"A few percent who will not bend set the rules for everyone who does not care.",
+n:"Taleb's example is kosher lemonade: the observant will not drink the other kind, nobody else minds, so the whole shelf goes kosher. The asymmetry is the engine, and he runs it through food, language, markets and religion. It only works when the stubborn group is spread evenly and the cost to everyone else is small. A chapter from Skin in the Game, and a good cure for judging anything by majority opinion."},
 {t:"MIT Guide to Lock Picking", a:"Ted the Tool", y:1991, u:"https://www.lysator.liu.se/mit-guide/MITLockGuide.pdf",
-d:"A mechanical explanation of how locks work and how they can be systematically defeated.",
-n:"One of the most famous early internet texts on physical security. It teaches a mindset: systems designed to keep people out are just logical puzzles."},
-{t:"Blood Meridian as Gnostic Tragedy", a:"Leo Daugherty", y:1992, u:"https://escholarship.org/content/qt5kw8f77n/qt5kw8f77n_noSplash_c03e51aa9031a015630f5b7bfa32ea15.pdf",
-d:"An examination of Cormac McCarthy's masterpiece through the framework of Gnosticism, where the material world is inherently evil.",
-n:"Analyzes the brutal, deterministic world of Blood Meridian and the archon-like figure of Judge Holden. Daugherty argues that the violence is not senseless, but deeply rooted in Gnostic theology."},
-{t:"The Psychology of Human Misjudgment", a:"Charlie Munger", y:1995, u:"https://neilhacker.com/wp-content/uploads/2020/02/human-misjudgement-copy.pdf",
-d:"A masterclass on the cognitive biases that lead individuals to make terrible decisions.",
-n:"Originally a speech at Harvard, this is the practical inversion of behavioral economics from a billionaire investor."},
-{t:"The Ecology of Fear", a:"Joel S. Brown", y:1999, u:"https://gwern.net/doc/cat/psychology/1999-brown.pdf",
-d:"How the psychological landscape of fear dictates the behavior, feeding habits, and survival strategies of prey animals.",
-n:"A foundational paper in behavioral ecology showing that the mere presence of predators (the 'ecology of fear') impacts ecosystems just as much as actual predation."},
-{t:"Psychology of Intelligence Analysis", a:"Richards J. Heuer, Jr. (CIA)", y:1999, u:"https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2",
-d:"How mental models and cognitive bias quietly wreck analysis, and the tradecraft built to counter them.",
-n:"Written for CIA analysts and better than most of the popular bias books that came after it. The practical takeaway is Analysis of Competing Hypotheses: instead of building a case for your favoured explanation, list them all and hunt for the evidence that kills them. Free, book-length, still in use."},
-{t:"The World's Largest Hedge Fund is a Fraud", a:"Harry Markopolos", y:2005, u:"https://www.sec.gov/news/studies/2009/oig-509/exhibit-0293.pdf",
-d:"The meticulously ignored whistleblowing memo that proved mathematically that Bernie Madoff's returns were impossible.",
-n:"A masterclass in forensic accounting and systemic blindness. It details exact red flags showing how Madoff was running a pure Ponzi scheme years before it collapsed."},
-{t:"This Is Water", a:"David Foster Wallace", y:2005, u:"https://farmamol.web.uah.es/This_is_Water.pdf",
-d:"The exact nature of the default setting of our minds, and how to transcend it.",
-n:"Originally a commencement speech at Kenyon College. A foundational text on choosing what to pay attention to in mundane, adult life."},
-{t:"The Secret Tesla Motors Master Plan", a:"Elon Musk", y:2006, u:"https://www.tesla.com/en_in/secret-master-plan",
-d:"Build sports car; use that money to build an affordable car; use that money to build an even more affordable car; provide zero emission power.",
-n:"A classic essay on strategic roadmap transparency and narrative positioning, reframing electric vehicle manufacturing from a niche gimmick into an inevitable stepped capital deployment plan."},
-{t:"Escaping the Laboratory", a:"Edmund Ramsden & Jon Adams", y:2009, u:"https://joeornstein.github.io/pols-4641/readings/Ramsden%20and%20Adams%20-%202009%20-%20Escaping%20the%20Laboratory%20The%20Rodent%20Experiments%20of.pdf",
-d:"A deep dive into the infamous 'Universe 25' mouse utopia experiments and their cultural impact.",
-n:"Shows how population density and 'behavioral sinks' became a prevailing narrative in 20th-century sociology and urban planning."},
-{t:"Ecstatic Truth", a:"Werner Herzog", y:2010, u:"https://www.bu.edu/arion/files/2010/03/Herzog.pdf",
-d:"A manifesto on why facts do not constitute truth, and why the deeper strata of truth must be reached through poetic fabrication.",
-n:"Delivered as a rogue declaration, published as 'On the Absolute, the Sublime, and Ecstatic Truth'. It explains his entire filmmaking philosophy and why he frequently alters reality to achieve what he calls ecstatic truth."},
-{t:"The Way of the Golden Elixir", a:"Fabrizio Pregadio", y:2011, u:"https://dons.directory/library/Way_Of_The_Golden_Elixir.pdf",
-d:"An introduction to Taoist alchemy: the outer furnace of Waidan, the inner furnace of Neidan, and the body as the vessel.",
-n:"Pregadio traces how the search for a transmuting elixir turned inward, until the crucible, the fire and the ingredients were all located inside the practitioner. A working map of the doctrine, its lineages, and the stages of the internal work."},
+d:"Locks open because no factory can drill five holes in a perfectly straight line.",
+n:"Written under a pseudonym at MIT and passed around the early internet. It explains pin tumblers, why manufacturing tolerances let you set the pins one at a time, and how to train your hands to feel it. The habit of mind matters more than the skill: every security system is a mechanism, and every mechanism has slack."},
+{t:"Essay on Wotan", a:"C. G. Jung", y:1936, u:"https://www.philosopher.eu/others-writings/essay-on-wotan-w-nietzsche-c-g-jung/",
+d:"Jung on Germany in 1936: this is not politics, it is possession. An old god has woken up inside a whole people.",
+n:"His word is Ergriffenheit, the state of being seized. An archetype, he says, is like a dry riverbed: the water can come back at any time and it will take the old channel. He wrote this while it was happening, three years before the war. You do not have to accept his psychology to feel how much better it describes a mass movement than a policy analysis does."},
+{t:"Harnessing the Science of Persuasion", a:"Robert B. Cialdini", y:2001, u:"https://www.amchamvietnam.com/wp-content/uploads/2016/08/Cialdini-weapons-of-influence.pdf",
+d:"Cialdini's six principles of persuasion, in his own words, in a few pages.",
+n:"Written for Harvard Business Review. Liking, reciprocity, social proof, consistency, authority, scarcity, each with the experiment behind it and a way to use it on Monday. He insists they only keep working if used honestly, which is either ethics or sound advice about repeat customers. The fastest way into his work."},
+{t:"Why Strict Churches Are Strong", a:"Laurence R. Iannaccone", y:1994, u:"https://www.academia.edu/144329918/Why_Strict_Churches_Are_Strong",
+d:"A church that demands a lot gets rid of the people who would only take.",
+n:"An economist's answer to why the sects with strange rules about dress, food and Saturday nights keep growing while the easy churches empty. A congregation is something its members make together, so free riders ruin it. Costly demands, even pointless ones, drive off the half-committed and leave a room where everyone gives. The same logic covers fraternities, companies with brutal hours, and any group that makes you pay to get in."},
+{t:"On Truth and Lies in a Nonmoral Sense", a:"Friedrich Nietzsche", y:1873, u:"https://dn790002.ca.archive.org/0/items/NietzscheTruthLiesInANonmoralSense1873/Nietzsche%20-%20Truth%20%26%20Lies%20in%20a%20Nonmoral%20Sense%20%281873%29.pdf",
+d:"Truth is a mobile army of metaphors that a people agreed on and then forgot were metaphors.",
+n:"Written at twenty-eight and left in a drawer. A nerve stimulus is turned into an image, the image into a sound: two metaphors deep before there is a word. Every concept is made by ignoring what differs between cases. If he is right, there was never a plain speech for rhetoric to corrupt. Language was persuasion from the first word."},
+{t:"Judgment Under Uncertainty: Heuristics and Biases", a:"Amos Tversky & Daniel Kahneman", y:1974, u:"https://www.csc2.ncsu.edu/faculty/mpsingh/local/Social/f25/wrap/readings/Tversky+Kahneman-heuristics-biases-1974.pdf",
+d:"Three shortcuts - representativeness, availability, anchoring - run most of the estimates anyone gives you.",
+n:"Eight pages in Science that started a field. The shortcuts are cheap and usually good enough, which is why we keep them, and they fail in the same direction every time, which is why they can be used against us. Anchoring alone explains why the first number said in a negotiation matters so much."},
 {t:"Facebook's Little Red Book", a:"Ben Barry / Facebook", y:2012, u:"https://drive.google.com/file/d/1TZYqdFOXkZZPpMJx_16YBFkw-jaPbxiS/view",
-d:"An internal corporate handbook on hacking, building fast, and maintaining a disruptive startup mentality at massive scale.",
-n:"Given to new employees during Facebook's prime. It acts as both propaganda and a genuinely effective distillation of engineering culture and aggressive risk-taking."},
+d:"The handbook Facebook gave its staff in 2012, when it still thought of itself as a movement.",
+n:"Designed by Ben Barry and printed in-house. Page after page of slogans set like propaganda posters, on purpose: move fast, the journey is 1% finished, if we do not build the thing that kills Facebook someone else will. It worked because it told employees they were part of history. Internal propaganda, well made, with the seams showing."},
+{t:"The World's Largest Hedge Fund is a Fraud", a:"Harry Markopolos", y:2005, u:"https://www.sec.gov/news/studies/2009/oig-509/exhibit-0293.pdf",
+d:"A 2005 memo to the SEC showing that Madoff's returns could not exist. The SEC filed it away.",
+n:"Markopolos did the arithmetic: the options strategy Madoff claimed would have needed more contracts than existed on the exchange. He listed red flag after red flag and put the likeliest answer in the title. Three more years passed. The memo teaches less about fraud than about how hard it is to make an institution see what it has no wish to see."},
+{t:"Every Cause Wants to Be a Cult", a:"Eliezer Yudkowsky", y:2007, u:"https://www.lesswrong.com/posts/yEjaj7PWacno5EvWa/every-cause-wants-to-be-a-cult",
+d:"A group does not need a strange doctrine to become a cult. It only needs to stop spending effort on not being one.",
+n:"Yudkowsky treats cultishness like entropy. Love of the in-group, suspicion of outsiders and worship of the founder are the default human settings, so any shared cause slides that way, whether it is a religion, a diet or a club for rational people. The slide is no proof that the cause is false. It is what happens when nobody pushes back. A short blog post by the founder of exactly such a club."},
+{t:"How to Build a Universe That Doesn't Fall Apart Two Days Later", a:"Philip K. Dick", y:1978, u:"https://philipdick.com/mirror/essays/How_to_Build_a_Universe.pdf",
+d:"Dick's test for reality: whatever is still there after you stop believing in it.",
+n:"A speech from 1978. Dick starts with Disneyland and fake fakes, moves on to the people who manufacture realities for a living - governments, corporations, television - and says he trusts none of them, himself included. Then it goes somewhere stranger, into his own visions and the Book of Acts. The first half is the best short text there is on living inside other people's fictions."},
 {t:"Meditations On Moloch", a:"Scott Alexander", y:2014, u:"https://slatestarcodex.com/2014/07/30/meditations-on-moloch/",
-d:"Multipolar traps and coordination failures force rational individual actors into destructive, race-to-the-bottom arms races.",
-n:"A landmark essay in modern rationalist discourse using game theory and Allen Ginsberg's 'Moloch' metaphor to explain systemic incentives that ruin human flourishing."},
+d:"Everyone can see the outcome is bad, everyone hates it, and nobody can stop, because whoever stops first loses.",
+n:"Scott Alexander takes the monster from Ginsberg's Howl and makes it the name for a pattern: arms races, tragedies of the commons, any contest where the players must sacrifice what they value to stay in the game. The examples run from rats to science funding. Long, but once read you see the pattern in every system that makes its own people miserable."},
+{t:"The Tyranny of Structurelessness", a:"Jo Freeman", y:1970, u:"https://romulusstudio.com/variant/pdfs/issue20/structure.pdf",
+d:"There is no such thing as a group without a structure. There are only groups that hide theirs.",
+n:"Freeman watched the women's movement refuse leaders and get them anyway: a circle of friends who settled things in private and could not be removed, because officially they did not exist. Her point holds for every flat startup, DAO and group chat. When the rules are not written down, power goes to whoever already knows them."},
+{t:"The Secret Tesla Motors Master Plan", a:"Elon Musk", y:2006, u:"https://www.tesla.com/en_in/secret-master-plan",
+d:"Four lines: build a sports car, use the money for a cheaper car, use that money for a cheaper one still, and sell clean power.",
+n:"A blog post from August 2006, when Tesla had delivered nothing. Musk publishes the entire strategy and calls it a secret. The trick is the framing: an expensive toy for rich people becomes step one of a plan, and every buyer becomes a funder of the mission. Twenty years on it is still the model for how a founder turns a product into a story."},
+{t:"Mimesis and Violence", a:"René Girard", y:1979, u:"https://jefflabarge.com/theology/1/OverviewofMimesis.pdf",
+d:"We want things because others want them. That makes us rivals, and the group ends the fight by turning on one man.",
+n:"Girard's whole system in one short essay. Desire is copied, so the model becomes the obstacle, and the two end up fighting over nothing but each other. When the rivalry spreads, the community unloads it on a single victim, and the peace that follows makes the victim look sacred. Myth, ritual and prohibition are the memory of that killing as told by the killers. Peter Thiel was his student, and it shows."},
+{t:"On Being Sane in Insane Places", a:"David L. Rosenhan", y:1973, u:"http://www.freedom-center.org/pdf/onbeingsane.pdf",
+d:"Eight sane people got themselves admitted to psychiatric hospitals and then could not get out by acting normal.",
+n:"Once the label was on, everything confirmed it. Taking notes was charted as 'writing behavior'. The other patients spotted the fakes; the staff did not. Read it knowing that Susannah Cahalan's 2019 investigation found serious holes in Rosenhan's data, so the most famous study of labelling may itself be a story that was too good to check. That makes it more useful here, not less."},
+{t:"Destruction and Creation", a:"John R. Boyd", y:1976, u:"https://mail.code7700.com/pdfs/john_boyd/destruction_and_creation_john_boyd.pdf",
+d:"To keep up with a changing world you have to keep smashing your own picture of it and building a new one.",
+n:"The only paper ever written by the fighter pilot behind the OODA loop. He takes Gödel, Heisenberg and the second law of thermodynamics and draws one conclusion: a model checked only against itself drifts away from reality and into disorder. So you break it apart and rebuild from the pieces, again and again, faster than the other man. A few dense pages. Everything else he left was briefing slides."},
+{t:"Against the Sophists", a:"Isocrates", y:"c. 390 BCE", u:"https://people.duke.edu/~wj25/ereserves/WJ-Against_the_Sophists.pdf",
+d:"Isocrates opens his school by calling his rivals frauds: men who sell virtue for a fixed fee and guarantee the result.",
+n:"The first advertisement in the history of education, and it is an attack ad. He goes after the debaters who promise happiness and the speechwriters who sell formulas, then admits what none of them will: talent and long practice do most of the work, and no teacher can hand you either. Plato won the argument. Isocrates got the next two thousand years of schooling."},
+{t:"The Psychology of Human Misjudgment", a:"Charlie Munger", y:1995, u:"https://neilhacker.com/wp-content/uploads/2020/02/human-misjudgement-copy.pdf",
+d:"Munger's list of the standard ways the human mind goes wrong, and what happens when several fire at once.",
+n:"A talk at Harvard in 1995 by Buffett's partner, who taught himself psychology because the textbooks would not connect it to real decisions. He starts with incentives and says he has underestimated their power his whole life. The idea to keep is the lollapalooza: several biases pushing the same way give results far out of proportion. His cases include Tupperware parties, open-outcry auctions and cults."},
+{t:"The Evolution of Costly Displays", a:"Joseph Henrich", y:2009, u:"https://www2.psych.ubc.ca/~henrich/pdfs/evolution%20of%20costly%20displays%20_henrich%202009.pdf",
+d:"Talk is cheap. We take our beliefs from people whose actions would cost them too much if they did not mean it.",
+n:"Henrich calls them credibility enhancing displays. A child copies what the adults eat, not what they say is good for you. A preacher who fasts, gives away his money or goes to his death is believed in a way no argument can match, and a faith that asks such acts of its members spreads through them. It explains martyrs, celibate priests and founders who put in their own savings. It also explains why nobody takes diet advice from a fat doctor."},
+{t:"Escaping the Laboratory", a:"Edmund Ramsden & Jon Adams", y:2009, u:"https://joeornstein.github.io/pols-4641/readings/Ramsden%20and%20Adams%20-%202009%20-%20Escaping%20the%20Laboratory%20The%20Rodent%20Experiments%20of.pdf",
+d:"John Calhoun gave mice everything they needed and watched the colony die out. Then the story escaped the lab.",
+n:"Universe 25 had food, water and no predators, and it ended in withdrawal, violence and no births. Ramsden and Adams follow what happened next: the phrase 'behavioral sink' moving into city planning, journalism, science fiction and every argument about crowding. The paper is about how an experiment becomes a parable, and how Calhoun's own hopeful conclusions were left behind."},
+{t:"Orpheus, or Philosophy", a:"Francis Bacon", y:1609, u:"https://home.hiwaay.net/~paul/bacon/ancients/orpheus.html",
+d:"Orpheus is philosophy. It goes down to conquer death, fails, and settles for singing wild men into cities.",
+n:"Fable XI of The Wisdom of the Ancients, where Bacon reads myth as doctrine in code. Natural philosophy reaches for immortality and loses it by looking back. What is left is civil philosophy: holding a society together by eloquence alone. Then the Bacchants drown out the song and tear the singer apart. A few pages on how order is made out of persuasion, and what ends it."},
+{t:"Learned Helplessness: Theory and Evidence", a:"Martin E.P. Seligman", y:1972, u:"https://ppc.sas.upenn.edu/sites/default/files/learnedhelplessness.pdf",
+d:"Dogs shocked with no way out stopped trying to escape, even after the door was opened.",
+n:"The animals had learned that nothing they did made a difference, and they carried the lesson into a cage where it was false. Seligman read human depression through it, and later built positive psychology on the opposite question. Worth knowing that in 2016 he and Maier revised the theory: passivity is the default, and what has to be learned is control."},
+{t:"Psychology of Intelligence Analysis", a:"Richards J. Heuer, Jr. (CIA)", y:1999, u:"https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2",
+d:"Analysts do not fail for lack of information. They fail because the mind fits new facts into the picture it already has.",
+n:"Written inside the CIA for its own analysts. Heuer shows that more data mostly raises confidence, not accuracy, and gives a drill called Analysis of Competing Hypotheses: list every explanation, then hunt for the evidence that kills each one, and keep what survives. Book-length, free, and better than most of the bias paperbacks that came after it. The method is in chapter 8."},
+{t:"Blood Meridian as Gnostic Tragedy", a:"Leo Daugherty", y:1992, u:"https://escholarship.org/content/qt5kw8f77n/qt5kw8f77n_noSplash_c03e51aa9031a015630f5b7bfa32ea15.pdf",
+d:"Blood Meridian read as Gnostic scripture: the world is the work of a bad god, and Judge Holden is its governor.",
+n:"Daugherty argues the violence in McCarthy's novel is theology. The Judge is an archon, a ruler of the material world who wants everything that exists entered in his ledger or destroyed, and the kid carries a spark he never learns to use. Whether or not McCarthy meant it, the reading explains why the book feels like a religious text with the salvation taken out."},
+{t:"The Elements of a Scientific Theory of Self-Deception", a:"Robert Trivers", y:2000, u:"https://www.mercatus.org/media/61046/download",
+d:"We lie to ourselves so that we can lie to others without the tells.",
+n:"Trivers is the biologist behind reciprocal altruism and parental investment. His argument: selection favours deceivers, then detectors, and the best way past a detector is to believe your own story, because a sincere face gives nothing away. So the mind hides the truth from itself and keeps the flattering version in view. Self-deception on this account is a weapon and not a malfunction. The bill comes when reality arrives and you are the last to know."},
+{t:"The Ecology of Fear", a:"Joel S. Brown, John W. Laundré & Mahesh Gurung", y:1999, u:"https://gwern.net/doc/cat/psychology/1999-brown.pdf",
+d:"Predators shape an ecosystem less by what they kill than by where their prey is afraid to go.",
+n:"The authors treat fear as a cost: an animal gives up food to stay safe, and you can measure how much. Bring the wolves back and the elk stop grazing the open valley, whether or not a wolf is anywhere near. Read it as a paper about deterrence. A threat that is believed does most of its work without being carried out."},
+{t:"Plutarch on Progress in Virtue", a:"Plutarch", y:"c. 100 AD", u:"https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Quomodo_quis_sentiat*.html",
+d:"The Stoics said you are either a sage or a fool. Plutarch says you can be getting better, and lists the signs.",
+n:"You are making progress when vice loosens its grip, when you stay level where you used to flare up, when you admire good men without envying them, when even your dreams calm down. The oldest working test for telling real improvement from the performance of it."},
 {t:"Self-Fulfilling Prophesies", a:"Alia Crum & Damon J. Phillips", y:2015, u:"https://www.researchgate.net/publication/299865216_Self-Fulfilling_Prophesies_Placebo_Effects_and_the_Social-Psychological_Creation_of_Reality",
-d:"How top-down expectations, mindset, and social influence directly alter physical reality and bodily physiology.",
-n:"An interdisciplinary synthesis connecting psychology, sociology, and medicine to prove that belief physically modulates outcomes."},
+d:"What you expect to happen changes what happens, in the body and between people.",
+n:"A review that puts three literatures side by side: placebo effects in medicine, mindsets in psychology, self-fulfilling prophecies in sociology. Hotel cleaners told their work counted as exercise got healthier. A milkshake labelled indulgent satisfied the body more than the same shake labelled sensible. Both studies are Crum's own. Belief is treated here as a cause with a dose."},
+{t:"The Way of the Golden Elixir", a:"Fabrizio Pregadio", y:2011, u:"https://dons.directory/library/Way_Of_The_Golden_Elixir.pdf",
+d:"Chinese alchemy in two stages: first the elixir is cooked in a furnace, then the furnace is moved inside the body.",
+n:"A short history by one of the main Western scholars of the subject. Waidan works with minerals and fire, and poisons several emperors. Neidan keeps the whole vocabulary - lead, mercury, cauldron, firing times - and applies it to breath, essence and spirit. For this archive the point is how a tradition survives the failure of its literal claims by turning them inward."},
 {t:"6 Secrets of Mental Toughness From the Navy SEALs", a:"Sport Ngin", y:2015, u:"https://cdn1.sportngin.com/attachments/document/748b-2136103/6_Secrets_of_Mental_Toughness_From_the_Navy_SEALs.pdf",
-d:"Actionable strategies for maintaining psychological resilience in extreme stress environments.",
-n:"Focuses on compartmentalization, visualization, and micro-goals to bypass the brain's innate panic responses."},
+d:"What men who get through SEAL training do with their heads when the body wants to quit.",
+n:"A short popular piece, the lightest thing in the archive. Cut the task down to the next small goal, rehearse it in your head, talk to yourself on purpose, slow your breathing. Nothing in it is new. It is here because it is plain and usable and takes five minutes."},
+{t:"On the Sublime", a:"Longinus (Trans. H.L. Havell)", y:"1st c. AD", u:"https://www.gutenberg.org/files/17957/17957-h/17957-h.htm",
+d:"Great writing does not persuade the listener. It takes him out of himself.",
+n:"A style manual that keeps turning into something else. Longinus says technique can be taught, but the real source is a great soul, and the sublime is its echo. He closes by asking why his age produces no giants and blames the love of money and pleasure, not the loss of freedom. Herzog, the next entry, quotes him."},
+{t:"Ecstatic Truth", a:"Werner Herzog", y:2010, u:"https://www.bu.edu/arion/files/2010/03/Herzog.pdf",
+d:"Facts give you the accountant's truth. The deeper kind has to be made.",
+n:"A talk given in Milan after a screening of Lessons of Darkness, a film that opens with a line from Pascal which Herzog wrote himself. He defends the forgery. Facts have a normative power, he says, but they do not illuminate; ecstatic truth is reached through invention, imagination and stylisation. Dangerous advice from anyone else. Read it straight after Longinus."},
+{t:"What You Can't Say", a:"Paul Graham", y:2004, u:"https://paulgraham.com/say.html",
+d:"Every era believes things that later look ridiculous. Ours does too, and you can work out which.",
+n:"Graham's tests: look at what gets people into trouble, look at the labels used to shut an argument down, look at what other times and places found normal that yours cannot say. The statements that get you punished are rarely the plainly false ones; nobody is fired for saying two and two make five. His advice is to think the forbidden thing and choose carefully where you say it. A web essay, no PDF."},
+{t:"This Is Water", a:"David Foster Wallace", y:2005, u:"https://farmamol.web.uah.es/This_is_Water.pdf",
+d:"A commencement speech about the supermarket queue, and who you decide to be while standing in it.",
+n:"Kenyon College, 2005. Wallace says the default setting is to see yourself as the centre of everything, and that an education is the freedom to choose what you pay attention to and what you make it mean. Everybody worships something, he says; the only choice is what. It is filed here because attention is what every other document in this archive is trying to capture."},
 {t:"Attention Is All You Need", a:"Ashish Vaswani et al.", y:2017, u:"https://arxiv.org/abs/1706.03762",
-d:"Replacing recurrent networks entirely with self-attention mechanisms unlocks massive parallelization and modern generative AI.",
-n:"The foundational paper introducing the Transformer architecture, completely shifting the trajectory of compute, machine intelligence, and modern technological narrative."}
+d:"Eight people at Google drop recurrence, keep attention, and the machines learn to write.",
+n:"The paper that introduced the Transformer. Older models read a sentence one word at a time; this one lets every word look at every other word at once, which made training fast enough to scale. Every large language model since is built on it. It is filed here because the most persuasive writer of the next decade will be a descendant of this paper."}
 ];
 /* The PSYOP Letters masthead, inlined so the page stays one file.
 Swap the string for another image URL, or set it to "" to show typed text instead. */
@@ -192,7 +248,7 @@ const BANNER = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABEwAAADcCAMAAABd9s
 --bone:#D6D4C8;     /* text */
 --dim:#8B9089;      /* secondary text */
 --seal:#D7821B;     /* the PSYOP Letters seal orange, the one accent */
---paper:#F7F4EC;    /* letter stock, closing block */
+--paper:#F7F4EC;    /* letter stock, the subhead tag */
 --ink:#14130F;      /* typewriter ink on paper */
 --chyron:#1A2BD0;   /* cable-access blue */
 --tape:#FFE600;     /* chyron yellow */
@@ -222,25 +278,12 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 /* ── classification strip + header ── */
 .class{background:var(--hull); border-bottom:var(--rule); color:var(--dim);
 font-size:10px; letter-spacing:.2em; text-transform:uppercase; text-align:center; padding:5px 12px}
-header{border-bottom:var(--rule)}
-.bar{display:flex; align-items:center; gap:20px; min-height:46px;
-font-size:11px; letter-spacing:.12em; text-transform:uppercase}
-.mark{font-weight:600; display:flex; align-items:center; gap:9px}
-.mark i{width:13px; height:13px; border-radius:50%; background:var(--seal); border:2.5px solid var(--bone);
-box-shadow:2px 2px 0 var(--seal); display:block; flex:none}
-.zulu{color:var(--dim); font-variant-numeric:tabular-nums}
-nav{margin-left:auto; display:flex; gap:18px}
-nav a{text-decoration:none; padding-bottom:2px; border-bottom:1px solid transparent}
-nav a:hover{border-bottom-color:var(--seal)}
-@media(max-width:560px){.zulu{display:none}}
 /* ── hero ── */
-.hero{padding:34px 0 0}
-.osd{display:flex; justify-content:space-between; font-family:var(--osd); font-size:22px; line-height:1;
-color:var(--bone); text-shadow:2px 0 0 rgba(232,64,28,.55), -2px 0 0 rgba(26,43,208,.7)}
-.osd span:last-child{font-variant-numeric:tabular-nums}
-h1{font-family:var(--sans); font-stretch:125%; font-weight:800; text-transform:uppercase; margin:26px 0 0;
-font-size:clamp(40px,8.1vw,98px); line-height:.9; letter-spacing:-.035em; text-wrap:balance;
+.hero{padding:clamp(40px,7vw,84px) 0 0}
+h1{font-family:var(--sans); font-stretch:125%; font-weight:800; text-transform:uppercase; margin:0;
+font-size:clamp(40px,8.1vw,98px); line-height:.9; overflow-wrap:anywhere; letter-spacing:-.035em; text-wrap:balance;
 position:relative}
+@media(max-width:560px){h1{font-size:13.2vw}}
 h1::before, h1::after{content:attr(data-text); position:absolute; inset:0; pointer-events:none; opacity:0}
 h1::before{color:var(--tape)} h1::after{color:var(--chyron)}
 .subhead{display:flex; align-items:center; gap:18px; margin:22px 0 0}
@@ -248,15 +291,9 @@ h1::before{color:var(--tape)} h1::after{color:var(--chyron)}
 font-size:clamp(12px,1.7vw,18px); letter-spacing:.02em; padding:8px 13px 5px; white-space:nowrap;
 box-shadow:4px 4px 0 var(--seal)}
 .subhead i{flex:1; height:1px; background:var(--seam); min-width:20px}
-.brief{display:grid; gap:28px; margin-top:28px; align-items:end}
-@media(min-width:860px){.brief{grid-template-columns:1fr 340px; gap:56px}}
-.lede{font-family:var(--sans); font-size:19px; line-height:1.45; max-width:54ch; margin:0}
+.lede{font-family:var(--sans); font-size:19px; line-height:1.45; max-width:54ch; margin:28px 0 0}
 .lede b{font-weight:600; -webkit-box-decoration-break:clone; box-decoration-break:clone;
 background:linear-gradient(rgba(215,130,27,.5), rgba(215,130,27,.5)) left bottom/100% .36em no-repeat}
-.readout{margin:0; border-top:var(--rule); font-size:12px}
-.readout div{display:grid; grid-template-columns:92px 1fr; gap:12px; padding:7px 0; border-bottom:var(--rule)}
-.readout dt{color:var(--dim); letter-spacing:.1em; text-transform:uppercase; font-size:10.5px; padding-top:1px}
-.readout dd{margin:0}
 /* ── the interruption: colour bars + chyron ── */
 .cut{margin-top:44px}
 .cut .bars{height:7px; background:var(--bars)}
@@ -272,13 +309,7 @@ font-size:23px; line-height:1; overflow:hidden; white-space:nowrap}
 .filters{border-bottom:var(--rule); padding:10px 0;
 position:sticky; top:0; background:var(--ram); z-index:52;
 display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px}
-.count{font-size:11px; letter-spacing:.12em; color:var(--dim); text-transform:uppercase; font-variant-numeric:tabular-nums}
-.find{flex:1 1 220px; display:flex; align-items:center; gap:8px; border:var(--rule); padding:0 10px; background:var(--hull)}
-.find span{color:var(--seal)}
-.find input{flex:1; min-width:0; font:inherit; font-size:13px; color:var(--bone); background:none; border:0; padding:6px 0; outline:none}
-.find input::placeholder{color:var(--dim); opacity:.8}
-.find:focus-within{border-color:var(--seal)}
-.views{display:flex; gap:8px}
+.views{display:flex; gap:8px; margin-left:auto}
 .toggle{font-size:11px; letter-spacing:.1em; text-transform:uppercase; border:var(--rule); padding:5px 10px}
 .toggle[aria-pressed="true"]{background:var(--bone); color:var(--hull); border-color:var(--bone)}
 /* ── the index ── */
@@ -316,25 +347,24 @@ a.w:hover{background:var(--seal); color:var(--hull)}
 .plots.list .meta{padding-top:12px}
 .plots.list .thesis{max-width:78ch}
 .plots.list .note{max-width:78ch}
-.empty{grid-column:1/-1; border-right:var(--rule); border-bottom:var(--rule); background:var(--plate);
-padding:54px 18px; text-align:center; font-family:var(--osd); font-size:26px; color:var(--dim)}
-/* ── the closing block: a sheet of PSYOP Letters stock on the dark desk ── */
-.signup{margin:0 0 64px}
+/* ── the closing block: dark plate, with the PSYOP Letters masthead pinned on as a label ── */
+.signup{border:var(--rule); background:var(--hull); margin:0 0 56px}
+.signup .bars{height:7px; background:var(--bars)}
+.sg-in{padding:clamp(26px,4.4vw,52px) clamp(22px,5vw,56px) clamp(32px,4.8vw,58px)}
 .sg-tag{display:flex; justify-content:space-between; gap:16px; font-family:var(--osd); font-size:22px; line-height:1;
-color:var(--bone); text-shadow:2px 0 0 rgba(232,64,28,.55), -2px 0 0 rgba(26,43,208,.7); margin-bottom:14px}
+color:var(--bone); text-shadow:2px 0 0 rgba(232,64,28,.55), -2px 0 0 rgba(26,43,208,.7)}
 .sg-tag .rec::before{content:""; display:inline-block; width:.5em; height:.5em; border-radius:50%;
 background:var(--flare); margin-right:.4em; animation:blink 1.6s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.paper{position:relative; z-index:51; /* sits above the scanlines: paper is not a screen */
-background:var(--paper); color:var(--ink); box-shadow:10px 10px 0 var(--seal);
-padding:clamp(26px,4.4vw,52px) clamp(20px,4.6vw,54px) clamp(30px,4.6vw,56px); margin-right:10px}
 .sg-grid{display:grid; gap:clamp(26px,3.6vw,54px); align-items:end}
-@media(min-width:900px){.sg-grid{grid-template-columns:1.1fr .9fr}}
-.sg-banner{display:block; width:100%; max-width:560px; height:auto; mix-blend-mode:multiply; margin-left:-6px}
-.sg-title{font-family:var(--type); font-weight:400; line-height:1; font-size:clamp(40px,7vw,78px); margin:0}
-.eyebrow{display:flex; align-items:center; gap:12px; font-family:var(--type); font-size:13px; margin-top:14px}
-.eyebrow::before, .eyebrow::after{content:"\2605  \2605  \2605"; white-space:pre; font-size:11px}
-.signup p{font-family:var(--type); font-size:clamp(16px,1.5vw,18.5px); line-height:1.5; max-width:44ch; margin:18px 0 0}
+.sg-tag + .sg-grid{margin-top:28px}
+@media(min-width:900px){.sg-grid{grid-template-columns:1fr .92fr}}
+.sg-title{font-family:var(--type); font-weight:400; line-height:1; font-size:clamp(34px,5vw,56px); margin:0}
+.sg-title.label{display:inline-block; max-width:100%; background:var(--paper); padding:6px 14px 6px 8px;
+box-shadow:5px 5px 0 var(--seal)}
+.sg-banner{display:block; width:340px; max-width:100%; height:auto; mix-blend-mode:multiply}
+.eyebrow{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); margin-top:26px}
+.signup p{font-family:var(--type); font-size:clamp(16px,1.5vw,18.5px); line-height:1.5; max-width:44ch; margin:12px 0 0}
 .sg-offer{display:flex; align-items:center; gap:18px; margin-top:20px}
 .burst{position:relative; flex:none; width:64px; height:64px; display:grid; place-items:center; transform:rotate(-12deg)}
 .burst::before, .burst::after, .burst i{content:""; position:absolute; inset:7px; background:var(--seal)}
@@ -343,17 +373,17 @@ padding:clamp(26px,4.4vw,52px) clamp(20px,4.6vw,54px) clamp(30px,4.6vw,56px); ma
 color:var(--ink); letter-spacing:-.01em}
 .signup .sg-stamp{margin:0}
 .signup form{display:grid; gap:12px; margin:0; align-self:end}
-.signup input[type=email]{width:100%; min-width:0; font-family:var(--type);
-font-size:clamp(15px,1.5vw,18px); line-height:1.2; color:var(--ink); background:#fff;
-border:2px solid var(--ink); border-radius:0; padding:clamp(18px,2.1vw,24px) clamp(16px,1.9vw,22px);
+.signup input[type=email]{width:100%; min-width:0; font-family:var(--mono);
+font-size:clamp(15px,1.5vw,18px); line-height:1.2; color:var(--bone); background:var(--ram);
+border:1px solid var(--dim); border-radius:0; padding:clamp(19px,2.2vw,26px) clamp(16px,1.9vw,22px);
 -webkit-appearance:none; appearance:none}
-.signup input[type=email]::placeholder{color:#77736A}
-.signup input[type=email]:focus{outline:none; box-shadow:4px 4px 0 var(--seal)}
+.signup input[type=email]::placeholder{color:var(--dim)}
+.signup input[type=email]:focus{outline:none; border-color:var(--seal); box-shadow:0 0 0 2px var(--seal)}
 .signup button[type=submit]{width:100%; font-family:var(--mono);
 font-size:clamp(12px,1.1vw,14px); font-weight:600; letter-spacing:.2em; text-transform:uppercase;
-background:var(--ink); color:var(--paper); border:2px solid var(--ink); padding:clamp(18px,2.1vw,24px) 24px}
-.signup button[type=submit]:hover{background:var(--seal); color:var(--ink)}
-.signup button[type=submit]:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
+background:var(--seal); color:var(--ink); border:1px solid var(--seal); padding:clamp(19px,2.2vw,26px) 24px}
+.signup button[type=submit]:hover{background:var(--bone); border-color:var(--bone)}
+.signup button[type=submit]:focus-visible{outline:2px solid var(--bone); outline-offset:3px}
 footer{border-top:var(--rule); padding:26px 0 50px; font-size:11px; letter-spacing:.1em;
 text-transform:uppercase; color:var(--dim); display:flex; flex-wrap:wrap; gap:6px 22px}
 footer a{text-decoration:none; border-bottom:1px solid var(--dim)}
@@ -393,35 +423,27 @@ html{scroll-behavior:auto}
 </head>
 <body>
 <div class="class" id="s-banner"></div>
-<header>
-<div class="wrap bar">
-<span class="mark"><i></i><span id="s-wordmark"></span></span>
-<span class="zulu" id="zulu" aria-hidden="true"></span>
-</div>
-</header>
 <main class="wrap">
 <section class="hero">
-<div class="osd" aria-hidden="true"><span>PLAY &#9654;</span><span id="counter">SP 0:00:00</span></div>
 <h1 id="s-headline"></h1>
 <div class="subhead"><b id="s-subhead"></b><i></i></div>
-<div class="brief">
 <p class="lede" id="s-description"></p>
-<dl class="readout" id="readout"></dl>
-</div>
 </section>
 <div class="cut" id="cut" aria-hidden="true">
 <div class="bars"></div>
 <div class="chyron"><b id="s-ticker-label"></b><div class="run" id="ticker"></div></div>
 </div>
 <div class="filters" id="index">
-<span class="count" id="count" aria-live="polite"></span>
-<label class="find"><span aria-hidden="true">&gt;</span>
-<input id="find" type="search" autocomplete="off" spellcheck="false" aria-label="Search the archive"></label>
+<div class="views">
+<button class="toggle" id="v-grid" aria-pressed="true">Grid</button>
+<button class="toggle" id="v-list" aria-pressed="false">List</button>
+</div>
 </div>
 <section class="plots" id="plots"></section>
 <section class="signup" id="subscribe">
+<div class="bars" aria-hidden="true"></div>
+<div class="sg-in">
 <div class="sg-tag" aria-hidden="true"><span id="s-signup-tag"></span><span class="rec">REC</span></div>
-<div class="paper">
 <div class="sg-grid">
 <div>
 <h2 class="sg-title" id="s-signup-title"></h2>
@@ -453,35 +475,22 @@ const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 /* ── strip, header, hero ── */
 if(SITE.banner) $("s-banner").textContent = SITE.banner; else $("s-banner").remove();
-$("s-wordmark").textContent = SITE.wordmark;
 $("s-headline").textContent = SITE.headline;
 $("s-headline").dataset.text = SITE.headline;
 if(SITE.subhead) $("s-subhead").textContent = SITE.subhead;
 else document.querySelector(".subhead").remove();
-$("s-description").innerHTML = SITE.highlight
+if(!SITE.description) $("s-description").remove();
+else $("s-description").innerHTML = SITE.highlight
 ? esc(SITE.description).replace(esc(SITE.highlight), "<b>"+esc(SITE.highlight)+"</b>")
 : esc(SITE.description);
-const first = ENTRIES[0], last = ENTRIES[ENTRIES.length-1];
-$("readout").innerHTML = [
-["Documents", ENTRIES.length],
-["Span", first.y + " to " + last.y],
-["Oldest", first.t],
-["Newest", last.t]
-].map(r=>`<div><dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd></div>`).join("");
-/* clock + tape counter */
-const t0 = Date.now(), p2 = n => String(n).padStart(2,"0");
-const tick = ()=>{
-$("zulu").textContent = new Date().toISOString().slice(11,19) + "Z";
-const s = Math.floor((Date.now()-t0)/1000);
-$("counter").textContent = `SP ${Math.floor(s/3600)}:${p2(Math.floor(s/60)%60)}:${p2(s%60)}`;
-};
-tick(); setInterval(tick, 1000);
 /* ── chyron ── */
 if(SITE.ticker && SITE.ticker.length){
 $("s-ticker-label").textContent = SITE.tickerLabel || "";
 if(!SITE.tickerLabel) $("s-ticker-label").remove();
 const line = SITE.ticker.map(s=>`<span>${esc(s)}</span>`).join("");
 $("ticker").innerHTML = line + line;
+/* constant crawl speed however many lines there are */
+$("ticker").style.animationDuration = Math.max(20, $("ticker").scrollWidth / 2 / 80) + "s";
 } else $("cut").remove();
 /* ── the index ── */
 $("plots").innerHTML = ENTRIES.map((e,i)=>{
@@ -501,7 +510,7 @@ ${e.x ? `<p class="xref">${esc(e.x)} <a class="w" href="${esc(SITE.weeklyUrl)}" 
 ${e.u ? `<a class="read" href="${esc(e.u)}" target="_blank" rel="noopener">Read the original</a>` : ""}
 </div>
 </article>`;
-}).join("") + `<p class="empty" id="empty" hidden>${esc(SITE.emptyState)}</p>`;
+}).join("");
 $("plots").querySelectorAll(".expand").forEach(btn=>{
 btn.onclick = ()=>{
 const open = btn.closest(".lot").classList.toggle("open");
@@ -509,22 +518,6 @@ btn.textContent = open ? SITE.closeLabel : SITE.openLabel;
 btn.setAttribute("aria-expanded", open);
 };
 });
-/* search */
-const lots = [...$("plots").querySelectorAll(".lot")];
-const hay = ENTRIES.map(e=>[e.t,e.a,e.y,e.d,e.n].join(" ").toLowerCase());
-const find = $("find");
-find.placeholder = SITE.searchPlaceholder;
-const filter = ()=>{
-const words = find.value.toLowerCase().split(/\s+/).filter(Boolean);
-let n = 0;
-lots.forEach((el,i)=>{
-const hit = words.every(w=>hay[i].includes(w));
-el.hidden = !hit; if(hit) n++;
-});
-$("empty").hidden = n > 0;
-$("count").textContent = (words.length ? n + " of " : "") + ENTRIES.length + " documents";
-};
-find.oninput = filter; filter();
 const g = $("v-grid"), l = $("v-list");
 const view = isList => {
 $("plots").classList.toggle("list", isList);
@@ -533,6 +526,31 @@ l.setAttribute("aria-pressed", isList);
 };
 g.onclick = ()=>view(false);
 l.onclick = ()=>view(true);
+/* ── the closing block.
+The form posts the address straight to Substack's free-subscribe
+endpoint and opens the publication in a new tab, so one submit both
+captures the email and lands the reader on PSYOP Letters. ── */
+const base = SITE.weeklyUrl.replace(/\/?$/, "/");
+const form = $("signup-form");
+if(SITE.signupTag) $("s-signup-tag").textContent = SITE.signupTag;
+else document.querySelector(".sg-tag").remove();
+$("s-signup-eyebrow").textContent = SITE.signupEyebrow;
+const sgName = SITE.signupTitleA + " " + SITE.signupTitleB;
+$("s-signup-title").classList.toggle("label", !!BANNER);
+$("s-signup-title").innerHTML = BANNER
+? `<img class="sg-banner" src="${esc(BANNER)}" alt="${esc(sgName)}" width="1100" height="220">`
+: esc(sgName);
+$("s-signup-blurb").textContent = SITE.signupBlurb;
+$("s-signup-stamp").textContent = SITE.signupStamp;
+if(SITE.signupBurst) $("s-burst").textContent = SITE.signupBurst;
+else document.querySelector(".burst").remove();
+$("s-signup-button").textContent = SITE.signupButton;
+$("signup-email").placeholder = SITE.signupPlaceholder;
+form.action = base + "api/v1/free";
+form.querySelector('[name=first_url]').value = location.href;
+form.querySelector('[name=current_url]').value = location.href;
+form.querySelector('[name=first_referrer]').value = document.referrer;
+form.querySelector('[name=current_referrer]').value = document.referrer;
 /* ── footer ── */
 $("submit").innerHTML =
 `<span>${esc(SITE.footerLine)}</span>` +
