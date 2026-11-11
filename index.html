@@ -40,14 +40,13 @@ submitLabel: "Suggest a document",
 submitEmail: "kaliyuga112233@example.com",
 footerLine: "Trillion $$$ PDFs (PSYOP Research Unit Archive)",
 /* ── the stealth / broadcast layer ── */
-tickerLabel: "BREAKING NEWS:", // red block at the start of the crawl - "" to hide
+tickerLabel: "BREAKING:", // red block at the start of the crawl - "" to hide
 ticker: [ // the blue crawl under the hero - [] to hide the whole strip
 "If your opponent is of choleric temper, irritate him.",
 "Even if it seems certain that you will lose, retaliate.",
-"Let your plans be dark and impenetrable as night, and when you move, fall like a thunderbolt.",
 "Build your opponent a golden bridge to retreat across.",
 "Simply become insane and desperate.",
-"If your opponent is of choleric temper, irritate him."
+"Let your plans be dark and impenetrable as night, and when you move, fall like a thunderbolt."
 ],
 searchPlaceholder: "search title, author, year",
 emptyState: "NO SIGNAL - nothing in the archive matches that. Try fewer words.",
@@ -534,29 +533,6 @@ l.setAttribute("aria-pressed", isList);
 };
 g.onclick = ()=>view(false);
 l.onclick = ()=>view(true);
-/* ── the closing block.
-The form posts the address straight to Substack's free-subscribe
-endpoint and opens the publication in a new tab, so one submit both
-captures the email and lands the reader on PSYOP Letters. ── */
-const base = SITE.weeklyUrl.replace(/\/?$/, "/");
-const form = $("signup-form");
-$("s-signup-tag").textContent = SITE.signupTag;
-$("s-signup-eyebrow").textContent = SITE.signupEyebrow;
-const sgName = SITE.signupTitleA + " " + SITE.signupTitleB;
-$("s-signup-title").innerHTML = BANNER
-? `<img class="sg-banner" src="${esc(BANNER)}" alt="${esc(sgName)}" width="1100" height="220">`
-: esc(sgName);
-$("s-signup-blurb").textContent = SITE.signupBlurb;
-$("s-signup-stamp").textContent = SITE.signupStamp;
-if(SITE.signupBurst) $("s-burst").textContent = SITE.signupBurst;
-else document.querySelector(".burst").remove();
-$("s-signup-button").textContent = SITE.signupButton;
-$("signup-email").placeholder = SITE.signupPlaceholder;
-form.action = base + "api/v1/free";
-form.querySelector('[name=first_url]').value = location.href;
-form.querySelector('[name=current_url]').value = location.href;
-form.querySelector('[name=first_referrer]').value = document.referrer;
-form.querySelector('[name=current_referrer]').value = document.referrer;
 /* ── footer ── */
 $("submit").innerHTML =
 `<span>${esc(SITE.footerLine)}</span>` +
