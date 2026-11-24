@@ -96,13 +96,22 @@ signupBurst: "FREE" // the orange starburst - "" to hide
 };
 
 /* One object per entry. The order here is the order on the page (it is curated, not by date):
-the first nine, the run around the middle (Markopolos to Tesla) and the last five are the hooks.
+the first nine, the run around the middle (Philip K. Dick to Tesla) and the last five are the hooks.
 DOC numbers follow this order.
 t = title a = author y = year
 u = link to the original ("" shows no link)
 d = the one-line thesis n = the note behind "Open +"
 x = optional cross-reference to the Weekly, shown inside the note */
 const ENTRIES = [
+{t:"The Dream of Scipio", a:"Cicero (Trans. C. W. Keyes)", y:"c. 51 BCE", u:"https://www.attalus.org/cicero/republic6.html",
+d:"From the stars the earth is a speck, Rome is a dot on it, and fame does not travel far.",
+n:"The last book of Cicero's Republic, and almost the only part that came through the Middle Ages, because Macrobius wrote a long commentary on it. Scipio dreams that his dead grandfather Africanus shows him the universe. Looking down, he is ashamed of how small the empire is. Fame is narrow in space and short in time, so it cannot be the reward. The reward for a man who serves well is a place among the stars, and the soul, which moves itself, cannot die. Filed first on purpose: before everything in here about winning attention, the view from above."},
+{t:"Goebbels' Principles of Propaganda", a:"Leonard W. Doob", y:1950, u:"https://csmeyns.github.io/propaganda-everyday/pdf/doob-1950-goebbels-principles-of-propaganda.pdf",
+d:"The working method of the most effective propagandist of the century, pulled out of his own diary.",
+n:"After 1945 the Americans recovered close to 6,800 pages of the diary Goebbels dictated in 1942 and 1943. Doob, a Yale psychologist who had worked on American wartime propaganda, read it to find the rules Goebbels actually followed, not the ones he preached. They are practical and cold: the propagandist must have intelligence on events and public opinion, a campaign must be run by one authority, timing is everything, events and people must be labelled with distinctive phrases or slogans, and one enemy should be picked out for special vilification. Read it as an anatomy of the method, the way a doctor reads about a disease."},
+{t:"The World's Largest Hedge Fund is a Fraud", a:"Harry Markopolos", y:2005, u:"https://www.sec.gov/news/studies/2009/oig-509/exhibit-0293.pdf",
+d:"A 2005 memo to the SEC showing that Madoff's returns could not exist. The SEC filed it away.",
+n:"Markopolos did the arithmetic: the options strategy Madoff claimed would have needed more contracts than existed on the exchange. He listed red flag after red flag and put the likeliest answer in the title. Three more years passed. The memo teaches less about fraud than about how hard it is to make an institution see what it has no wish to see."},
 {t:"The Energies of Men", a:"William James", y:1907, u:"https://en.wikisource.org/wiki/The_Energies_of_Men",
 d:"Most people live far inside their limits. Fatigue is only the first layer, and there is energy stored behind it.",
 n:"James starts from second wind: push past the first wave of tiredness and a fresh supply arrives, sometimes a third and a fourth. He argues the mind works the same way, and that habit keeps nearly everyone on the shallow layer for life. Compared with what we ought to be, he says, we are only half awake. Then he asks what opens the reserve: a crisis, a strong emotion, an idea, a daily discipline. An address to the American Philosophical Association, and as practical as anything he wrote."},
@@ -172,6 +181,9 @@ n:"Iron money too heavy to steal, so wealth stopped mattering. Common meals, so 
 {t:"Sayings of Spartan Women", a:"Plutarch", y:"c. 100 AD", u:"https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Sayings_of_Spartan_Women*.html",
 d:"Come back with your shield or on it. The mothers of Sparta, in their own words.",
 n:"A few pages of one-liners collected in Plutarch's Moralia. A mother hands her son his shield and tells him to come home with it or on it. Another kills her son for deserting his post and says he was never hers. Told that one son died in the line and the other saved himself by running, a mother claims the first and disowns the second. Asked why Spartan women alone rule their husbands, Gorgo, daughter of King Cleomenes, answers that they alone give birth to men. Read it next to Life of Lycurgus: the laws explain the system, and this is what it sounded like at home."},
+{t:"Sayings of Spartans", a:"Plutarch", y:"c. 100 AD", u:"https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Sayings_of_Spartans*/main.html",
+d:"The men's half of the collection: the shortest answers in history, and every one of them meant.",
+n:"Kings, ephors and nameless soldiers, one line each, collected by Plutarch from the Loeb Moralia. Lycurgus raises two puppies from one litter, one on soft food and one on the hunt, then sets a hare loose in the assembly to show that training beats birth. A man drones on and is asked why so big an introduction to so small a subject. Shown a painting of Athenians killing Spartans, a Spartan says: yes, in the picture. Leonidas, leaving for Thermopylae, tells his wife to marry a good man and bear good children. Laconic is the only adjective a city ever gave the language for saying less."},
 {t:"On Truth and Lies in a Nonmoral Sense", a:"Friedrich Nietzsche", y:1873, u:"https://dn790002.ca.archive.org/0/items/NietzscheTruthLiesInANonmoralSense1873/Nietzsche%20-%20Truth%20%26%20Lies%20in%20a%20Nonmoral%20Sense%20%281873%29.pdf",
 d:"Truth is a mobile army of metaphors that a people agreed on and then forgot were metaphors.",
 n:"Written at twenty-eight and left in a drawer. A nerve stimulus is turned into an image, the image into a sound: two metaphors deep before there is a word. Every concept is made by ignoring what differs between cases. If he is right, there was never a plain speech for rhetoric to corrupt. Language was persuasion from the first word."},
@@ -187,9 +199,6 @@ n:"Eight pages in Science that started a field. The shortcuts are cheap and usua
 {t:"Facebook's Little Red Book", a:"Ben Barry / Facebook", y:2012, u:"https://drive.google.com/file/d/1TZYqdFOXkZZPpMJx_16YBFkw-jaPbxiS/view",
 d:"The handbook Facebook gave its staff in 2012, when it still thought of itself as a movement.",
 n:"Designed by Ben Barry and printed in-house. Page after page of slogans set like propaganda posters, on purpose: move fast, the journey is 1% finished, if we do not build the thing that kills Facebook someone else will. It worked because it told employees they were part of history. Internal propaganda, well made, with the seams showing."},
-{t:"The World's Largest Hedge Fund is a Fraud", a:"Harry Markopolos", y:2005, u:"https://www.sec.gov/news/studies/2009/oig-509/exhibit-0293.pdf",
-d:"A 2005 memo to the SEC showing that Madoff's returns could not exist. The SEC filed it away.",
-n:"Markopolos did the arithmetic: the options strategy Madoff claimed would have needed more contracts than existed on the exchange. He listed red flag after red flag and put the likeliest answer in the title. Three more years passed. The memo teaches less about fraud than about how hard it is to make an institution see what it has no wish to see."},
 {t:"How to Build a Universe That Doesn't Fall Apart Two Days Later", a:"Philip K. Dick", y:1978, u:"https://philipdick.com/mirror/essays/How_to_Build_a_Universe.pdf",
 d:"Dick's test for reality: whatever is still there after you stop believing in it.",
 n:"A speech from 1978. Dick starts with Disneyland and fake fakes, moves on to the people who manufacture realities for a living - governments, corporations, television - and says he trusts none of them, himself included. Then it goes somewhere stranger, into his own visions and the Book of Acts. The first half is the best short text there is on living inside other people's fictions."},
@@ -271,15 +280,12 @@ n:"A speech in Chicago, months after Roosevelt came back from Cuba with the Roug
 {t:"On the Sublime", a:"Longinus (Trans. H.L. Havell)", y:"1st c. AD", u:"https://www.gutenberg.org/files/17957/17957-h/17957-h.htm",
 d:"Great writing does not persuade the listener. It takes him out of himself.",
 n:"A style manual that keeps turning into something else. Longinus says technique can be taught, but the real source is a great soul, and the sublime is its echo. He closes by asking why his age produces no giants and blames the love of money and pleasure, not the loss of freedom. Herzog, the next entry, quotes him."},
-{t:"Ecstatic Truth", a:"Werner Herzog", y:2010, u:"https://www.bu.edu/arion/files/2010/03/Herzog.pdf",
-d:"Facts give you the accountant's truth. The deeper kind has to be made.",
-n:"A talk given in Milan after a screening of Lessons of Darkness, a film that opens with a line from Pascal which Herzog wrote himself. He defends the forgery. Facts have a normative power, he says, but they do not illuminate; ecstatic truth is reached through invention, imagination and stylisation. Dangerous advice from anyone else. Read it straight after Longinus."},
+{t:"The Minnesota Declaration", a:"Werner Herzog", y:1999, u:"https://www.walkerart.org/reader/minnesota-declaration-truth-documentary-cinema-1999/",
+d:"Facts give you the truth of accountants. The deeper truth has to be invented.",
+n:"Twelve points, subtitled Lessons of Darkness, read from the stage of the Walker Art Center in Minneapolis on April 30, 1999. Herzog says he wrote them down in a quarter of an hour at three in the morning in Sicily. Cinema verite, he says, reaches only a superficial truth. There is a deeper stratum, ecstatic truth, mysterious and elusive, and it can be reached only through fabrication, imagination and stylization. In 2017, after the phrase alternative facts entered politics, he added a six-point addendum."},
 {t:"What You Can't Say", a:"Paul Graham", y:2004, u:"https://paulgraham.com/say.html",
 d:"Every era believes things that later look ridiculous. Ours does too, and you can work out which.",
 n:"Graham's tests: look at what gets people into trouble, look at the labels used to shut an argument down, look at what other times and places found normal that yours cannot say. The statements that get you punished are rarely the plainly false ones; nobody is fired for saying two and two make five. His advice is to think the forbidden thing and choose carefully where you say it. A web essay, no PDF."},
-{t:"The Dream of Scipio", a:"Cicero (Trans. C. W. Keyes)", y:"c. 51 BCE", u:"https://www.attalus.org/cicero/republic6.html",
-d:"From the stars the earth is a speck, Rome is a dot on it, and fame does not travel far.",
-n:"The last book of Cicero's Republic, and almost the only part that came through the Middle Ages, because Macrobius wrote a long commentary on it. Scipio dreams that his dead grandfather Africanus shows him the universe. Looking down, he is ashamed of how small the empire is. Fame is narrow in space and short in time, so it cannot be the reward. The reward for a man who serves well is a place among the stars, and the soul, which moves itself, cannot die. Filed last on purpose: after everything in here about winning attention, this is the view from above."}
 ];
 /* The PSYOP Letters masthead, inlined so the page stays one file.
 Swap the string for another image URL, or set it to "" to show typed text instead. */
