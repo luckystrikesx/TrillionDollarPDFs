@@ -52,11 +52,11 @@ gateTitle: "Get FREE access to the archive",
 gateHighlight: "FREE", // the word in the title set in orange - "" for none
 gatePlaceholder: "Email address",
 gateButton: "I want the archive",
-gateFine: "You'll get PSYOP Letters, free. The key comes with your welcome letter. Unsubscribe any time.",
+gateFine: "", // small print under the perk, e.g. "You'll get PSYOP Letters, free. Unsubscribe any time." - "" hides it
 gateSentTitle: "Check your inbox.",
 gateSentText: "Your welcome letter from PSYOP Letters is on its way. Open the link inside and the archive unseals.",
 gateRetry: "Wrong address? Try again",
-gateKeyAsk: "Already have the key?",
+gateKeyAsk: "", // e.g. "Already have the key?" - shows a box to type the key in; "" hides it (the key link still works)
 gateKeyPlaceholder: "the key",
 gateKeyButton: "Unseal",
 gateKeyWrong: "Wrong key.",
@@ -656,11 +656,11 @@ $("s-gate-button").textContent = SITE.gateButton;
 $("s-gate-perk").textContent = SITE.signupStamp;
 if(SITE.signupBurst) $("s-gate-burst").textContent = SITE.signupBurst;
 else gate.querySelector(".gate-perk .burst").remove();
-$("s-gate-fine").textContent = SITE.gateFine;
+if(SITE.gateFine) $("s-gate-fine").textContent = SITE.gateFine; else $("s-gate-fine").remove();
 $("s-gate-sent-title").textContent = SITE.gateSentTitle;
 $("s-gate-sent-text").textContent = SITE.gateSentText;
 $("s-gate-retry").textContent = SITE.gateRetry;
-$("s-gate-ask").textContent = SITE.gateKeyAsk;
+if(SITE.gateKeyAsk) $("s-gate-ask").textContent = SITE.gateKeyAsk; else gate.querySelector(".gate-key").hidden = true;
 $("gate-key-input").placeholder = SITE.gateKeyPlaceholder;
 $("s-gate-unseal").textContent = SITE.gateKeyButton;
 /* the form: the address goes straight to Substack, PSYOP Letters opens in a new tab,
