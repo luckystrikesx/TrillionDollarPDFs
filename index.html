@@ -39,15 +39,13 @@ warnLabel: "DON'T CLICK!", // the warning sign next to the masthead, links to we
 submitLabel: "Suggest a document",
 submitEmail: "kaliyuga112233@example.com",
 footerLine: "Trillion $$ PDFs (PSYOP Research Unit Archive)",
-/* ── the gate: an opt-in page that seals the archive until the reader signs up to PSYOP Letters.
-The cover is a screenshot of this page (coverImage). The form posts the address straight to Substack (weeklyUrl + "api/v1/free") and opens PSYOP Letters
+/* ── the gate: the page runs as normal down to the first documents, then the index fades out
+and the opt-in sits where it fades. The form posts the address straight to Substack (weeklyUrl + "api/v1/free") and opens PSYOP Letters
 in a new tab. The archive opens for anyone who arrives through the key link, which goes in the
 PSYOP Letters welcome email: https://trilliondollarpdf.com/?key=unsealed  (swap "unsealed" for accessKey).
 A browser that has opened the key link once stays unsealed. {n} becomes the number of documents. ── */
 gate: true, // false switches the gate off
 accessKey: "unsealed", // change it and everyone needs the new link
-coverImage: "archive-cover.jpg", // a screenshot of this page, sitting next to index.html
-coverUrl: "trilliondollarpdf.com", // the address shown above the screenshot
 gateTitle: "Get FREE access to the archive",
 gateHighlight: "FREE", // the word in the title set in orange - "" for none
 gatePlaceholder: "Email address",
@@ -459,27 +457,15 @@ h1{animation:jolt .95s steps(1) .25s 1}
 @keyframes jolt{0%{transform:translateX(-5px) skewX(-4deg)} 30%{transform:translateX(4px) skewX(3deg)}
 55%{transform:translateX(-2px)} 75%{transform:none}}
 }
-/* ── the gate: a full-page opt-in, cover on the left (top on phones), the form beside it ── */
-.gate{position:fixed; inset:0; z-index:49; overflow-y:auto; overscroll-behavior:contain;
-background:var(--ram) var(--grain)}
+/* ── the gate: the real page stays live up top (read-out, glitch, crawl); the index fades out
+like it ran out of clearance, and the opt-in sits in the fade ── */
+html.sealed .filters{position:static}
+html.sealed .shelf{max-height:clamp(240px,24vw,300px); overflow:hidden;
+-webkit-mask-image:linear-gradient(#000 18%, transparent 84%); mask-image:linear-gradient(#000 18%, transparent 84%)}
+html.sealed .signup, html.sealed #submit{display:none}
+.gate{position:relative; z-index:1; margin:clamp(-80px,-5vw,-40px) auto 0; padding:0 0 clamp(72px,9vw,120px)}
 .gate[hidden]{display:none}
-html.sealed{overflow:hidden}
-.gate-page{max-width:1020px; min-height:100%; margin:0 auto; padding:clamp(14px,4vw,56px) clamp(14px,4vw,40px) 56px;
-display:grid; gap:clamp(28px,4vw,64px); align-content:center; outline:none}
-@media(min-width:900px){.gate-page{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); align-items:center}}
-/* the cover: a literal screenshot of the archive, in a slim browser frame, stamped sealed */
-.cover{position:relative; margin:0; border:var(--rule); background:var(--hull); overflow:hidden;
-box-shadow:0 24px 60px rgba(0,0,0,.5)}
-.cover-bar{display:flex; align-items:center; gap:6px; padding:9px 12px; border-bottom:var(--rule); background:var(--plate)}
-.cover-bar i{width:8px; height:8px; border-radius:50%; background:var(--seam)}
-.cover-bar span{flex:1; margin:0 34px 0 10px; text-align:center; font-size:11px; letter-spacing:.06em; color:var(--dim);
-background:var(--ram); border-radius:3px; padding:4px 8px}
-.cover img{display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:top}
-@media(max-width:899px){.cover img{aspect-ratio:5/4}} /* shorter on phones, so the form sits higher */
-.cover::after{content:""; position:absolute; left:0; right:0; bottom:0; height:22%; pointer-events:none;
-background:linear-gradient(transparent, var(--hull))}
-/* the pitch and the form */
-.gate-body{max-width:460px; width:100%; justify-self:center}
+.gate-body{max-width:500px; margin:0 auto; text-align:center}
 .gate-body h2{font-family:var(--sans); font-weight:650; font-size:clamp(30px,4.2vw,44px); line-height:1.04; letter-spacing:-.02em;
 margin:0 0 24px; text-wrap:balance}
 .gate-body h2 em{font-style:normal; color:var(--seal)}
@@ -493,12 +479,12 @@ padding:16px 16px; width:100%}
 border:0; padding:17px 18px; cursor:pointer; transition:background-color .15s}
 #gate-form button:hover{background:var(--bone)}
 #gate-form button:focus-visible{outline:2px solid var(--bone); outline-offset:3px}
-.gate-perk{display:flex; align-items:center; gap:14px; margin:18px 0 0}
+.gate-perk{display:flex; align-items:center; justify-content:center; gap:14px; margin:20px 0 0; text-align:left}
 .gate-perk .burst{width:52px; height:52px}
 .gate-perk .burst b{font-size:14px}
 .gate-perk p{font-family:var(--type); font-size:15.5px; line-height:1.4; margin:0}
 .gate-fine{font-family:var(--type); font-size:14px; line-height:1.5; color:var(--dim); text-align:center; margin:22px 0 0}
-.gate-sent{border:1px dashed var(--seam); padding:22px 22px 20px}
+.gate-sent{border:1px dashed var(--seam); padding:22px 22px 20px; text-align:left}
 .gate-sent[hidden]{display:none}
 .gate-sent b{display:block; font-family:var(--sans); font-weight:700; font-size:22px}
 .gate-sent p{font-family:var(--type); font-size:16px; line-height:1.5; margin:10px 0 0}
@@ -571,12 +557,7 @@ html{scroll-behavior:auto}
 <footer id="submit"></footer>
 </main>
 <div class="gate" id="gate" hidden>
-<div class="gate-page" role="dialog" aria-modal="true" aria-labelledby="s-gate-title" tabindex="-1">
-<figure class="cover">
-<div class="cover-bar" aria-hidden="true"><i></i><i></i><i></i><span id="s-cv-url"></span></div>
-<img id="cv-img" alt="" width="1100" height="1375">
-</figure>
-<div class="gate-body">
+<div class="gate-body" role="region" aria-labelledby="s-gate-title">
 <h2 id="s-gate-title"></h2>
 <form id="gate-form" method="post" target="_blank">
 <label for="gate-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Email address</label>
@@ -607,7 +588,6 @@ html{scroll-behavior:auto}
 </div>
 </div>
 </div>
-</div>
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -633,7 +613,9 @@ return norm(store.get()) === want;
 };
 const gate = $("gate");
 if(open()){ gate.remove(); return; }
-const shut = [document.querySelector("main"), $("s-banner")];
+const shelf = document.querySelector(".shelf");
+shelf.after(gate);
+const shut = [shelf, document.querySelector(".signup"), $("submit")];
 document.documentElement.classList.add("sealed");
 shut.forEach(el => el && (el.inert = true));
 const unseal = () => {
@@ -642,10 +624,6 @@ gate.remove();
 document.documentElement.classList.remove("sealed");
 shut.forEach(el => el && (el.inert = false));
 };
-/* the cover */
-$("cv-img").src = SITE.coverImage;
-$("cv-img").alt = "A look inside " + SITE.headline + ": " + ENTRIES.length + " documents";
-$("s-cv-url").textContent = SITE.coverUrl;
 /* the pitch */
 const hl = SITE.gateHighlight;
 $("s-gate-title").innerHTML = hl && SITE.gateTitle.includes(hl)
@@ -691,7 +669,6 @@ if(norm($("gate-key-input").value) === norm(SITE.accessKey)) unseal();
 else { $("gate-no").textContent = SITE.gateKeyWrong; $("gate-key-input").select(); }
 };
 gate.hidden = false;
-gate.querySelector(".gate-page").focus({preventScroll:true});
 })();
 /* ── strip, header, hero ── */
 if(SITE.banner) $("s-banner").textContent = SITE.banner; else $("s-banner").remove();
