@@ -49,10 +49,11 @@ accessKey: "unsealed", // change it and everyone needs the new link
 gateTitle: "Get FREE access to the archive",
 gateHighlight: "FREE", // the word in the title set in orange - "" for none
 gatePlaceholder: "Email address",
-gateButton: "I want the archive",
+gateButton: "Send me the archive",
+gateNote: "Not there in 45 seconds? Check spam.", // small line right under the button - "" hides it
 gateFine: "", // small print under the perk, e.g. "You'll get PSYOP Letters, free. Unsubscribe any time." - "" hides it
 gateSentTitle: "Check your inbox.",
-gateSentText: "Your welcome letter from PSYOP Letters is on its way. Open the link inside and the archive unseals. Nothing after 2 minutes? Check Promotions or spam.",
+gateSentText: "Your welcome letter from PSYOP Letters is on its way. Open the link inside and the archive unseals. Not there in 45 seconds? Check spam or Promotions.",
 gateRetry: "Wrong address? Try again",
 gateKeyAsk: "", // e.g. "Already have the key?" - shows a box to type the key in; "" hides it (the key link still works)
 gateKeyPlaceholder: "the key",
@@ -95,13 +96,22 @@ signupBurst: "FREE" // the orange starburst - "" to hide
 };
 
 /* One object per entry. The order here is the order on the page (it is curated, not by date):
-the first six, the run around the middle (Markopolos to Tesla) and the last five are the hooks.
+the first nine, the run around the middle (Markopolos to Tesla) and the last five are the hooks.
 DOC numbers follow this order.
 t = title a = author y = year
 u = link to the original ("" shows no link)
 d = the one-line thesis n = the note behind "Open +"
 x = optional cross-reference to the Weekly, shown inside the note */
 const ENTRIES = [
+{t:"The Energies of Men", a:"William James", y:1907, u:"https://en.wikisource.org/wiki/The_Energies_of_Men",
+d:"Most people live far inside their limits. Fatigue is only the first layer, and there is energy stored behind it.",
+n:"James starts from second wind: push past the first wave of tiredness and a fresh supply arrives, sometimes a third and a fourth. He argues the mind works the same way, and that habit keeps nearly everyone on the shallow layer for life. Compared with what we ought to be, he says, we are only half awake. Then he asks what opens the reserve: a crisis, a strong emotion, an idea, a daily discipline. An address to the American Philosophical Association, and as practical as anything he wrote."},
+{t:"Life of Diogenes", a:"Diogenes Laertius", y:"c. 230 AD", u:"https://abocalypse.com/courses/uchicago/diogenes.pdf",
+d:"The man who lived in a jar, mocked Plato and told Alexander the Great to get out of his sunlight.",
+n:"Ten pages of anecdotes, in C. D. Yonge's translation, about the Cynic who decided every custom was negotiable. He threw away his cup when he saw a boy drink from his hands. He walked the market in daylight with a lamp, looking for a human being. Asked where he came from, he said he was a citizen of the world. It reads like a run of stunts, and every stunt is an argument. As a student, Nietzsche won a university prize for an essay on the sources of this very book."},
+{t:"The Most Intolerant Wins", a:"Nassim Nicholas Taleb", y:2016, u:"https://www.fisheaters.com/srpdf/themostintolerantwins.pdf",
+d:"A few percent who will not bend set the rules for everyone who does not care.",
+n:"Taleb's example is kosher lemonade: the observant will not drink the other kind, nobody else minds, so the whole shelf goes kosher. The asymmetry is the engine, and he runs it through food, language, markets and religion. It only works when the stubborn group is spread evenly and the cost to everyone else is small. A chapter from Skin in the Game, and a good cure for judging anything by majority opinion."},
 {t:"Simple Sabotage Field Manual", a:"Office of Strategic Services (OSS)", y:1944, u:"https://regmedia.co.uk/2021/01/05/simple_sabotage_field_manual.pdf",
 d:"How to wreck an organisation from the inside without breaking a single rule.",
 n:"A 1944 manual for citizens in occupied Europe. The physical sabotage is dated. The section on meetings is not: insist on proper channels, refer everything to a committee, reopen decisions already made, haggle over wording. Read it and count how many of your colleagues are working for the OSS."},
@@ -144,9 +154,6 @@ n:"The authors changed what subjects did by means the subjects never noticed, th
 {t:"Phaedrus", a:"Plato (Trans. Benjamin Jowett)", y:"c. 370 BCE", u:"https://www.gutenberg.org/files/1636/1636-h/1636-h.htm",
 d:"Rhetoric is the leading of souls. To do it well you must know what kinds of soul there are and which words move which.",
 n:"The one place Plato grants that a real art of persuasion could exist, and he names the price: know your listener the way a physician knows a body. Then comes the myth of Theuth, where the god offers writing as a cure for forgetting and the king answers that it is a poison for memory. A written text cannot answer back or choose its reader. Plato wrote that down."},
-{t:"The Most Intolerant Wins", a:"Nassim Nicholas Taleb", y:2016, u:"https://www.fisheaters.com/srpdf/themostintolerantwins.pdf",
-d:"A few percent who will not bend set the rules for everyone who does not care.",
-n:"Taleb's example is kosher lemonade: the observant will not drink the other kind, nobody else minds, so the whole shelf goes kosher. The asymmetry is the engine, and he runs it through food, language, markets and religion. It only works when the stubborn group is spread evenly and the cost to everyone else is small. A chapter from Skin in the Game, and a good cure for judging anything by majority opinion."},
 {t:"MIT Guide to Lock Picking", a:"Ted the Tool", y:1991, u:"https://www.lysator.liu.se/mit-guide/MITLockGuide.pdf",
 d:"Locks open because no factory can drill five holes in a perfectly straight line.",
 n:"Written under a pseudonym at MIT and passed around the early internet. It explains pin tumblers, why manufacturing tolerances let you set the pins one at a time, and how to train your hands to feel it. The habit of mind matters more than the skill: every security system is a mechanism, and every mechanism has slack."},
@@ -159,9 +166,15 @@ n:"Written for Harvard Business Review. Liking, reciprocity, social proof, consi
 {t:"Why Strict Churches Are Strong", a:"Laurence R. Iannaccone", y:1994, u:"https://www.academia.edu/144329918/Why_Strict_Churches_Are_Strong",
 d:"A church that demands a lot gets rid of the people who would only take.",
 n:"An economist's answer to why the sects with strange rules about dress, food and Saturday nights keep growing while the easy churches empty. A congregation is something its members make together, so free riders ruin it. Costly demands, even pointless ones, drive off the half-committed and leave a room where everyone gives. The same logic covers fraternities, companies with brutal hours, and any group that makes you pay to get in."},
+{t:"Life of Lycurgus", a:"Plutarch (Trans. John Dryden)", y:"c. 100 AD", u:"https://classics.mit.edu/Plutarch/lycurgus.html",
+d:"A whole state rebuilt as a training regime, and the rules held for five hundred years.",
+n:"Iron money too heavy to steal, so wealth stopped mattering. Common meals, so no man ate richer than his neighbour. Boys taken from home at seven and raised hungry, cold and in packs. Speech cut down until laconic became a word. Plutarch admires most of it and records the rest without blinking, including the infants left at the foot of Mount Taygetus. Then Lycurgus made the Spartans swear to keep his laws until he came back, left, and starved himself to death so that he never would."},
 {t:"On Truth and Lies in a Nonmoral Sense", a:"Friedrich Nietzsche", y:1873, u:"https://dn790002.ca.archive.org/0/items/NietzscheTruthLiesInANonmoralSense1873/Nietzsche%20-%20Truth%20%26%20Lies%20in%20a%20Nonmoral%20Sense%20%281873%29.pdf",
 d:"Truth is a mobile army of metaphors that a people agreed on and then forgot were metaphors.",
 n:"Written at twenty-eight and left in a drawer. A nerve stimulus is turned into an image, the image into a sound: two metaphors deep before there is a word. Every concept is made by ignoring what differs between cases. If he is right, there was never a plain speech for rhetoric to corrupt. Language was persuasion from the first word."},
+{t:"Pythian 2", a:"Pindar", y:"c. 470 BCE", u:"https://cts.perseids.org/read/greekLit/tlg0033/tlg002/perseus-eng3/2.70-2.95",
+d:"Learn what you are, and then become it.",
+n:"A victory ode for Hieron, tyrant of Syracuse, and the source of the line Nietzsche carried for the rest of his life: become who you are, having learned what that is. He made it the subtitle of Ecce Homo. The lines around it are advice to a powerful man: an ape looks pretty only to children, and the slanderer poisons everyone he touches. The link opens on the famous passage."},
 {t:"Judgment Under Uncertainty: Heuristics and Biases", a:"Amos Tversky & Daniel Kahneman", y:1974, u:"https://www.csc2.ncsu.edu/faculty/mpsingh/local/Social/f25/wrap/readings/Tversky+Kahneman-heuristics-biases-1974.pdf",
 d:"Three shortcuts - representativeness, availability, anchoring - run most of the estimates anyone gives you.",
 n:"Eight pages in Science that started a field. The shortcuts are cheap and usually good enough, which is why we keep them, and they fail in the same direction every time, which is why they can be used against us. Anchoring alone explains why the first number said in a negotiation matters so much."},
@@ -195,6 +208,9 @@ n:"Once the label was on, everything confirmed it. Taking notes was charted as '
 {t:"Destruction and Creation", a:"John R. Boyd", y:1976, u:"https://mail.code7700.com/pdfs/john_boyd/destruction_and_creation_john_boyd.pdf",
 d:"To keep up with a changing world you have to keep smashing your own picture of it and building a new one.",
 n:"The only paper ever written by the fighter pilot behind the OODA loop. He takes Gödel, Heisenberg and the second law of thermodynamics and draws one conclusion: a model checked only against itself drifts away from reality and into disorder. So you break it apart and rebuild from the pieces, again and again, faster than the other man. A few dense pages. Everything else he left was briefing slides."},
+{t:"Principles of War", a:"Carl von Clausewitz", y:1812, u:"https://clausewitzstudies.org/readings/Principles/Clausewitz-PrinciplesOfWar-ClausewitzCom.pdf",
+d:"When in doubt, choose the bolder course, and put everything you have behind it.",
+n:"Clausewitz spent two years tutoring the Prussian crown prince and left him this summary in 1812, before quitting the Prussian army to fight Napoleon from the Russian side. It is short, direct and written for a sixteen-year-old. Concentrate on the decisive point, prefer the bold plan, and do not lose heart when things go wrong, because they always will. The seed of On War, without the fog."},
 {t:"Against the Sophists", a:"Isocrates", y:"c. 390 BCE", u:"https://people.duke.edu/~wj25/ereserves/WJ-Against_the_Sophists.pdf",
 d:"Isocrates opens his school by calling his rivals frauds: men who sell virtue for a fixed fee and guarantee the result.",
 n:"The first advertisement in the history of education, and it is an attack ad. He goes after the debaters who promise happiness and the speechwriters who sell formulas, then admits what none of them will: talent and long practice do most of the work, and no teacher can hand you either. Plato won the argument. Isocrates got the next two thousand years of schooling."},
@@ -213,6 +229,9 @@ n:"Fable XI of The Wisdom of the Ancients, where Bacon reads myth as doctrine in
 {t:"Learned Helplessness: Theory and Evidence", a:"Martin E.P. Seligman", y:1972, u:"https://ppc.sas.upenn.edu/sites/default/files/learnedhelplessness.pdf",
 d:"Dogs shocked with no way out stopped trying to escape, even after the door was opened.",
 n:"The animals had learned that nothing they did made a difference, and they carried the lesson into a cage where it was false. Seligman read human depression through it, and later built positive psychology on the opposite question. Worth knowing that in 2016 he and Maier revised the theory: passivity is the default, and what has to be learned is control."},
+{t:"Courage Under Fire", a:"James B. Stockdale", y:1993, u:"https://hoover-s3-website.s3.us-west-2.amazonaws.com/s3fs-public/uploads/documents/StockdaleCourage.pdf",
+d:"What is up to you and what is not: Epictetus, tested for seven years in a North Vietnamese prison.",
+n:"Shot down in 1965, Stockdale told himself on the way down that he was leaving the world of technology for the world of Epictetus. He had read the Enchiridion at Stanford. He spent the next seven and a half years as a prisoner, four of them in solitary and two in leg irons, leading the resistance inside the camp. The line between what is in your power and what is not was the one thing that held. The best proof anyone has given that Stoicism is a tool and not a mood."},
 {t:"Psychology of Intelligence Analysis", a:"Richards J. Heuer, Jr. (CIA)", y:1999, u:"https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2",
 d:"Analysts do not fail for lack of information. They fail because the mind fits new facts into the picture it already has.",
 n:"Written inside the CIA for its own analysts. Heuer shows that more data mostly raises confidence, not accuracy, and gives a drill called Analysis of Competing Hypotheses: list every explanation, then hunt for the evidence that kills each one, and keep what survives. Book-length, free, and better than most of the bias paperbacks that came after it. The method is in chapter 8."},
@@ -228,6 +247,9 @@ n:"The authors treat fear as a cost: an animal gives up food to stay safe, and y
 {t:"Plutarch on Progress in Virtue", a:"Plutarch", y:"c. 100 AD", u:"https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Quomodo_quis_sentiat*.html",
 d:"The Stoics said you are either a sage or a fool. Plutarch says you can be getting better, and lists the signs.",
 n:"You are making progress when vice loosens its grip, when you stay level where you used to flare up, when you admire good men without envying them, when even your dreams calm down. The oldest working test for telling real improvement from the performance of it."},
+{t:"Letter to Francesco Vettori", a:"Niccolò Machiavelli", y:1513, u:"https://courses.washington.edu/hsteu401/Letter%20%20to%20Vettori.pdf",
+d:"By day the tavern and the mud. At night, court dress on, and four hours with the ancients.",
+n:"That spring the Medici had him arrested and tortured. Now he is out of office and stuck on his farm, snaring thrushes and arguing over cards with the butcher and the miller. In the evening he takes off his muddy clothes, puts on court dress and enters the courts of the ancients to question them, and for four hours he forgets every trouble and does not fear death. In the same letter he mentions a little book he is writing on principalities. The Prince was written by a man refusing to be what his circumstances said he was."},
 {t:"Self-Fulfilling Prophesies", a:"Alia Crum & Damon J. Phillips", y:2015, u:"https://www.researchgate.net/publication/299865216_Self-Fulfilling_Prophesies_Placebo_Effects_and_the_Social-Psychological_Creation_of_Reality",
 d:"What you expect to happen changes what happens, in the body and between people.",
 n:"A review that puts three literatures side by side: placebo effects in medicine, mindsets in psychology, self-fulfilling prophecies in sociology. Hotel cleaners told their work counted as exercise got healthier. A milkshake labelled indulgent satisfied the body more than the same shake labelled sensible. Both studies are Crum's own. Belief is treated here as a cause with a dose."},
@@ -237,6 +259,9 @@ n:"A short history by one of the main Western scholars of the subject. Waidan wo
 {t:"6 Secrets of Mental Toughness From the Navy SEALs", a:"Sport Ngin", y:2015, u:"https://cdn1.sportngin.com/attachments/document/748b-2136103/6_Secrets_of_Mental_Toughness_From_the_Navy_SEALs.pdf",
 d:"What men who get through SEAL training do with their heads when the body wants to quit.",
 n:"A short popular piece, the lightest thing in the archive. Cut the task down to the next small goal, rehearse it in your head, talk to yourself on purpose, slow your breathing. Nothing in it is new. It is here because it is plain and usable and takes five minutes."},
+{t:"The Strenuous Life", a:"Theodore Roosevelt", y:1899, u:"https://www.usmcu.edu/Portals/218/Strenuous%20Life%2C%20Theodore%20Roosevelt.pdf",
+d:"Ease is not the reward. It is how men and nations go soft and get beaten.",
+n:"A speech in Chicago, months after Roosevelt came back from Cuba with the Rough Riders. He preaches toil and risk over what he calls ignoble ease, and it is where the line about daring mighty things comes from, even at the price of failure. Read it as period material too: the same speech argues for holding the Philippines, and the hardship he sells to men is also a case for empire."},
 {t:"On the Sublime", a:"Longinus (Trans. H.L. Havell)", y:"1st c. AD", u:"https://www.gutenberg.org/files/17957/17957-h/17957-h.htm",
 d:"Great writing does not persuade the listener. It takes him out of himself.",
 n:"A style manual that keeps turning into something else. Longinus says technique can be taught, but the real source is a great soul, and the sublime is its echo. He closes by asking why his age produces no giants and blames the love of money and pleasure, not the loss of freedom. Herzog, the next entry, quotes him."},
@@ -327,26 +352,21 @@ background:linear-gradient(rgba(215,130,27,.5), rgba(215,130,27,.5)) left bottom
 .chyron{display:flex; background:var(--chyron); color:var(--tape); font-family:var(--osd);
 font-size:19px; line-height:1; overflow:hidden; white-space:nowrap}
 .chyron b{flex:none; font-weight:400; background:var(--flare); color:#fff; padding:8px 14px 9px; position:relative; z-index:1}
-.chyron .run{display:flex; flex:none; padding:7px 0 8px; animation:crawl 64s linear infinite}
+.chyron .run{display:flex; flex:none; padding:7px 0 8px; animation:crawl 64s linear 1.4s infinite} /* holds the first line for a beat on load */
 .chyron .run span{padding:0 20px}
 .chyron .run span::after{content:"///"; margin-left:40px; opacity:.55}
 .chyron:hover .run{animation-play-state:paused}
-@media(max-width:560px){.chyron{font-size:17px}}
+@media(max-width:560px){.chyron{font-size:16px} .chyron .run span{padding:0 8px} .chyron .run span::after{margin-left:28px}} /* first line fits a phone on load */
 @keyframes crawl{to{transform:translateX(-50%)}}
 /* ── index bar ── */
 .filters{border-bottom:var(--rule); padding:14px 0 12px;
 position:sticky; top:0; background:var(--ram) var(--grain); z-index:48;
 display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px}
 .count{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--dim)}
-.views{display:flex; gap:8px; margin-left:auto}
-.toggle{font-size:11px; letter-spacing:.12em; text-transform:uppercase; border:var(--rule); padding:6px 12px; transition:border-color .15s}
-.toggle:hover{border-color:var(--dim)}
-.toggle[aria-pressed="true"]{background:var(--bone); color:var(--hull); border-color:var(--bone)}
 /* ── the index ── */
 .plots{display:grid; border-left:var(--rule); margin-bottom:clamp(72px,9vw,120px)}
 @media(min-width:640px){.plots{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:980px){.plots{grid-template-columns:repeat(3,1fr)}}
-.plots.list{grid-template-columns:1fr}
 .lot{background:var(--plate); padding:20px 22px 20px 19px; display:flex; flex-direction:column;
 border-right:var(--rule); border-bottom:var(--rule); border-left:3px solid transparent;
 transition:background-color .15s, border-color .15s}
@@ -372,12 +392,6 @@ border-top:1px dashed var(--seam); margin-top:14px; padding-top:12px; color:var(
 text-transform:uppercase; text-decoration:none; color:var(--seal); border-bottom:1px solid var(--seal)}
 a.w{text-decoration:none; color:var(--bone); border-bottom:2px solid var(--seal); white-space:nowrap}
 a.w:hover{background:var(--seal); color:var(--hull)}
-.plots.list .lot{display:grid; grid-template-columns:76px 1fr; gap:0 18px; align-items:start}
-.plots.list .no{flex-direction:column; gap:4px; grid-row:1/span 4}
-.plots.list h2{margin-top:0}
-.plots.list .meta{padding-top:12px}
-.plots.list .thesis{max-width:78ch}
-.plots.list .note{max-width:78ch}
 /* ── the closing block: dark plate, with the PSYOP Letters masthead pinned on as a label ── */
 .signup{border:var(--rule); background:var(--hull); margin:0 0 clamp(64px,8vw,104px)}
 .signup .bars{height:7px; background:var(--bars)}
@@ -460,8 +474,9 @@ h1{animation:jolt .95s steps(1) .25s 1}
 /* ── the gate: the real page stays live up top (read-out, glitch, crawl); the index fades out
 like it ran out of clearance, and the opt-in sits in the fade ── */
 html.sealed .filters{position:static}
-html.sealed .shelf{max-height:clamp(240px,24vw,300px); overflow:hidden;
--webkit-mask-image:linear-gradient(#000 18%, transparent 84%); mask-image:linear-gradient(#000 18%, transparent 84%)}
+html.sealed .shelf{max-height:400px; overflow:hidden;
+-webkit-mask-image:linear-gradient(#000 40%, transparent 84%); mask-image:linear-gradient(#000 40%, transparent 84%)}
+@media(max-width:639px){html.sealed .shelf{max-height:470px}}
 html.sealed .signup, html.sealed #submit{display:none}
 .gate{position:relative; z-index:1; margin:clamp(-80px,-5vw,-40px) auto 0; padding:0 0 clamp(72px,9vw,120px)}
 .gate[hidden]{display:none}
@@ -483,6 +498,7 @@ border:0; padding:17px 18px; cursor:pointer; transition:background-color .15s}
 .gate-perk .burst{width:52px; height:52px}
 .gate-perk .burst b{font-size:14px}
 .gate-perk p{font-family:var(--type); font-size:15.5px; line-height:1.4; margin:0}
+.gate-note{font-family:var(--type); font-size:14px; line-height:1.4; color:var(--dim); margin:2px 0 0}
 .gate-fine{font-family:var(--type); font-size:14px; line-height:1.5; color:var(--dim); text-align:center; margin:22px 0 0}
 .gate-sent{border:1px dashed var(--seam); padding:22px 22px 20px; text-align:left}
 .gate-sent[hidden]{display:none}
@@ -506,7 +522,7 @@ border:var(--rule); padding:9px 12px; width:min(220px,100%)}
 html{scroll-behavior:auto}
 .chyron .run{animation:none}
 .sg-tag .rec::before{animation:none}
-.lot, .toggle, .sg-title.label, .sg-offer .burst{transition:none}
+.lot, .sg-title.label, .sg-offer .burst{transition:none}
 .warn{transition:none}
 }
 </style>
@@ -527,10 +543,6 @@ html{scroll-behavior:auto}
 <div class="shelf">
 <div class="filters" id="index">
 <span class="count" id="s-index"></span>
-<div class="views">
-<button class="toggle" id="v-grid" aria-pressed="true">Grid</button>
-<button class="toggle" id="v-list" aria-pressed="false">List</button>
-</div>
 </div>
 <section class="plots" id="plots"></section>
 </div>
@@ -569,6 +581,7 @@ html{scroll-behavior:auto}
 <input type="hidden" name="referral_code" value="">
 <input type="hidden" name="source" value="embed">
 <button type="submit" id="s-gate-button"></button>
+<p class="gate-note" id="s-gate-note"></p>
 </form>
 <div class="gate-sent" id="gate-sent" hidden aria-live="polite">
 <b id="s-gate-sent-title"></b>
@@ -631,6 +644,7 @@ $("s-gate-title").innerHTML = hl && SITE.gateTitle.includes(hl)
 : esc(SITE.gateTitle);
 $("gate-email").placeholder = SITE.gatePlaceholder;
 $("s-gate-button").textContent = SITE.gateButton;
+if(SITE.gateNote) $("s-gate-note").textContent = SITE.gateNote; else $("s-gate-note").remove();
 $("s-gate-perk").textContent = SITE.signupStamp;
 if(SITE.signupBurst) $("s-gate-burst").textContent = SITE.signupBurst;
 else gate.querySelector(".gate-perk .burst").remove();
@@ -689,7 +703,8 @@ const tick = () => { const s = Math.floor((Date.now()-t0)/1000);
 $("tc").textContent = `SP ${Math.floor(s/3600)}:${pad(Math.floor(s/60)%60)}:${pad(s%60)}`; };
 tick(); setInterval(tick, 1000);
 } else $("osd").remove();
-if(SITE.indexLabel) $("s-index").textContent = fill(SITE.indexLabel); else $("s-index").remove();
+/* the bar under the crawl only shows when there is a label for it */
+if(SITE.indexLabel) $("s-index").textContent = fill(SITE.indexLabel); else $("index").remove();
 /* ── chyron ── */
 if(SITE.ticker && SITE.ticker.length){
 $("s-ticker-label").textContent = SITE.tickerLabel || "";
@@ -725,14 +740,6 @@ btn.textContent = open ? SITE.closeLabel : SITE.openLabel;
 btn.setAttribute("aria-expanded", open);
 };
 });
-const g = $("v-grid"), l = $("v-list");
-const view = isList => {
-$("plots").classList.toggle("list", isList);
-g.setAttribute("aria-pressed", !isList);
-l.setAttribute("aria-pressed", isList);
-};
-g.onclick = ()=>view(false);
-l.onclick = ()=>view(true);
 /* ── the closing block: no form. The masthead, the warning sign and the offer line
 all open PSYOP Letters in a new tab. ── */
 if(SITE.signupTag) $("s-signup-tag").textContent = SITE.signupTag;
